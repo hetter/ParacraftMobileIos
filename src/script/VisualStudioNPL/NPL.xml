@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <!-- raw NPL classes. Generated based on http://pedn.paraengine.com/ -->
+  <tables>
+    <!--NPL-->
+    <table name="NPL">
+      <function name="activate">
+        <summary>activate a given file and load the file if it have not been loaded before</summary>
+        <parameter name="sNeuronFile">
+          It can either be glia file or neuron file. and it can either be local or using the default or specified DNS. All these information is extracted from the sNeuronFile parameters.
+          NOTE: if relative_path contains "\\", it will be converted to "/".
+        </parameter>
+        <parameter name="input">
+          If it is a string, it is regarded as a chunk of code that should be executed in the destination neuron file's runtime. If this is a table or number, it will be transmitted via a internal variable called "msg". When activating neurons on a remote network, only pure data table is allowed in the sCode.
+          Note : pure data table is defined as table consisting of only string, number and other table of the above type. NPL.activate function also accepts ParaFileObject typed message data type. ParaFileObject will be converted to base64 string upon transmission. There are size limit though of 10MB. one can also programmatically check whether a script object is pure date by calling NPL.SerializeToSCode() function. Please note that data types that is not pure data in sCode will be ignored instead of reporting an error.
+        </parameter>
+      </function>
+      <function name="call">
+        <summary>activate a local file synchronously.Use activate() if you need an asynchronous activation.</summary>
+        <parameter name="sNeuronFile">
+          It can either be glia file or neuron file. and it can either be local or using the default or specified DNS. All these information is extracted from the sNeuronFile parameters.
+          NOTE: if relative_path contains "\\", it will be converted to "/".
+        </parameter>
+        <parameter name="input">
+          If it is a string, it is regarded as a chunk of code that should be executed in the destination neuron file's runtime. If this is a table or number, it will be transmitted via a internal variable called "msg". When activating neurons on a remote network, only pure data table is allowed in the sCode.
+          Note : pure data table is defined as table consisting of only string, number and other table of the above type. NPL.activate function also accepts ParaFileObject typed message data type. ParaFileObject will be converted to base64 string upon transmission. There are size limit though of 10MB. one can also programmatically check whether a script object is pure date by calling NPL.SerializeToSCode() function. Please note that data types that is not pure data in sCode will be ignored instead of reporting an error.
+        </parameter>
+      </function>
+      <function name="GetFileName">
+        <summary>
+          return the NPL file name that is being loaded.
+        </summary>
+        <returns>
+          Only call this function when the file is being initialized. i.e. at the root level. Note: calling this function inside other functions will lead to unexpected result.
+        </returns>
+      </function>
+      <function name="load">
+        <summary>
+          load a new glia file (in the local environment) without running it.
+          If the glia file is already loaded, it will not be loaded again. If the file extension is ".dll", it will be treated as a plug-in dll.if the filepath is "*.dll", it means all DLLs in that directory. IMPORTANT: unlike other activation functions, this is more like "include()", the function will be loaded where it is and returned to the original caller upon finishing. For source file: when loading an NPL file, we will first find if there is an up to date compiled version in the bin directory. if there is, we will load the compiled version, otherwise we will use the text version. use bin version, if source version does not exist; use bin version, if source and bin versions are both on disk (instead of zip) and that bin version is newer than the source version. e.g. we can compile source to bin directory with file extension ".o", e.g. "script/abc.lua" can be compiled to "bin/script/abc.o", The latter will be used if available and up-to-date.
+        </summary>
+        <parameter name="filepath">
+          the local file path. e.g. (gl)script/empty.lua
+        </parameter>
+        <parameter name="bReload (optional)">
+          if true, the file will be reloaded even if it is already loaded. otherwise, the file will only be loaded if it is not loaded yet.
+          if one should be very careful when calling with bReload set to true, since this may lead to recursive reloading of the same file. If this occurs, it will generate C Stack overflow error message.
+        </parameter>
+      </function>
+      <function name="EnableNetwork">
+        <summary>
+          Enable the network, by default the network layer is disabled.
+          calling this function multiple time with different CenterName will restart the network layer with a different center name.
+        </summary>
+        <parameter name="bEnable">
+          true to enable, false to disable.If this is false, the CenterName and Password are ignored.
+        </parameter>
+        <parameter name="CenterName">
+          the local nerve center name. it is also the user name which local receptor will use in the credentials to login in other NPL runtime
+        </parameter>
+        <parameter name="Password">
+        </parameter>
+      </function>
+      <function name="AddDNSRecord">
+        <summary>
+          add a DNS server record to the current NPL runtime.
+          DNS server record is a mapping from name to (IP:port) if one maps several IP:port to the same name, the former ones will be overridden.
+        </summary>
+        <parameter name="sDNSName">
+          the DNS server name. the DNS name "_world" is used for the current world DNS server. It is commonly used as a DNS reference to the current world that the user is exploring
+        </parameter>
+        <parameter name="sAddress">
+          "IP:port". e.g. "192.168.1.10:4000"
+        </parameter>
+      </function>
+      <function name="SetTimer">
+        <summary>
+          creates a timer with the specified time-out value
+        </summary>
+        <parameter name="nIDEvent">
+          Specifies a positive timer identifier. For nIDEvent is less or equal to 0, they are reserved for internal uses. If the NPL runtime already has a timer with the value nIDEvent, then the existing timer is replaced by the new timer. When SetTimer replaces a timer, the timer is reset.
+        </parameter>
+        <parameter name="fElapse">
+          Specifies the time-out value, in seconds. Please note that a timer will not be repeatedly activated if its timeout is shorter than the frame rate of the NPL simulation pipeline .
+        </parameter>
+        <parameter name="sNeuronFile">
+          The NPL file to be activated when the time-out value elapses. For more information about the file name See NPL.activate()
+        </parameter>
+        <returns>
+          true if succeeds.An application can pass the value of the nIDEvent parameter to the NPL.KillTimer function to destroy the timer.
+        </returns>
+      </function>
+      <function name="KillTimer">
+        <summary>
+          Destroys the specified timer.
+        </summary>
+        <parameter name="nIDEvent">
+          Specifies a positive timer identifier. For nIDEvent is less or equal to 0, they are reserved for internal uses. If the NPL runtime already has a timer with the value nIDEvent, then the existing timer is replaced by the new timer. When SetTimer replaces a timer, the timer is reset.
+        </parameter>
+        <returns>
+          If the function succeeds, the return value is true
+        </returns>
+      </function>
+      <function name="ChangeTimer">
+        <summary>
+          Changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.
+        </summary>
+        <parameter name="nIDEvent">
+          Specifies a positive timer identifier. For nIDEvent is less or equal to 0, they are reserved for internal uses. If the NPL runtime already has a timer with the value nIDEvent, then the existing timer is replaced by the new timer. When SetTimer replaces a timer, the timer is reset.
+        </parameter>
+        <parameter name="dueTime">
+          int: The amount of time to delay before the invoking the callback method specified when the Timer was constructed, in milliseconds. Specify zero (0) to restart the timer immediately. however, the current implementation does not accept dueTime that is larger than MAX_TIMER_DUE_TIME 10000000, which is 10000 seconds.
+        </parameter>
+        <parameter name="period">
+          The  time interval between invocations of the callback method specified when the Timer was constructed, in milliseconds.
+        </parameter>
+        <returns>
+          If the function succeeds, the return value is true
+        </returns>
+      </function>
+      <function name="SerializeToSCode">
+        <summary>
+          serialize a npl/lua table object into sCode.
+          The object could be a value, string or a table of the above type. input also accepts ParaFileObject typed data. ParaFileObject will be converted to base64 string internally.There are size limit though of 10MB.
+        </summary>
+        <parameter name="sStorageVar">
+          if this is "", the scode contains only the object. otherwise an assignment is made, by prefixing the scode with "[sStorageVar = "
+        </parameter>
+        <parameter name="input">
+          object: input luabind object
+        </parameter>
+        <returns>
+          string: sCode the output scode
+        </returns>
+      </function>
+      <function name="IsSCodePureData">
+        <summary>
+          verify the script code.
+          it returns true if the script code contains pure msg data or table. this function is used to verify scode received from the network. So that the execution of a pure data in the local runtime is harmless.
+        </summary>
+      </function>
+      <function name="RegisterWSCallBack ">
+        <summary>
+          this method will associate a web service (method) with either a sCode, which will be called when the web service returned.
+          The returned message, if any, will be passed via a global parameter called msg. If msg == nil, it always means that there is an error during processing, such as HTTP 404 not found. the error code either string or number will be returned in a global variable called msgerror. For example: function callbackFunc1() if(msg~=nil) then log(msg.username); -- error code in msgerror else log(tostring(msgerror)); -- error code in msgerror end end NPL.RegisterWSCallBack("http://paraengine.com/login.aspx",callbackFunc1); NPL.activate("http://paraengine.com/login.aspx", {username="aaa"});
+        </summary>
+        <parameter name="sWebServiceFile">
+          URL of the web service
+        </parameter>
+        <parameter name="sCode">
+          code to be executed when the web service is called. When a two-way web service call is invoked; it internally will create a thread for the returning message. Please refer to .Net 3.0 network communication architecture.
+        </parameter>
+      </function>
+      <function name="UnregisterWSCallBack">
+        <summary>
+          unregister web service call back for a given file.
+        </summary>
+        <parameter name="sWebServiceFile">
+          if this is nil or "", all call backs will be unregistered.
+        </parameter>
+      </function>
+      <function name="AsyncDownload">
+        <summary>
+          Asynchronously download a file or an HTTP web page from the url.
+        </summary>
+        <parameter name="url">string</parameter>
+        <parameter name="destFolder">folder  path or file path. if the destFolder contains a file extension, we will save the downloaded file as the destFolder otherwise, we will save the file as the combination of the destFolder and the filename returned from the remote target.  </parameter>
+        <parameter name="callbackScript">
+          script code to be called, a global variable called msg is assigned, as below if url is a file: msg = {DownloadState=""|"complete"|"terminated", totalFileSize=number, currentFileSize=number, PercentDone=number} if url is a web page: msg = {DownloadState=""|"complete"|"terminated", ContentType=string that contains "text/html", Headers=string of {name:value
+          }, StatusCode=int, StatusDescription=string, ResponseUri=string of actual url that is responding. totalFileSize=number, currentFileSize=number, PercentDone=number}
+        </parameter>
+        <parameter name="DownloaderName">string</parameter>
+      </function>
+      <function name="CancelDownload">
+        <summary>
+          cancel all asynchronous downloads that matches a certain downloader name pattern
+        </summary>
+        <parameter name="DownloaderName">
+          regular  expression. such as "proc1", "proc1.*", ".*"
+        </parameter>
+      </function>
+      <function name="Compile">
+        <summary>
+          compile source The main advantages of precompiling chunks are: faster loading, protecting source code from accidental user changes, and off-line syntax checking.
+          Precompiling does not imply faster execution because in npl chunks are always compiled into bytecodes before being executed. compiling simply allows those bytecodes to be saved in a file for later execution. compiling can produce a single output file containing the bytecodes for all source files given. By default, the output file is named luac.out, but you can change this with the -o option. e.g. NPL.Compile("-p -o bin/script/config.o script/config.lua");
+        </summary>
+        <parameter name="arguments">
+          "%s [options] [filenames]" "Available options are:\n" " - process stdin\n" " -l list\n" " -o name output to file " LUA_QL("name") " (default is \"s\")\n" " -p parse only\n" " -s strip debug information\n" " -v show version information\n" " -- stop handling options\n",
+        </parameter>
+      </function>
+    </table>
+    <!--ParaUI-->
+    <table name="ParaUI">
+      <function name="PlaySound">
+        <summary>Play a sound file.</summary>
+        <parameter name="strSoundAssetName">the sound object name </parameter>
+        <parameter name="bLoop">whether to loop the sound file</parameter>
+      </function>
+      <function name="StopSound">
+        <summary>
+          stop playing a sound file.
+          one can use this function to stop playing looping sound such as a background music.
+        </summary>
+        <parameter name="strSoundAssetName">the sound object name </parameter>
+      </function>
+      <function name="Destroy">
+        <summary>
+          delete a GUI object as well as all its child objects, by its name.
+          If there are several objects who have the same id, only the last attached one is deleted.
+        </summary>
+        <parameter name="strObjectName">the object name</parameter>
+      </function>
+      <function name="Destroy1">
+        <summary>
+          delete a GUI object as well as all its child objects, by its ID.
+          If there are several objects who have the same id, only the last attached one is deleted.
+        </summary>
+        <parameter name="nid">id</parameter>
+      </function>
+      <function name="GetUIObject">
+        <summary>Get the first GUI object that matches the name.</summary>
+        <parameter name="strObjectName">the name of the control. If this is "root", the root object is returned.</parameter>
+        <returns>the control with the given name. return NULL if not find.</returns>
+      </function>
+      <function name="GetUIObject1">
+        <summary>get UI object by its ID.</summary>
+        <parameter name="nid">this is id property value or result of GetID() from a UI object. If this is 0, the root object is returned. </parameter>
+        <returns>the control with the given id. return NULL if not find.</returns>
+      </function>
+      <function name="GetMousePosition">
+        <summary>
+          get the current mouse position.
+          e.g. local x, y = ParaUI.GetMousePosition();
+        </summary>
+        <parameter name="x">screen x</parameter>
+        <parameter name="y">screen y</parameter>
+      </function>
+      <function name="CreateUIObject">
+        <summary>
+          Create a GUI object based on the default template object.
+          All default template object is defined in "script/config.lua", which will be loaded when GUI engine is loaded.
+          One can change template object at runtime by GetDefaultObject().
+          Although it is possible to create many objects with the same name, we do not advice you to do so.
+        </summary>
+        <parameter name="strType">
+          type of the new object. It can be "container", "button", "scrollbar", "editbox", "imeeditbox", "slider",
+          "video", "3dcanvas", "listbox", "painter" and "text". "container" is the only type of control that can contain other objects
+        </parameter>
+        <parameter name="strObjectName">the new object's name </parameter>
+        <parameter name="alignment">
+          can be one of the following strings or nil or left out entirely:
+          "_lt" align to left top of the screen
+          "_lb" align to left bottom of the screen
+          "_ct" align to center of the screen
+          "_ctt": align to center top of the screen
+          "_ctb": align to center bottom of the screen
+          "_ctl": align to center left of the screen
+          "_ctr": align to center right of the screen
+          "_rt" align to right top of the screen
+          "_rb" align to right bottom of the screen
+          "_mt": align to middle top
+          "_ml": align to middle left
+          "_mr": align to middle right
+          "_mb": align to middle bottom
+          "_fi": align to left top and right bottom. This is like fill in the parent window.
+
+          the layout is given below:
+          _lt _mt _rt
+          _ml _ct _mr
+          _lb _mb _rb
+        </parameter>
+        <parameter name="x">screen coordinate x, for _m? alignments, the meaning is different, see remark </parameter>
+        <parameter name="y">screen coordinate y, for _m? alignments, the meaning is different, see remark </parameter>
+        <parameter name="width">screen coordinate width or right, depending on alignment mode, for _m? alignments, the meaning is different, see remark </parameter>
+        <parameter name="height">screen coordinate height or bottom, depending on alignment mode, for _m? alignments, the meaning is different, see remark </parameter>
+        <remarks>
+          we design _m? alignment types. _mt: x is coordinate from the left. y is coordinate from the top,
+          width is the coordinate from the right and height is the height _mb: x is coordinate from the left.
+          y is coordinate from the bottom, width is the coordinate from the right and height is the height _ml:
+          x is coordinate from the left. y is coordinate from the top, width is the width and height is the
+          coordinate from the bottom _mr: x is coordinate from the right. y is coordinate from the top,
+          width is the width and height is the coordinate from the bottom
+        </remarks>
+        <returns>created ParaUIObject</returns>
+      </function>
+      <function name="GetDefaultObject">
+        <summary>
+          get the default template object from which all sub-sequent controls of the same type are cloned(created).
+          one can modify the template object at runtime to change of the theme of all controls created subsequently.
+          All default template object is defined in "script/config.lua", which will be loaded when GUI engine is loaded
+        </summary>
+        <parameter name="strType">
+          It can be "container", "button", "scrollbar", "editbox", "imeeditbox", "slider" and "text".
+        </parameter>
+        <returns>the default object is returned</returns>
+      </function>
+      <function name="SetCursorFromFile">
+        <summary>
+          Set the current cursor to use.
+          One can call very often, since it will does nothing with identical cursor file and hot spot.
+          Typically, hardware supports only 32x32 cursors and, when windowed, the system might support only 32x32 cursors.
+        </summary>
+        <parameter name="szCursor">
+          cursor file name: The contents of this texture will be copied and potentially format-converted
+          into an internal buffer from which the cursor is displayed. The dimensions of this surface
+          must be less than the dimensions of the display mode, and must be a power of two in each direction,
+          although not necessarily the same power of two. The alpha channel must be either 0.0 or 1.0.
+        </parameter>
+        <parameter name="XHotSpot">
+          [in] X-coordinate offset (in pixels) that marks the center of the cursor.
+          The offset is relative to the upper-left corner of the cursor. When the cursor is given a new position,
+          the image is drawn at an offset from this new position determined by subtracting the hot spot coordinates from the position.
+        </parameter>
+        <parameter name="YHotSpot">
+          [in] Y-coordinate offset (in pixels) that marks the center of the cursor.
+          The offset is relative to the upper-left corner of the cursor. When the cursor is given a new position,
+          the image is drawn at an offset from this new position determined by subtracting the hot spot coordinates from the position.
+        </parameter>
+      </function>
+      <function name="SetUseSystemCursor">
+        <summary>
+          whether to use system cursor.
+        </summary>
+        <parameter name="bUseSystem">If this is true, d3d hardware cursor is not shown, even you have loaded an cursor icon using SetCursorFromFile.</parameter>
+      </function>
+      <function name="ToScript">
+        <summary>
+          to NPL script.
+        </summary>
+        <returns>string</returns>
+      </function>
+      <function name="ShowCursor">
+        <summary>
+          whether to show cursor
+        </summary>
+        <parameter name="bShow">whether to show cursor</parameter>
+      </function>
+      <function name="LockMouse">
+        <summary>
+          Lock Mouse so that mouse move will not change the mouse position.
+          this is useful when user is changing camera view during mouse drag operation.
+        </summary>
+        <parameter name="bLock">true to lock</parameter>
+      </function>
+      <function name="IsMouseLocked">
+        <summary>
+          check whether Mouse is locked.
+
+          When mouse is locked, mouse move will not change the mouse position.
+          this is useful when user is changing camera view during mouse drag operation.
+        </summary>
+        <returns>whether the mouse is locked</returns>
+      </function>
+      <function name="ResetUI">
+        <summary>
+          clear all UI objects.
+        </summary>
+      </function>
+      <function name="AddDragReceiver">
+        <summary>
+          add an receiver to the current receiver list during an drag operation.
+          call this function on an dragable UI object's Begin Drag event handler.
+          all added drag receivers are automatically removed after drag and drop process
+        </summary>
+        <parameter name="sName">name. if this is "root", the dragging object can always to reattached.</parameter>
+      </function>
+      <function name="SetToolTipBehavior">
+        <summary>
+          How tooltip is displayed.
+        </summary>
+        <parameter name="behavior">"normal" or "flashing". default is "normal"</parameter>
+      </function>
+      <function name="CreateGraphics">
+        <summary>
+          create a new graphics object for drawing primitives on to a render target
+        </summary>
+        <parameter name="name">the name of the graphics object</parameter>
+        <returns>ParaUIGraphics object</returns>
+      </function>
+    </table>
+    <!--ParaScene-->
+    <table name="ParaScene">
+      <function name="GetAttributeObject">
+        <summary>get the attribute object associated with the global scene.</summary>
+        <returns>ParaAttributeObject</returns>
+      </function>
+      <function name="GetAttributeObjectSky">
+        <summary>get the attribute object associated with the current sky object. </summary>
+        <returns>ParaAttributeObject</returns>
+      </function>
+      <function name="GetAttributeObjectPlayer">
+        <summary>get the attribute object associated with the current player.</summary>
+        <returns>ParaAttributeObject</returns>
+      </function>
+      <function name="GetAttributeObjectOcean">
+        <summary>get the attribute object associated with the global ocean manager.</summary>
+        <parameter name="url">string</parameter>
+        <returns>ParaAttributeObject</returns>
+      </function>
+      <function name="GetObject">
+        <summary>
+          get the scene object by name.
+          currently, the object must be global, in order to be found by its name.
+        </summary>
+        <parameter name="strObjName">
+          the format of the name is as below: strObjName := [&lt;_type&gt;]string
+          _type := managed_loader | OPC | NPC | player
+          e.g. strObjName = "creatures1" or "&lt;managed_loader&gt; sceneloader1" or "&lt;player&gt;".
+        </parameter>
+        <remarks>
+          if local mesh's name begins with "g_", it can also be retrieved by calling this function.
+          however, if a global object has the same name, the global object is always returned instead of the local mesh.
+        </remarks>
+        <returns>ParaObject</returns>
+      </function>
+      <function name="GetObject3">
+        <summary>
+          get the first local object,whose position is very close to vPos.
+          This function will search for the first (local mesh) object throughout the hierachy of the scene.
+          this function is kind of slow, please do not call on a per frame basis. Use GetObjectByViewBox() to get an object faster.
+        </summary>
+        <parameter name="vPos">world position of the local mesh object</parameter>
+        <parameter name="fEpsilon">if a mesh is close enough to vPos within this value.</parameter>
+        <returns>ParaObject, NULL if not found</returns>
+      </function>
+      <function name="GetPlayer">
+        <summary>
+          Get the current player.
+          same as ParaScene.GetObject("&lt;player&gt;").
+        </summary>
+        <returns>ParaObject</returns>
+      </function>
+      <function name="GetNextObject">
+        <summary>get the next scene object. </summary>
+        <parameter name="obj">the object whose next object is retrieved.</parameter>
+        <returns>return the next object. the returned object is invalid if there is only one object left. </returns>
+      </function>
+      <function name="CreateWorld">
+        <summary>
+          Create a new parallel world of a given size.
+          When this function is called, it will replace previously created world of the same name.
+          Currently only a single world can be created at any given time. In future, we will support hosting several world simultaneously.
+          the quad tree depth is automatically calculated. The smallest quad tree tile is of size 128 meters.
+        </summary>
+        <parameter name="sWorldName">name of the world to be created.</parameter>
+        <parameter name="fWorldSize">the size of the world in meters.</parameter>
+        <parameter name="sConfigFile">the file name of the configuration file. Currently it is the same as the terrain configuration file</parameter>
+      </function>
+      <function name="Reset">
+        <summary>
+          reset the scene to blank.
+          this function is NOT automatically called when a new isolated world is created.
+          so one need to call Reset() when it wants to change the world, otherwise the new world will be merged into the previous world.
+        </summary>
+      </function>
+      <function name="CreateManagedLoader">
+        <summary>
+          Create a managed loader for dynamic scene object loading and unloading.
+          For more information please refer to the NPL reference
+          See also:
+          CManagedLoaderObject in ParaEngine reference.
+        </summary>
+        <parameter name="sLoaderName">the name of the loader.</parameter>
+        <returns>ParaObject</returns>
+      </function>
+      <function name="CreateGlobalTerrain">
+        <summary>
+          Create and set the global terrain from height map and texture files.
+          this function can be called multiple times, in which cases previously
+          loaded terrain will be discarded example:
+          ParaScene.CreateGlobalTerrain(2048, 7, "LlanoElev.png", 5.0, 15.0, 1, "LlanoTex.jpg", "dirt2.jpg", 64, 10.0");
+        </summary>
+        <parameter name="fRadius">entire terrain size, this has doing to do with the actual terrain map size, it just prevent mobile characters from walking outside it.</parameter>
+        <parameter name="nDepth">depth of the quad tree terrain hierarchy. objects created on the terrain will be organized in a quad tree. This is the depth of the quad tree. It should not be too big. usually 7 is enough. the rest of the parameters specify the data to render the terrain.</parameter>
+        <parameter name="sHeightmapfile">the height map used to create the terrain. It must be sized to 2*2*...*2 pixels for both height and width. so usually it is 1024*1024, 2048*2048, etc.</parameter>
+        <parameter name="fTerrainSize">the actual terrain size in the game</parameter>
+        <parameter name="bSwapvertical">if one want to swap the height map data vertically.</parameter>
+        <parameter name="sMainTextureFile">texture to be mapped to entire terrain</parameter>
+        <parameter name="sCommonTextureFile">texture to be tiles to the entire terrain to add some details.</parameter>
+        <parameter name="nMaxBlockSize">When doing LOD with the height map, the max block size must be smaller than this one. This will be (nMaxBlockSize*nMaxBlockSize) sized region on the height map.</parameter>
+        <parameter name="fDetailThreshold">we will use a LOD block to approximate the terrain at its location, if the block is smaller than fDetailThreshold pixels when projected to the 2D screen.</parameter>
+      </function>
+      <function name="Attach">
+        <summary>
+          Attach the object to the current root scene according to its type and position.
+          some further initialization might be performed after an object is inserted to the scene.
+          please refer to individual object type for details. the attachment location is:
+          global bipeds are attached to the root scene object.
+          static objects are attached to some location in the quad tree terrain tiles.
+          If the object has already been attached to the scene, this function takes no effect.
+          however, if the object is a static scene object and has been moved between two Attach() functions.
+          then the second call to Attach() function will detach the object from the scene,
+          and re-attach it to the scene according to the new position.
+        </summary>
+        <parameter name="pObj">ParaObject</parameter>
+      </function>
+      <function name="Delete">
+        <summary>
+          delete the object.
+          If the object is root scene object, then the entire scene is deleted.
+        </summary>
+        <parameter name="pObj">ParaObject</parameter>
+      </function>
+      <function name="Detach">
+        <summary>
+          detach the object.
+          Be sure that the object is properly deleted after it is detached from the scene,
+          because the scene graph is not responsible to manage it any more. The only exception is the managed loader object.
+          See also:
+          CreateManagedLoader(const char * sLoaderName)
+        </summary>
+        <parameter name="pObj">ParaObject</parameter>
+      </function>
+      <function name="FireMissile">
+        <summary>
+          fire a missile from (fromX, fromY, fromZ) to (toX, toY, toZ) using the specified missile object and speed.
+          ParaScene.FireMissile(2, 5, fromX, fromY, fromZ, toX, toY, toZ);
+        </summary>
+        <parameter name="nMissileID">missile ID</parameter>
+        <parameter name="fSpeed">speed</parameter>
+        <parameter name="fromX">fromX</parameter>
+        <parameter name="fromY">fromY</parameter>
+        <parameter name="fromZ">fromZ</parameter>
+        <parameter name="toX">toX</parameter>
+        <parameter name="toY">toY</parameter>
+        <parameter name="toZ">toZ</parameter>
+        <returns></returns>
+      </function>
+      <function name="">
+        <summary></summary>
+        <parameter name="url">string</parameter>
+        <returns></returns>
+      </function>
+      <function name="">
+        <summary></summary>
+        <parameter name="url">string</parameter>
+        <returns></returns>
+      </function>
+      <function name="">
+        <summary></summary>
+        <parameter name="url">string</parameter>
+        <returns></returns>
+      </function>
+      <function name="">
+        <summary></summary>
+        <parameter name="url">string</parameter>
+        <returns></returns>
+      </function>
+    </table>
+    <!--ParaNetwork-->
+    <table name="ParaNetwork">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaGlobal-->
+    <table name="ParaGlobal">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaAsset-->
+    <table name="ParaAsset">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaEngine-->
+    <table name="ParaEngine">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaWorld-->
+    <table name="ParaWorld">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaTerrain-->
+    <table name="ParaTerrain">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaCamera-->
+    <table name="ParaCamera">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaMovie-->
+    <table name="ParaMovie">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaIO-->
+    <table name="ParaIO">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaAudio-->
+    <table name="ParaAudio">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaMisc-->
+    <table name="ParaMisc">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--Config-->
+    <table name="Config">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--NPLJabberClient-->
+    <table name="NPLJabberClient">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--JabberClientManager-->
+    <table name="JabberClientManager">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+    <!--ParaBootStrapper-->
+    <table name="ParaBootStrapper">
+      <function name="GetAttributeObject">
+        <summary>It returns the ParaAttributeObject</summary>
+      </function>
+    </table>
+  </tables>
+  <globals>
+    <function name="log">
+      <summary>output to log.txt</summary>
+      <parameter name="text" />
+    </function>
+  </globals>
+
+  <variables>
+    <variable name="ParaUI" type="ParaUI"/>
+    <variable name="NPL" type="NPL"/>
+    <variable name="ParaUI" type="ParaUI"/>
+    <variable name="ParaScene" type="ParaScene"/>
+    <variable name="ParaNetwork" type="ParaNetwork"/>
+    <variable name="ParaGlobal" type="ParaGlobal"/>
+    <variable name="ParaAsset" type="ParaAsset"/>
+    <variable name="ParaEngine" type="ParaEngine"/>
+    <variable name="ParaWorld" type="ParaWorld"/>
+    <variable name="ParaTerrain" type="ParaTerrain"/>
+    <variable name="ParaCamera" type="ParaCamera"/>
+    <variable name="ParaMovie" type="ParaMovie"/>
+    <variable name="ParaIO" type="ParaIO"/>
+    <variable name="ParaAudio" type="ParaAudio"/>
+    <variable name="ParaMisc" type="ParaMisc"/>
+    <variable name="Config" type="Config"/>
+    <variable name="NPLJabberClient" type="NPLJabberClient"/>
+    <variable name="JabberClientManager" type="JabberClientManager"/>
+    <variable name="ParaBootStrapper" type="ParaBootStrapper"/>
+  </variables>
+</doc>

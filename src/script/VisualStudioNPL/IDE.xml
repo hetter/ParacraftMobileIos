@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <!-- raw NPL classes. Generated based on http://pedn.paraengine.com/ -->
+  <tables>
+    <table name="commonlib">
+      <function name="echo">
+        <summary>log anything to log.txt file</summary>
+        <parameter name="object">anything</parameter>
+      </function>
+    </table>
+    <table name="_guihelper">
+      <function name="MessageBox">
+        <summary>Display a message box</summary>
+        <parameter name="text">text to display</parameter>
+      </function>
+    </table>
+    <table name="CommonCtrl">
+      <function name="AddControl">
+        <summary>add a new global control</summary>
+        <parameter name="sControlName">string control name</parameter>
+        <parameter name="ctl">the control object to add</parameter>
+      </function>
+    </table>
+    <table name="localserver">
+      <function name="new">
+        <summary>add a new global control</summary>
+        <parameter name="sControlName">string control name</parameter>
+        <parameter name="ctl">the control object to add</parameter>
+      </function>
+    </table>
+  </tables>
+  <variables>
+    <variable name="commonlib" type="commonlib" />
+    <variable name="_guihelper" type="_guihelper" />
+    <variable name="CommonCtrl" type="CommonCtrl" />
+    <variable name="localserver" type="localserver" ns="System.localserver"/>
+  </variables>
+</doc>

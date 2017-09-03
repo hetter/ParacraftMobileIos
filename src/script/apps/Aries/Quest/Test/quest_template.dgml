@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="BottomToTop" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="30000" Category="Quest" AutoActived="0" Comment="aaa" Detail="" EndDialog="EndDialog" EndNPC="100" Goal="10001#1" Label="questA（30000）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭1个水咕噜" ValidDate="" />
+    <Node Id="30001" Category="Quest" AutoActived="0" Detail="" EndDialog="EndDialog" EndNPC="100" Goal="10000#1" Label="questB（30001）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭1个火毛怪" ValidDate="" />
+    <Node Id="30002" Category="Quest" AutoActived="1" Detail="" EndDialog="EndDialog" EndNPC="101" Goal="10000#2" Label="questC（30002）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="30001#3" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭2个火毛怪" ValidDate="" />
+    <Node Id="30003" Category="Quest" AutoActived="0" Detail="" EndDialog="EndDialog" EndNPC="100" Goal="10001#1$10000#1" Label="questD（30003）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="" Reward="{'20002#100$10002#1','10002#1'}" RewardState="0" StartDialog="StartDialog" StartNPC="100" Title="消灭1个水咕噜，1个火毛怪" ValidDate="" />
+    <Node Id="30004" Category="Quest" AutoActived="0" Detail="" EndDialog="EndDialog" EndNPC="101" Goal="10000#2" Label="questE（30004）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="30001#1$30000#1" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭2个火毛怪" ValidDate="" />
+    <Node Id="30005" Category="Quest" AutoActived="0" Detail="" EndDialog="EndDialog" EndNPC="101" Goal="10000#2" Label="questF（30005）" QuestRepeat="1" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="30001#3" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭2个火毛怪" ValidDate="" />
+    <Node Id="30006" Category="Quest" AutoActived="0" Detail="" EndDialog="EndDialog" EndNPC="101" Goal="10000#2" Label="questG（30006）" QuestRepeat="0" RequestAttr="20000#1$20001#10" RequestAttrEquation="0" RequestQuest="30003#1@30001#1" Reward="{'20002#100$10002#1','10002#1'}" RewardState="1" StartDialog="StartDialog" StartNPC="100" Title="消灭2个火毛怪" ValidDate="" />
+  </Nodes>
+  <Links>
+    <Link Source="30002" Target="30001" Category="and_valid" />
+    <Link Source="30004" Target="30000" Category="and_finished" />
+    <Link Source="30004" Target="30001" Category="and_finished" />
+    <Link Source="30005" Target="30001" Category="and_valid" />
+    <Link Source="30006" Target="30001" Category="or_finished" />
+    <Link Source="30006" Target="30003" Category="or_finished" />
+  </Links>
+  <Categories>
+    <Category Id="and_finished" Label="and_finished" />
+    <Category Id="and_valid" Label="and_valid" />
+    <Category Id="or_finished" Label="or_finished" />
+    <Category Id="Quest" Label="Quest" />
+  </Categories>
+  <Properties>
+    <Property Id="AutoActived" Label="自动激活(AutoActived)" DataType="System.String" />
+    <Property Id="Comment" Label="备注(Comment)" DataType="System.String" />
+    <Property Id="Detail" Label="任务描述(Detail)" DataType="System.String" />
+    <Property Id="EndDialog" Label="交任务NPC对话(EndDialog)" DataType="System.String" />
+    <Property Id="EndNPC" Label="交任务NPC(EndNPC)" DataType="System.String" />
+    <Property Id="Goal" Label="任务目标(Goal)" DataType="System.String" />
+    <Property Id="GraphDirection" Label="GraphDirection" DataType="Microsoft.VisualStudio.Progression.Layout.GraphDirection" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" Label="Layout" DataType="System.String" />
+    <Property Id="QuestRepeat" Label="是否可以重复(QuestRepeat)" DataType="System.String" />
+    <Property Id="RequestAttr" Label="开启条件(RequestAttr)" DataType="System.String" />
+    <Property Id="RequestAttrEquation" Label="前置条件等式(RequestAttrEquation)" DataType="System.String" />
+    <Property Id="RequestQuest" Label="前置任务(RequestQuest)" DataType="System.String" />
+    <Property Id="Reward" Label="任务奖励(Reward)" DataType="System.String" />
+    <Property Id="RewardState" Label="奖励方式(RewardState)" DataType="System.String" />
+    <Property Id="StartDialog" Label="接任务NPC对话(StartDialog)" DataType="System.String" />
+    <Property Id="StartNPC" Label="接任务NPC(StartNPC)" DataType="System.String" />
+    <Property Id="Title" Label="任务名称(Title)" DataType="System.String" />
+    <Property Id="ValidDate" Label="有效期(ValidDate)" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Link" GroupLabel="and_finished" ValueLabel="Has category">
+      <Condition Expression="HasCategory('and_finished')" />
+      <Setter Property="Stroke" Value="#FFFF0000" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="or_finished" ValueLabel="Has category">
+      <Condition Expression="HasCategory('or_finished')" />
+      <Setter Property="Stroke" Value="#FFFF0000" />
+      <Setter Property="StrokeDashArray" Value="3 3" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="and_valid" ValueLabel="Has category">
+      <Condition Expression="HasCategory('and_valid')" />
+      <Setter Property="Stroke" Value="#FF400080" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="or_valid" ValueLabel="Has category">
+      <Condition Expression="HasCategory('or_valid')" />
+      <Setter Property="Stroke" Value="#FF400080" />
+      <Setter Property="StrokeDashArray" Value="3 3" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="实线(and)" ValueLabel="Has category">
+      <Condition Expression="HasCategory('_finished')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="虚线(or)" ValueLabel="Has category">
+      <Condition Expression="HasCategory('_valid')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="红色(任务完成就可以接1)" ValueLabel="Has category">
+      <Condition Expression="HasCategory('_finished')" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="紫色(任务激活/任务完成就可以接3)" ValueLabel="Has category">
+      <Condition Expression="HasCategory('_valid')" />
+    </Style>
+  </Styles>
+</DirectedGraph>

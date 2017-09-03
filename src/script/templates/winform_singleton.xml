@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameModule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <files>
+    <ModuleFile>
+      <FileName>%instance_name%.lua</FileName>
+      <InstallDirectory>%install_path%</InstallDirectory>
+      <InstallScript />
+      <SourceCode>--[[
+Title: template: windows form or modeless dialog
+Author(s): [your name], original template by LiXizhi
+Date: 2007/2/7
+Parameters:
+	%instance_name%: it needs to be a valid name, such as MyDialog
+use the lib:
+------------------------------------------------------------
+NPL.load("(gl)%file_path%");
+%instance_name%.Show();
+-------------------------------------------------------
+]]
+
+-- common control library
+NPL.load("(gl)script/ide/common_control.lua");
+
+if(not %instance_name%) then %instance_name%={}; end
+
+--@param bShow: boolean to show or hide. if nil, it will toggle current setting. 
+function %instance_name%.Show(bShow)
+	local _this,_parent;
+	
+	_this=ParaUI.GetUIObject("%instance_name%_cont");
+	if(_this:IsValid() == false) then
+		if(bShow == false) then return	end
+		bShow = true;
+		_this=ParaUI.CreateUIObject("container","%instance_name%_cont","_lt",0,0,400,300);
+		--_this.background="Texture/whitedot.png;0 0 0 0";
+		_this:AttachToRoot();
+		_parent = _this;
+		
+		local left, top, width, height = 0,0, 124, 32
+		_this=ParaUI.CreateUIObject("button","%instance_name%_OK","_lt",left,top,width,height);
+		_this.text="OK";
+		_this.onclick=";%instance_name%.OnDestory();";
+		_parent:AddChild(_this);
+	else
+		if(bShow == nil) then
+			bShow = (_this.visible == false);
+		end
+		_this.visible = bShow;
+	end	
+end
+
+-- destory the control
+function %instance_name%.OnDestory()
+	ParaUI.Destroy("%instance_name%_cont");
+end</SourceCode>
+    </ModuleFile>
+  </files>
+  <ModuleName>untitled</ModuleName>
+  <NPLVersion>1.0</NPLVersion>
+  <ModuleDescription />
+</GameModule>

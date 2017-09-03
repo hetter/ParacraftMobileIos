@@ -1,0 +1,88 @@
+-- main game loop file template
+-- author: [your name], original template by LiXizhi
+-- date: 
+-- description: main game loop file. 
+-- Parameters:
+--  %instance_name%: it needs to be a valid name
+-- use the lib:
+------------------------------------------------------------
+-- NPL.activate("(gl)%file_path%");
+------------------------------------------------------------
+
+NPL.load("(gl)script/lang/lang.lua");
+
+if(not %instance_name%) then %instance_name%={}; end
+
+local function activate()
+	if(main_state==0) then
+		-- this is the main game loop
+	elseif(main_state==nil) then
+		-- application entry point
+		-- global assets and init scene loading
+		ParaAsset.OpenArchive ("xmodels/character.zip");
+
+		-- create main window
+		%instance_name%.CreateMainWindow();
+		
+		-- set event handlers
+		%instance_name%.ReBindEventHandlers();
+			
+		-- goto main game
+		main_state=0;
+	end	
+end
+NPL.this(activate);
+
+
+-- just create a hello world window
+function %instance_name%.CreateMainWindow()
+	local _this, _parent;
+	_this = ParaUI.GetUIObject("%instance_name%_app_ctl");
+	if(_this:IsValid() == false) then 
+		local width, height = 500,200;
+		_this=ParaUI.CreateUIObject("container","%instance_name%_app_ctl", "_ct",-width/2,-height/2,width, height);
+		_this:AttachToRoot();
+		_parent=_this;
+		
+		_this=ParaUI.CreateUIObject("text","s", "_lt",100,50, 300, 25);
+		_this.text = [[Hello World!
+Start up tips:
+	- Edit "config/bootstrapper.xml" to set your game loop file
+	- If you have ParaIDE installed, press F5 key to launch SDK window.
+ Press SPACE key to exit]];
+		
+		_parent:AddChild(_this);
+	end	
+end
+
+-- bind the event registers
+function %instance_name%.ReBindEventHandlers()
+	NPL.load("(gl)script/ide/event_mapping.lua");
+	-- register mouse picking event handler
+	ParaScene.RegisterEvent("_m_%instance_name%_pick", ";%instance_name%.OnMouseClick();");
+	-- register key event handler
+	ParaScene.RegisterEvent("_k_%instance_name%_keydown", ";%instance_name%.OnKeyDownEvent();");
+end
+
+-- called when the user clicked its mouse
+function %instance_name%.OnMouseClick()
+	if(ParaScene.IsSceneEnabled()~=true) then 
+		return
+	end
+	if(mouse_button == "left") then
+	end
+end	
+
+-- called when the user hit a key
+function %instance_name%.OnKeyDownEvent()
+	if(ParaScene.IsSceneEnabled()==true) then 
+		-- TODO:	
+	end
+	if(virtual_key == Event_Mapping.EM_KEY_SPACE) then	
+		-- exit application
+		ParaGlobal.ExitApp();
+	elseif(virtual_key == Event_Mapping.EM_KEY_F5) then	
+		-- bring up the ParaIDE SDK
+		NPL.activate("ParaAllInOne.dll");	
+	end
+end

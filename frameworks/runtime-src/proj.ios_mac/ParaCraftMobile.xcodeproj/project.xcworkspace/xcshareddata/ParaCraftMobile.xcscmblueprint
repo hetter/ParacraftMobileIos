@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5077311768F29CBD5C4DD1B05EBB53D438FD38C7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5077311768F29CBD5C4DD1B05EBB53D438FD38C7" : 0,
+    "6C3F181BB717F389F208709997A0F8573E0E923D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FDE8CC7F-3600-4F85-A21D-A8CD59C6A98D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5077311768F29CBD5C4DD1B05EBB53D438FD38C7" : "ParaEngine\/",
+    "6C3F181BB717F389F208709997A0F8573E0E923D" : "ParaEngine\/Mobile\/trunk\/ParaCraftMobile\/frameworks\/runtime-src\/external\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ParaCraftMobile",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Mobile\/trunk\/ParaCraftMobile\/frameworks\/runtime-src\/proj.ios_mac\/ParaCraftMobile.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiXizhi\/ParaEngine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5077311768F29CBD5C4DD1B05EBB53D438FD38C7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LiXizhi\/external.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C3F181BB717F389F208709997A0F8573E0E923D"
+    }
+  ]
+}

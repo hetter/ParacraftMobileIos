@@ -1,0 +1,277 @@
+﻿<!-- "script/apps/Aries/Pipeline/PortalPage.html" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pipeline portal page, 2010/3/22</title>
+</head>
+<body>
+<pe:mcml>
+<script type="text/npl" src="PortalPage.lua"><![CDATA[
+MyCompany.Aries.Pipeline.PortalPage.OnInit();
+]]></script>
+<div style="width:800px;height:448px;margin:0px;background:url();">
+  <pe:treeview name="toolsets" style="margin-left:-15px;background:;" VerticalScrollBarStep="64">
+    <div style="width:800px;height:192px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        <div style="width:112px;height:96px;float:left;margin:0px;font-size:12px;background:;">
+            <div style="width:64px;height:64px;margin-bottom:0px;margin:16px;background:url(Texture/3DMapSystem/common/whiteboard.png);">
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                常规更新
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                工具集合
+            </div>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a target="_self" href="script/apps/Aries/Debug/ArenaMobs2LootMcmlLines.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                世界掉落搜索器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Debug/DirectInstanceEntrance.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                直接副本入口
+            </a><br/>
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Loading语言更新
+            </a><br/>
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnFlushLocalCache" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                更新当前DB的globalstore内存
+            </a><br/>
+            <a target="_self" href="script/apps/Taurus/Desktop/SettingsPage.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                3D环境设置
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                地图高亮位置编辑
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                内部时报连接更新
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                历史时报连接更新
+            </a><br/>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Portal内景场景编辑器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成资源替换文件
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                地图引导页更新
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                音乐区域更新
+            </a><br/>
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnTestPowerPipTutorial" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                体验超魔教程
+            </a><br/>
+        </div>
+    </div>
+    <div style="width:800px;height:192px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        <div style="width:112px;height:96px;float:left;margin:0px;font-size:12px;background:;">
+            <div style="width:64px;height:64px;margin-bottom:0px;margin:16px;background:url(Texture/3DMapSystem/common/IconSet/Creation_4.png);">
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                版本维护
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                工具集合
+            </div>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                globalstore版本比较工具
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                extendedcost版本比较工具
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成物品属性列表Excel
+            </a><br/>
+            <a target="_self" onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickPrintManuals" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                打印帮助手册temp/guides/
+            </a><br/>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Portal内景场景编辑器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成资源替换文件
+                机器配置查询
+            </a><br/>
+            <a target="_self" href="script/kids/3DMapSystemApp/Assets/AssetManifestPage.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成background预加载文件
+            </a><br/>
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnCheckConfigPublishProcess" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                Config检查工具
+            </a><br/>
+        </div>
+    </div>
+    <div style="width:800px;height:192px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        <div style="width:112px;height:96px;float:left;margin:0px;font-size:12px;background:;">
+            <div style="width:64px;height:64px;margin-bottom:0px;margin:16px;background:url(Texture/3DMapSystem/common/IconSet/Modify_4.png);">
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                运营Debug
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                工具集合
+            </div>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                物品查询器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                extendedcost版本比较工具
+            </a><br/>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Portal内景场景编辑器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成资源替换文件
+                机器配置查询
+            </a><br/>
+        </div>
+    </div>
+    <div style="width:800px;height:192px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        <div style="width:112px;height:96px;float:left;margin:0px;font-size:12px;background:;">
+            <div style="width:64px;height:64px;margin-bottom:0px;margin:16px;background:url(Texture/3DMapSystem/common/IconSet/Creation_4.png);">
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                美术流程
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                工具集合
+            </div>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                CCS人物测试器
+            </a><br/>
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                装备浏览器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                物品资源对应检查工具
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                CCS资源数据库生成工具
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                物品相对路径检查工具
+            </a><br/>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Portal内景场景编辑器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成资源替换文件
+                机器配置查询
+            </a><br/>
+        </div>
+    </div>
+    <div style="width:800px;height:192px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        <div style="width:112px;height:96px;float:left;margin:0px;font-size:12px;background:;">
+            <div style="width:64px;height:64px;margin-bottom:0px;margin:16px;background:url(Texture/3DMapSystem/common/IconSet/Modify_4.png);">
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                客服
+            </div>
+            <div style="width:64px;height:16px;text-align:center;margin-left:22px;">
+                工具集合
+            </div>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                自动更新新上架物品维护
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                自动更新新任务维护
+            </a><br/>
+        </div>
+        <div style="width:200px;height:96px;float:left;margin:8px;font-size:12px;background:;">
+            <a onclick="MyCompany.Aries.Pipeline.PortalPage.OnClickEmptyTool" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/delete.png);width:16px;height:16px;margin:2px;" />
+                Portal内景场景编辑器
+            </a><br/>
+            <a target="_self" href="script/apps/Aries/Pipeline/SimpleTools/LoadingTextSteps.html" style="color:#000000;">
+                <img style="background:url(Texture/3DMapSystem/common/brick.png);width:16px;height:16px;margin:2px;" />
+                生成资源替换文件
+                机器配置查询
+            </a><br/>
+        </div>
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetOdd_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+    <div style="width:800px;height:64px;margin:0px;font-size:12px;background:url(Texture/Aries/Pipeline/ToolSetEven_32bits.png: 4 4 4 4)">
+        ds
+    </div>
+  </pe:treeview>
+</div>
+</pe:mcml> 
+</body>
+</html>

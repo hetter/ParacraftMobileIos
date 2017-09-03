@@ -1,0 +1,2671 @@
+﻿<!-- "script/apps/Aries/Pipeline/TestPortalPage.html" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pipeline portal page, 2010/3/22</title>
+</head>
+<body>
+<pe:mcml>
+<script type="text/npl" src="TestPortalPage.lua" refresh="true"><![CDATA[
+--MyCompany.Aries.Pipeline.TestPortalPage.OnInit();
+
+local pageCtrl = document:GetPageCtrl();
+
+    local ItemManager = Map3DSystem.Item.ItemManager;
+    local Dock = commonlib.gettable("MyCompany.Aries.Desktop.Dock");
+    local MsgHandler = commonlib.gettable("MyCompany.Aries.Combat.MsgHandler");
+    local Combat = commonlib.gettable("MyCompany.Aries.Combat");
+    local ProfileManager = commonlib.gettable("System.App.profiles.ProfileManager");
+
+function Test1_sdfa()
+	local player = ParaScene.GetPlayer();
+    local p_x, p_y, p_z = player:GetPosition();
+	Map3DSystem.SendMessage_obj({type = Map3DSystem.msg.OBJ_CreateObject, 
+		silentmode = true,
+		SkipHistory = true,
+		obj_params = {
+			name = "g_get",
+			AssetFile = "model/06props/v5/06combat/Common/BuffSlots/common_buffslot.x",
+            --AssetFile = "model/01building/v5/01house/BigDipper/BigDipper.x",
+			x = p_x,
+			y = p_y + 1,
+			z = p_z,
+			IsCharacter = false,
+			IsPersistent = false, -- do not save an GSL agent when saving scene
+		},
+	})
+    local obj = ParaScene.GetObject("g_get");
+	if(obj:IsValid()) then
+        obj:SetField("progress",1);
+	end
+
+    local i = 1;
+    for i = 1, 30 do
+	    local player = ParaScene.GetPlayer();
+        local p_x, p_y, p_z = player:GetPosition();
+	    Map3DSystem.SendMessage_obj({type = Map3DSystem.msg.OBJ_CreateObject, 
+		    silentmode = true,
+		    SkipHistory = true,
+		    obj_params = {
+			    name = "g_test_shield"..i,
+			    AssetFile = "character/v5/09effect/Combat_Earth/DamageShieldAndThorn_Level1_Earth_Shield.x",
+                --AssetFile = "model/01building/v5/01house/BigDipper/BigDipper.x",
+			    x = p_x,
+			    y = p_y,
+			    z = p_z,
+			    IsCharacter = true,
+			    IsPersistent = false, -- do not save an GSL agent when saving scene
+		    },
+	    })
+    end
+end
+
+local function get_day_of_week_1(dd, mm, yy) 
+	local days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" }
+
+	local mmx = mm
+
+	if (mm == 1) then  mmx = 13; yy = yy-1  end
+	if (mm == 2) then  mmx = 14; yy = yy-1  end
+
+	local val8 = dd + (mmx*2) +  math.floor(((mmx+1)*3)/5)   + yy + math.floor(yy/4)  - math.floor(yy/100)  + math.floor(yy/400) + 2
+	local val9 = math.floor(val8/7)
+	local dw = val8-(val9*7) 
+
+	if (dw == 0) then
+		dw = 7
+	end
+
+	return dw, days[dw];
+end
+    
+function Test1()
+
+    local WorldManager = commonlib.gettable("MyCompany.Aries.WorldManager");
+	local world_info = WorldManager:GetCurrentWorld()
+	
+
+    commonlib.echo(world_info.name)
+    commonlib.echo(world_info.name)
+    commonlib.echo(world_info.name)
+    commonlib.echo(world_info.name)
+    commonlib.echo(world_info.name)
+
+    do return end
+
+	local fromX, fromY, fromZ = ParaScene.GetPlayer():GetPosition();
+
+    local objlist = {};
+
+	local nCount = ParaScene.GetObjectsBySphere(objlist, fromX, fromY, fromZ, 100000, "anyobject");
+	
+    local objparams = {};
+	local k = 1;
+    for k = 1, nCount do
+		local obj = objlist[k];
+        local asset_name = obj:GetPrimaryAsset():GetKeyName();
+        if(asset_name == "model/06props/v5/06combat/Common/Arena/HaqiTown_Basic_teen.x") then
+            ParaScene.Delete(obj);
+        end
+    end
+
+    do return end
+
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(16080, 1)
+
+    do return end
+    
+    local mcml_str = string.format([[<div style="margin-left:0px;width:300px;height:32;color:#%s;text-align:center;base-font-size:18;font-weight:bold;text-shadow:true" >%s</div>]], "ff0000", "fdsadgas")
+    local mcml_str = [[<img src="Texture/Aries/Common/CriticalStrike.png;0 0 180 80" style="width:180px;height:80px;"/><br/>]];
+    mcml_str = mcml_str..[[<aries:textsprite spritestyle="CombatDigits" color="#ff0000" text="-1234567890" fontsize="32"/>]];
+	local sCtrlName = headon_speech.Speek(ParaScene.GetPlayer().name, mcml_str, 2, true, true);
+
+    local sCtrlName = headon_speech.Speek(ParaScene.GetPlayer().name, "fdsagfdgf", 2, true, true);
+
+    do return end
+
+    log("11111cccc\n")
+    commonlib.echo({MyCompany.Aries.Combat.MsgHandler.Get_closest_alive_mob_position("清水泡泡")});
+    commonlib.echo({MyCompany.Aries.Combat.MsgHandler.Get_closest_alive_mob_position("清水泡泡")});
+
+    do return end
+    
+    System.Animation.PlayAnimationFile({73, "character/Animation/v6/teen_default_combat_pose.x"}, ParaScene.GetPlayer());
+
+    --System.Animation.PlayAnimationFile({71, 73}, ParaScene.GetPlayer())
+
+    do return end
+    
+    log("11111ccccc\n")
+    commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory(293217710))
+    
+    Map3DSystem.App.profiles.ProfileManager.GetUserInfo(293217710, nil, function (msg) end, "access plus 1 second")
+
+    do return end
+
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(23167, 1);
+
+    do return end
+    
+    local CCS = commonlib.gettable("Map3DSystem.UI.CCS")
+    local s = CCS.GetCCSInfoString()
+
+    log("111cccc\n")
+    commonlib.echo(s)
+
+    do return end
+
+
+	local Desktop = MyCompany.Aries.Desktop;
+	Desktop.GUIHelper.ArrowPointer.ShowArrow(43298, 2, "_ctb", -342 + 7 * 41, -80, 64, 64);
+
+    do return end
+
+
+    log("1111ccc\n")
+    commonlib.echo(ItemManager.GetGlobalStoreItemInMemory(1121));
+
+    log("11cc\n")
+    commonlib.echo(Map3DSystem.UI.CCS.DB.GetAlternateModelFromID(31121));
+
+    do return end
+    
+    log("11111ccccc\n")
+    local i;
+    for i = 1001, 8999 do
+        
+	    local gsItem = ItemManager.GetGlobalStoreItemInMemory(i);
+	    if(gsItem) then
+            -- 139 ~ 150 
+            local stat_type;
+            for stat_type = 139, 150 do
+                if(gsItem.template.stats[stat_type] and (gsItem.template.stats[stat_type] >= 22292 and gsItem.template.stats[stat_type] <= 22296)) then
+                    commonlib.echo(i)
+                end
+            end
+        end
+        
+    end
+
+    do return end
+
+    
+
+    ItemManager.GetItemsInOPCBag(1635828, 1, "s1e2dffewaewfef", function(msg) 
+        log("11111ccccc\n")
+        local _, guid = ItemManager.IfOPCOwnGSItem(1635828, 1811)
+		local item = ItemManager.GetOPCItemByGUID(1635828, guid);
+		if(item and item.guid > 0) then
+            log("11111cccc\n")
+			commonlib.echo(item)
+			commonlib.echo(item)
+		end
+    end);
+
+    do return end
+
+	local BasicArena = commonlib.gettable("MyCompany.Aries.Quest.NPCs.BasicArena");
+	BasicArena.TeleportToSafeZone();
+
+    do return end
+    
+    MyCompany.Aries.Combat.MsgHandler.OnCheckHPTip()
+
+    do return end
+    
+	local Desktop = MyCompany.Aries.Desktop;
+	Desktop.GUIHelper.ArrowPointer.ShowArrow(43298, 2, "_ctb", -342 + 7 * 41, -80, 64, 64);
+    
+                                
+    do return end
+
+    --"0#1#0#1#1#@100#F#0#0#0#0#0#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#100#F#0#0#0#0#@1#15506#0#3#11009#982#12881#0#0#0#31155#0#0#31335#0#0#0#31425#0#31028#0#0#0#0#0#0#"
+
+    do return end
+
+	local fromX, fromY, fromZ = ParaScene.GetPlayer():GetPosition();
+
+    local objlist = {};
+
+	local nCount = ParaScene.GetObjectsBySphere(objlist, fromX, fromY, fromZ, 100000, "anyobject");
+	
+    local objparams = {};
+	local k = 1;
+    for k = 1, nCount do
+		local obj = objlist[k];
+        local asset_name = obj:GetPrimaryAsset():GetKeyName();
+        if(asset_name == "model/06props/v5/06combat/Common/Arena/HaqiTown_Basic_teen.x") then
+            ParaScene.Delete(obj);
+        end
+    end
+
+    do return end
+    
+    local level = string.match("cvdagfdag_level2", "^.+level(%d+)$");    
+
+    commonlib.echo(level)
+    commonlib.echo(level)
+    commonlib.echo(level)
+    commonlib.echo(level)
+
+    do return end
+    
+	local msg = {
+		pmoney = 9999999,
+		emoney = 9999999,
+	};
+	paraworld.users.AddMoney(msg, "Player.AddMoney", function(msg)
+		if(type(callbackFunc) == "function") then
+			callbackFunc(msg);
+		end
+		-- get the user info in local server
+		System.App.profiles.ProfileManager.GetUserInfo(nil, nil, nil, "access plus 1 minute");
+	end);
+
+    do return end
+
+    local id = 1;
+    for id = 1, 9 do
+        local gsid = pe_slot.Get_shortcut_gsid(id)
+        if(gsid and gsid >= 17155 and gsid <= 17159) then
+            -- 17155_HPPotion01
+            -- 17159_HPPotion05
+	        local Desktop = MyCompany.Aries.Desktop;
+	        Desktop.GUIHelper.ArrowPointer.ShowArrow(7956, 2, "_lt", 10, -290, 64, 64);
+        end
+    end
+
+    
+    do return end
+
+    MyCompany.Aries.Desktop.Dock.OnExpNotification(100)
+
+    do return end
+
+
+    NPL.load("(gl)script/apps/Aries/Mail/MailManager.lua");
+    local MailManager = commonlib.gettable("MyCompany.Aries.Quest.Mail.MailManager")
+
+	local mail = MailManager.GetMail(9030);
+	if(mail)then
+		mail = commonlib.deepcopy(mail);
+		mail.sender = msg.sender;
+		MailManager.PushMail(mail);
+	end
+	local mail = MailManager.GetMail(9031);
+	if(mail)then
+		mail = commonlib.deepcopy(mail);
+		mail.sender = msg.sender;
+		MailManager.PushMail(mail);
+	end
+	local mail = MailManager.GetMail(9032);
+	if(mail)then
+		mail = commonlib.deepcopy(mail);
+		mail.sender = msg.sender;
+		MailManager.PushMail(mail);
+	end
+
+    do return end
+
+    commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory())
+    commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory())
+    commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory())
+    commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory())
+
+
+    do return end
+    
+    local CCS = commonlib.gettable("Map3DSystem.UI.CCS")
+    local s = CCS.GetCCSInfoString()
+
+    commonlib.echo(s)
+    commonlib.echo(s)
+    commonlib.echo(s)
+    commonlib.echo(s)
+    commonlib.echo(s)
+
+    do return end
+    
+    NPL.load("(gl)script/apps/Aries/Desktop/AntiIndulgenceArea.lua");
+    local AntiIndulgenceArea = commonlib.gettable("MyCompany.Aries.Desktop.AntiIndulgenceArea");
+    local used_sec = AntiIndulgenceArea.GetUsedSec();
+    
+    log("1111cccc\n")
+    commonlib.echo(used_sec)
+    commonlib.echo(used_sec)
+    commonlib.echo(used_sec)
+
+    do return end
+
+    MsgHandler.HidePetPicker()
+
+    do return end
+    
+	NPL.load("(gl)script/apps/Aries/CombatPet/CombatPetPage.lua");
+	local CombatPetPage = commonlib.gettable("MyCompany.Aries.CombatPet.CombatPetPage");
+	CombatPetPage.ShowPage(false,true);
+
+    do return end
+
+    local params = {
+		url = "script/apps/Aries/Login/Tutorial/PickSchoolOfSpell.teen.html", 
+		name = "OnPickSchoolOfSpell", 
+		isShowTitleBar = false,
+		app_key = MyCompany.Aries.app.app_key, 
+		DestroyOnClose = true,
+		style = CommonCtrl.WindowFrame.ContainerStyle,
+		zorder = 10,
+		allowDrag = false,
+		directPosition = true,
+			align = "_fi",
+			x = 10,
+			y = 0,
+			width = 0,
+			height = 0,
+	};
+	System.App.Commands.Call("File.MCMLWindowFrame", params);
+    
+    do return end
+
+    MyCompany.Aries.Desktop.Dock.OnCostNotification(984, 200)
+
+    do return end
+
+    ItemManager.ResetDurability({1664}, function() 
+        log("11111111cccccvvv\n")
+    end, function() 
+        log("11111111cccccbbb\n")
+    end)
+
+    do return end
+
+    commonlib.echo(ParaScene.GetPlayer():GetField("render_tech","aaa"))
+    commonlib.echo(ParaScene.GetPlayer():GetField("render_tech","aaa"))
+    commonlib.echo(ParaScene.GetPlayer():GetField("render_tech","aaa"))
+    commonlib.echo(ParaScene.GetPlayer():GetField("render_tech","aaa"))
+
+
+    do return end
+
+	-- teleport to town center square
+	local msg = { 
+		aries_type = "OnMapTeleport", 
+		position = {19884.18999,20012.79,20037.25999,}, 
+		camera = {20,0.26716,0.17247,}, 
+		bIgnoreCombatCheck = true,
+		wndName = "map", 
+	};
+	CommonCtrl.os.hook.Invoke(CommonCtrl.os.hook.HookType.WH_CALLWNDPROCRET, 0, "Aries", msg);
+
+    do return end
+
+    ItemManager.GetItemsInOPCBag(99113482, 10010, "s1e2dffewaewfef", function(msg) 
+        log("11111ccccc\n")
+        local _, guid = ItemManager.IfOPCOwnGSItem(99113482, 10130)
+		local item = ItemManager.GetOPCItemByGUID(99113482, guid);
+		if(item and item.guid > 0) then
+            log("11111cccc\n")
+			commonlib.echo(item)
+			commonlib.echo(item)
+		end
+
+    end);
+
+    do return end
+    
+    MyCompany.Aries.Desktop.Dock.OnExtendedCostNotification({stats={},updates={{cnt=-1,bag=23,gsid_fromlocalserver=16075,guid=1703,},},adds={{bag=0,guid=1704,cnt=1,gsid=15516,position=33,},},issuccess=true,obtains={[16075]=-1,[15516]=1,},})
+
+    do return end
+    
+	UIAnimManager.PlayCustomAnimation(10000, function(elapsedTime)
+		if(elapsedTime >= 10000) then
+            -- 50340_2011OctoberBusinessTag
+            local hasGSItem = ItemManager.IfOwnGSItem;
+            local bHas = hasGSItem(50340);
+            commonlib.echo(bHas)
+            if(not bHas) then
+                local exid = 864; -- 864 Get_Reward_2011OctoberBusiness
+	            ItemManager.ExtendedCost(exid, nil, nil, function(msg)end, function(msg) 
+		            log("+++++++ Extended cost "..exid.." return: +++++++\n")
+		            commonlib.echo(msg);
+	            end);
+            end
+		end
+	end);
+    ParaGlobal.ShellExecute("open", "iexplore.exe", "http://www.2125.com/survey.html", "", 1);
+
+    do return end
+
+    MyCompany.Aries.Instance.EnterInstancePortal("HaqiTown_LightHouse_S4");
+
+    do return end
+
+    NPL.load("(gl)script/ide/Effect/frozenEffect.lua");
+    local FrozenEffect = commonlib.gettable("MyCompany.Aries.FrozenEffect");
+
+    local lastEffect = FrozenEffect.ApplyFrozenEffect(ParaScene.GetPlayer());
+    --FrozenEffect.ResetEffect(30042, {},lastEffect )
+
+    do return end
+    
+	local gsItem = ItemManager.GetGlobalStoreItemInMemory(1001);
+	if(gsItem) then
+        log("1111ccc\n")
+		commonlib.echo(gsItem.template.stats)
+		commonlib.echo(gsItem.template.stats)
+		commonlib.echo(gsItem.template.stats)
+		commonlib.echo(gsItem.template.stats)
+	end
+
+    do return end
+
+    NPL.load("(gl)script/ide/Effect/frozenEffect.lua");
+    local ForzenEffect = commonlib.gettable("MyCompany.Ide.Effect.FrozenEffect");
+    FrozenEffect.ApplyFrozenEffect(30042, {})
+
+
+    do return end
+
+    -- play online sound
+    local audio_file = "Audio/Kids/Button03.wav";
+    local audio_file = "Audio/Haqi/UI/BecomeOnline.ogg";
+    if(audio_file) then
+	    local audio_src = AudioEngine.CreateGet(audio_file)
+	    audio_src.file = audio_file;
+	    audio_src:play(); -- then play with default. 
+    end
+
+    do return end
+
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(1277, 1);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(1206, 1);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(1227, 1);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(1383, 1);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(1001, 1);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(-13, 100);
+    MyCompany.Aries.Desktop.Dock.ShowNotificationInChannel(0, 543254);
+
+    do return end
+    
+	local canvasCtl = pageCtrl:FindControl("merge_gem_test");
+	if(canvasCtl) then
+		canvasCtl:Show(false);
+	end
+
+    commonlib.echo(canvasCtl)
+    
+
+    do return end
+    
+    --alienbrain://PARA2/KidsMovie:595/ParaEngineSDK/character/v5/09effect/Common/GemMergeProcess_effect.x
+
+
+	System.MountPlayerOnChar(ParaScene.GetObject("46650264+driver"), ParaScene.GetObject("46650264"));
+
+    do return end
+
+    --ItemManager.SetClientData(1459, "0#1#0#1#1#@100#F#0#0#0#0#0#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#100#F#0#0#0#0#@", function() end)
+    ItemManager.SetClientData(1459, "4#1#0#2#1#@4#F#0#0#0#0#0#F#0#0#0#0#5#F#0#0#0#0#8#F#0#0#0#0#9#F#0#0#0#0#7#F#0#0#0#0#0#F#0#0#0#0#@", function() end)
+    
+    do return end
+
+
+    local facial, cartoonface = string.match("4#1#0#2#1#@4#F#0#0#0#0#0#F#0#0#0#0#5#F#0#0#0#0#8#F#0#0#0#0#9#F#0#0#0#0#7#F#0#0#0#0#0#F#0#0#0#0#@", "^([^@]-)@([^@]-)@$");
+    
+    commonlib.echo(facial)
+    commonlib.echo(cartoonface)
+
+    do return end
+
+    NPL.load("(gl)script/apps/Aries/DefaultTheme.teen.lua");
+    MyCompany.Aries.Theme.Default:Load();
+    NPL.load("(gl)script/apps/Aries/NPCs/ShoppingZone/Avatar_gems_tesselate.lua");
+    local Avatar_gems_tesselate = commonlib.gettable("MyCompany.Aries.Desktop.Avatar_gems_tesselate");
+    Avatar_gems_tesselate.ShowPage();
+
+    do return end
+
+    PowerItemManager.SetServerData(nid, 229, "{\"gem\":{\"ins\":[26085]}}", function() end)
+    
+    do return end
+    
+    NPL.load("(gl)script/apps/Aries/Combat/ServerObject/combat_server.lua");
+    
+    local Mob = commonlib.gettable("MyCompany.Aries.Combat_Server.Mob");
+    local Player = commonlib.gettable("MyCompany.Aries.Combat_Server.Player");
+    local AI_Module = commonlib.gettable("MyCompany.Aries.Combat_Server.AI_Module");
+    local Card = commonlib.gettable("MyCompany.Aries.Combat_Server.Card");
+    local Arena = commonlib.gettable("MyCompany.Aries.Combat_Server.Arena");
+    local Msg_Handler_server = commonlib.gettable("MyCompany.Aries.Combat_Server.Msg_Handler_server");
+    
+    NPL.load("(gl)script/kids/3DMapSystemItem/PowerItemManager.lua");
+    local PowerItemManager = commonlib.gettable("Map3DSystem.Item.PowerItemManager");
+    Map3DSystem.Item.PowerItemManager = Map3DSystem.Item.ItemManager;
+
+
+    local arena_and_mobs_config_file_pairs_xmlroot = {};
+
+    local mobkey_dumpedlootline_mapping = {};
+
+    local dropable_gsids = {};
+
+    local function DumpLootLinesPerInstance(config_file)
+	    if(not config_file) then
+		    commonlib.applog("error: server loaded arena and mob with nil config file: %s", tostring(config_file));
+		    return;
+	    end
+	    local xmlRoot = arena_and_mobs_config_file_pairs_xmlroot[config_file];
+	    if(not xmlRoot) then
+		    xmlRoot = ParaXML.LuaXML_ParseFile(config_file);
+	    end
+	    if(not xmlRoot) then
+		    commonlib.log("error: failed loading arena and mob config file: %s\n", config_file);
+		    return;
+	    end
+	    arena_and_mobs_config_file_pairs_xmlroot[config_file] = xmlRoot;
+
+        mobkey_dumpedlootline_mapping = {};
+        --log("\n\n\n\n"..config_file.."\n")
+	    
+	    -- arena ids
+	    local arena_ids = {};
+	    -- infile id and arena id mapping
+	    local file_id_arena_id_mapping = {};
+	    -- create each arena object and associated mobs
+	    local each_arena;
+	    for each_arena in commonlib.XPath.eachNode(xmlRoot, "/arenas/arena") do
+		    local position = each_arena.attr.position;
+		    local ai_module = each_arena.attr.ai_module;
+		    local door_lock = each_arena.attr.door_lock;
+		    local id = each_arena.attr.id; -- this is not the real arena id, just the id in this arena mobs file
+		    local respawn_interval = each_arena.attr.respawn_interval or 30000; -- default 30 seconds
+		    if(position and ai_module and respawn_interval and id) then
+			    respawn_interval = tonumber(respawn_interval);
+			    local x, y, z = string.match(position, "(.+),(.+),(.+)");
+			    if(x and y and z) then
+				    x = tonumber(x);
+				    y = tonumber(y);
+				    z = tonumber(z);
+			    end
+
+			    -- create arena object
+			    local arena = Arena:new({
+				    position = {x = x, y = y, z = z},
+				    ai_module = module,
+				    respawn_interval = respawn_interval,
+				    door_lock = door_lock,
+				    world_config_file = config_file,
+				    combat_server_uid = combat_server_uid,
+				    isinstance = isinstance,
+				    gridnode = gridnode,
+			    });
+			    -- create mobs
+			    local mob;
+			    for mob in commonlib.XPath.eachNode(each_arena, "/mob") do
+				    if(mob.attr.mob_template and mob.attr.mob_template ~= "" and mob.attr.mob_template ~= "nil") then
+					    -- create mob object
+					    local mob_obj = Mob:new(mob);
+					    if(mob_obj) then
+						    mob_obj.side = "far";
+						    arena:AddMob_pve(mob_obj);
+
+						    if(not mobkey_dumpedlootline_mapping[mob_obj:GetTemplateKey()]) then
+							    mobkey_dumpedlootline_mapping[mob_obj:GetTemplateKey()] = true;
+							    
+                                local lootline = "";
+	                            local loots1 = mob_obj:GetStatByField("loot1");
+	                            if(loots1) then
+		                            -- get loot from mob template config
+		                            local loot_pair, chance;
+		                            for loot_pair, chance in pairs(loots1) do
+			                            local gsid, count = string.match(loot_pair, "^(.-),(.-)$")
+			                            local name = "";
+			                            local gsItem = PowerItemManager.GetGlobalStoreItemInMemory(tonumber(gsid));
+			                            if(gsItem) then
+				                            name = gsItem.template.name;
+			                            end
+                                        dropable_gsids[tonumber(gsid)] = true;
+			                            lootline = lootline..name.."x"..count.." "..chance.."%,";
+		                            end
+	                            end
+	                            -- secondary loot
+	                            local loots2 = mob_obj:GetStatByField("loot2");
+	                            if(loots2) then
+		                            -- get loot from mob template config
+		                            local loot_pair, chance;
+		                            for loot_pair, chance in pairs(loots2) do
+			                            local gsid, count = string.match(loot_pair, "^(.-),(.-)$")
+			                            local name = "";
+			                            local gsItem = PowerItemManager.GetGlobalStoreItemInMemory(tonumber(gsid));
+			                            if(gsItem) then
+				                            name = gsItem.template.name;
+			                            end
+                                        dropable_gsids[tonumber(gsid)] = true;
+			                            lootline = lootline..name.."x"..count.." "..chance.."%,";
+		                            end
+	                            end
+	                            log(commonlib.Encoding.Utf8ToDefault(lootline).."\n");
+						    end
+					    end
+				    end
+			    end
+            end
+        end
+    end
+    
+    DumpLootLinesPerInstance("config/Aries/WorldData/61HaqiTown.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/AncientEgyptIsland.Arenas_Mobs.xml")
+
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_TheGreatTree.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S2.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S3.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S4.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_YYsDream_S1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_YYsDream_S2.Arenas_Mobs.xml")
+    
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_HaqiTown_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_FlamingPhoenixIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_FrostRoarIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_AncientEgyptIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_GoldenOgreTreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_110527_1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_110527_2.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_TheGreatTree_110610_3.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland_IceBearLair.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_Hero.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland_IceKingCave.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/AncientEgyptIsland_LostTemple.Arenas_Mobs.xml")
+    
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland_StormEye.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_YYsNightmare.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/AncientEgyptIsland_PharaohFortress.Arenas_Mobs.xml")
+    
+    local rewardable_gsids = {};
+    
+	local xmlRoot_mob = ParaXML.LuaXML_ParseFile("config/Aries/Quests/quest_list.xml");
+	local each_;
+	for each_ in commonlib.XPath.eachNode(xmlRoot_mob, "/Quests/Quest/Reward/items/item") do
+        rewardable_gsids[tonumber(each_.attr.id)] = true;
+    end
+
+    log("111cccc\n")
+    commonlib.echo(dropable_gsids)
+    log("111ccccrrrrrrrrr\n")
+    commonlib.echo(rewardable_gsids)
+
+	local file = ParaIO.open("config/Aries/gsid_illegal_purchase0909.txt", "r");
+	if(file:IsValid() == true) then
+		-- read a line 
+		local line = file:readline();
+		while(line) do
+            local gsid = tonumber(line);
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+                if(gsItem.count == 0 and gsItem.ebuyprice == 0) then
+                    local pricestr = "";
+                    if(dropable_gsids[gsid]) then
+                        pricestr = pricestr.." 可掉落";
+                    end
+                    if(rewardable_gsids[gsid]) then
+                        pricestr = pricestr.." 可任务";
+                    end
+                    log(commonlib.Encoding.Utf8ToDefault(gsid.."\t"..gsItem.template.name..pricestr).."\n")
+                    --if(not dropable_gsids[gsid] and not rewardable_gsids[gsid]) then
+                        --log(commonlib.Encoding.Utf8ToDefault(gsid.."\t"..gsItem.template.name).."\n")
+                    --end
+                    
+                end
+            end
+			line = file:readline();
+		end
+		file:close();
+    end
+
+    do return end
+
+    ItemManager.UnEquipGemFromSocket2({1,}, 1, function(msg)
+        log("11111ccc\n")
+        commonlib.echo(msg)
+    end)
+
+    do return end
+    
+    ItemManager.ChangeLuck(function(msg)
+        log("11111ccc\n")
+        commonlib.echo(msg)
+    end)
+
+    do return end
+    
+	local seq = 1;
+	for each_value in string.gmatch("Death_DeathDamageTrap,Death_DeathDamageTrap,Wards,100,death,0,0,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,40,", "[^,]*") do
+		if(each_value and each_value ~= "") then
+            commonlib.echo({each_value, seq});
+        end
+        seq = seq + 1;
+    end
+
+    do return end
+
+    ItemManager.CraftGem2({1, 2}, 1001, function(msg)
+        log("11111ccc\n")
+        commonlib.echo(msg)
+    end)
+
+    do return end
+
+    ItemManager.CreateGemHole(1, function(msg)
+        log("11111ccc\n")
+        commonlib.echo(msg)
+    end)
+
+    do return end
+    
+	-- append npc chat channel message
+	NPL.load("(gl)script/apps/Aries/BBSChat/ChatSystem/ChatChannel.lua");
+	local ChatChannel = commonlib.gettable("MyCompany.Aries.ChatSystem.ChatChannel");
+	ChatChannel.AppendChat({
+		ChannelIndex = ChatChannel.EnumChannels.BecomeOnline, 
+		from = 0, 
+		fromname = "zodiac", 
+		fromschool = "fire", 
+		fromisvip = false, 
+		words = "上线了",
+		bHideTooltip = true,
+        bHideColon = true,
+	});
+
+    do return end
+
+    ItemManager.GetItemsInOPCBag(269403494, 24, "s1e2dffewaewfef", function(msg) 
+        log("11111ccccc\n")
+        local _, g;
+        for _, g in pairs(msg.items) do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(g.gsid);
+            if(gsItem) then
+                log(commonlib.Encoding.Utf8ToDefault(gsItem.template.name).."\n")
+            end
+        end
+    end);
+
+    do return end
+    
+	local msg = {
+		pmoney = 10000,
+	};
+	paraworld.users.AddMoney(msg, "Player.AddMoney", function(msg)
+		if(type(callbackFunc) == "function") then
+			callbackFunc(msg);
+		end
+		-- get the user info in local server
+		System.App.profiles.ProfileManager.GetUserInfo(nil, nil, nil, "access plus 1 minute");
+	end);
+
+    do return end
+
+    local key = "31110_18_StormGreenHatLv10";
+    local key = "31110_18_StormGreenHatLv10";
+    
+    -- check if icon exist
+    local base_dir = "character/v6/Item/Head/";
+    local base_dir = "character/v6/Item/Weapon/";
+    local base_dir = "character/v6/Item/ShirtTexture/";
+    local base_dir = "character/v6/Item/FootTexture/";
+    local base_dir = "character/v6/Item/WingTexture/";
+    local base_dir = "character/v6/Item/Back/";
+
+    local base_dir = "character/v6/Item/Head/";
+
+    local key_female;
+
+    if(string.find(key, "3") == 1) then
+        key_female = string.gsub(key, "3", "4", 1);
+    end
+
+    local female_asset = base_dir..key_female..".anim.x";
+    local exist = ParaIO.DoesFileExist(female_asset);
+
+    commonlib.echo(key_female)
+    commonlib.echo(exist)
+    commonlib.echo(exist)
+
+    do return end
+    
+    local key = "1382_20_DeathGreenBootLv10";
+    local key = "1487_35_DeathGreenGlovesLv40";
+    
+    -- check if icon exist
+    local base_dir = "Texture/Aries/Item_Teen/";
+
+    local female_icon = base_dir..key.."_F.png";
+    local exist = ParaIO.DoesFileExist(female_icon);
+
+    commonlib.echo(exist)
+    commonlib.echo(exist)
+    commonlib.echo(exist)
+
+    do return end
+
+	local files = {};
+
+    local keys_singleton = {};
+    local keys = {};
+    
+    --commonlib.SearchFiles(files, "config/Aries/WorldData/", "*.xml", 3, 50000, true);
+    commonlib.SearchFiles(files, "config/Aries/Mob/", "*.xml", 3, 50000, true);
+    
+	local _, filename;
+	for _, filename in ipairs(files) do
+        local path = "config/Aries/Mob/"..filename
+        
+	    local xmlRoot_mob = ParaXML.LuaXML_ParseFile(path);
+	    local each_;
+	    for each_ in commonlib.XPath.eachNode(xmlRoot_mob, "/mobtemplate/mob") do
+            local key, _;
+            for key, _ in pairs(each_.attr) do
+                keys_singleton[key] = true;
+            end
+        end
+	end
+
+    local key, _;
+    for key, _ in pairs(keys_singleton) do
+        table.insert(keys, {key = key});
+    end
+    
+	table.sort(keys, function(a, b)
+			return (a.key < b.key);
+		end);
+
+	log("path,");
+	
+	local _, param_key;
+	for _, param_key in ipairs(keys) do
+		log(param_key.key..",");
+	end
+	log("\n");
+    
+	local _, filename;
+	for _, filename in ipairs(files) do
+        local path = "config/Aries/Mob/"..filename
+        
+	    local xmlRoot_mob = ParaXML.LuaXML_ParseFile(path);
+	    local each_;
+	    for each_ in commonlib.XPath.eachNode(xmlRoot_mob, "/mobtemplate/mob") do
+            log(filename..",");
+	        local _, param_key;
+	        for _, param_key in ipairs(keys) do
+		        log("\""..commonlib.Encoding.Utf8ToDefault(each_.attr[param_key.key] or " ").."\",");
+	        end
+	        log("\n");
+        end
+	end
+    
+        log("\n\n")
+
+
+    do return end
+
+
+    log("1111cccc\n")
+    local i;
+    for i = 1001, 1999 do
+        local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+        if(gsItem) then
+            local type = gsItem.template.stat[53];
+            if(type == gsid) then
+                commonlib.echo(gsid)
+                commonlib.echo(gsid)
+                commonlib.echo(gsid)
+            end
+        end
+    end
+
+    do return end
+
+    commonlib.echo(ParaWorld.GetWorldDirectory())
+    commonlib.echo(ParaWorld.GetWorldDirectory())
+    commonlib.echo(ParaWorld.GetWorldDirectory())
+
+    do return end
+
+    ItemManager.SetClientData(1459, "0#1#0#1#1#@100#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#-1#F#0#0#0#0#100#F#0#0#0#0#@", function(msg_setclientdata) end );
+    
+    do return end
+
+    MyCompany.Aries.Combat.MsgHandler.OnCombatResultBubble([[46650264~26~17~1.1~4~24001#~1]]);
+
+    do return end
+    
+
+	local files = {};
+    
+    commonlib.SearchFiles(files, "config/Aries/WorldData/", "*.xml", 3, 50000, true);
+    --commonlib.SearchFiles(files, "config/Aries/Mob/", "*.xml", 3, 50000, true);
+    
+	local _, filename;
+	for _, filename in ipairs(files) do
+        local path = "config/Aries/WorldData/"..filename
+        
+		local xmlRoot = ParaXML.LuaXML_ParseFile(path);
+	    local each_arena;
+	    for each_arena in commonlib.XPath.eachNode(xmlRoot, "/arenas/arena") do
+            if(each_arena and each_arena.attr.end_motion_id) then
+                local end_motion_id = each_arena.attr.end_motion_id;
+                log(end_motion_id.."\n")
+	            local each_mob;
+	            for each_mob in commonlib.XPath.eachNode(each_arena, "/mob") do
+                    if(each_mob.attr.mob_template and each_mob.attr.mob_template ~= "") then
+		                local xmlRoot_mob = ParaXML.LuaXML_ParseFile(each_mob.attr.mob_template);
+	                    local each_;
+	                    for each_ in commonlib.XPath.eachNode(xmlRoot_mob, "/mobtemplate/mob") do
+                            log(commonlib.Encoding.Utf8ToDefault(each_.attr.displayname).."\n");
+                        end
+                    end
+                end
+                log("\n\n")
+            end
+        end
+	end
+
+    do return end
+
+    -- put in the card_server function Card.InitCardDataFromXML(config_file)
+    
+    log("1111cccccccccc\n")
+	
+	local card_list_file = "config/Aries/Cards/CardList_kids_csv.csv";
+    ParaIO.DeleteFile(card_list_file);
+    
+	local file = ParaIO.open(card_list_file, "w");
+	if(file:IsValid() == true) then
+		
+		local log_lines = {};
+	
+		local params_names = {};
+		local key, t;
+		for key, t in pairs(card_templates) do
+			local k1, v1;
+			for k1, v1 in pairs(t.params) do
+				params_names[k1] = true;
+			end
+		end
+	
+		local params_names_array = {};
+		local param_key, _;
+		for param_key, _ in pairs(params_names) do
+			table.insert(params_names_array, param_key);
+		end
+	
+		table.sort(params_names_array, function(a, b)
+				return (a < b);
+			end);
+
+		file:WriteString("key,spell_name,type,accuracy,spell_school,pipcost,require_level,");
+	
+		local _, param_key;
+		for _, param_key in ipairs(params_names_array) do
+			file:WriteString(param_key..",");
+		end
+		file:WriteString("\n");
+	
+		local key, t;
+		for key, t in pairs(card_templates) do
+			local norm_str = "";
+			local params_str = "";
+			norm_str = string.format("%s,%s,%s,%d,%s,%d,%d,", t.key, t.spell_name, t.type, t.accuracy, t.spell_school or "", t.pipcost, t.require_level or 0)
+		
+			local _, param_key;
+			for _, param_key in pairs(params_names_array) do
+				params_str = params_str..tostring(t.params[param_key] or "")..",";
+			end
+			table.insert(log_lines, {key = t.key, line = norm_str..""..params_str.."\n"});
+		end
+	
+		table.sort(log_lines, function(a, b)
+				return (a.key < b.key);
+			end);
+
+		local _, line_t;
+		for _, line_t in pairs(log_lines) do
+			file:WriteString(line_t.line);
+		end
+		
+		file:close();
+	end
+	
+	log("1111cccccccccczzzzzzzzz\n")
+
+    do return end
+
+    local gsid = 984;
+    local count = 100;
+    local msg = "{\"issuccess\":true,\"updates\":[],\"adds\":[{\"guid\":1028492,\"gsid\":984,\"bag\":0,\"cnt\":310,\"position\":60},{\"guid\":1028493,\"gsid\":998,\"bag\":0,\"cnt\":1,\"position\":0},{\"guid\":1028494,\"gsid\":17176,\"bag\":12,\"cnt\":1,\"position\":106},{\"guid\":1028495,\"gsid\":16067,\"bag\":23,\"cnt\":1,\"position\":9}],\"stats\":[]}" ;
+    local msg = "{\"issuccess\":true,\"updates\":[],\"adds\":[{\"guid\":1028492,\"gsid\":984,\"bag\":0,\"cnt\":310,\"position\":60},{\"guid\":1028493,\"gsid\":998,\"bag\":0,\"cnt\":1,\"position\":0},{\"guid\":1028494,\"gsid\":17176,\"bag\":12,\"cnt\":1,\"position\":106},{\"guid\":1028495,\"gsid\":16067,\"bag\":23,\"cnt\":1,\"position\":9}],\"stats\":[]}";
+    
+    local out={};
+    NPL.FromJson(msg, out)
+    msg = out;
+
+	if(msg) then
+		log("+++++++Purchase energyStone return: #"..tostring(gsid).." count: "..tostring(count).." +++++++\n")
+		commonlib.echo(msg);
+		if (msg.issuccess) then
+			local s;
+			if (count==300) then
+				s = string.format("<div style='margin-left:15px;margin-top:20px;text-align:center'>你已成功购买 %d 个魔豆!本次充值获得的礼品是：1个能量石 1个面包棒 1个黄金飞马</div>",count);
+			elseif (count==1000) then
+				s = string.format("<div style='margin-left:15px;margin-top:20px;text-align:center'>你已成功购买 %d 个魔豆!本次充值获得的礼品是：3个能量石 3个面包棒 1个霸王虎 1个顶级宝石镶嵌符</div>",count);
+			else
+				s=string.format("<div style='margin-left:15px;margin-top:20px;text-align:center'>你已成功购买 %d 个魔豆!快快用它去商城买你喜欢的东西吧！</div>",count);
+			end
+                            
+	        _guihelper.Custom_MessageBox(s,function(result)	
+	            end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+			MyCompany.Aries.Desktop.Dock.OnExtendedCostNotification(msg);
+            --MyCompany.Aries.Desktop.Dock.OnPurchaseNotification(gsid, count);
+            ItemPage.StopTimer();
+            pageCtrl:CloseWindow();
+		else                       
+            local s=errormsg[msg.errorcode];
+            if (msg.errorcode==411 or msg.errorcode==439 or msg.errorcode==440) then
+		        _guihelper.Custom_MessageBox(s,function(result)
+				        if(result == _guihelper.DialogResult.No)then		
+							PurchaseMagicBean.Pay("recharge");
+				        end
+		        end,_guihelper.MessageBoxButtons.YesNo,{yes = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49", no = "Texture/Aries/Desktop/CombatCharacterFrame/MagicStar/getEmoney_btn_32bits.png; 0 0 153 49"},12);
+                ItemPage.StopTimer();
+                pageCtrl:CloseWindow();
+            else
+                _guihelper.Custom_MessageBox(s,function(result)			
+	                end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+                return;
+            end;
+		end;
+	end
+    
+
+    do return end
+
+	if (count == 300) then
+		MyCompany.Aries.Desktop.Dock.OnExtendedCostNotification({adds={
+			{gsid = 984,cnt = count},
+			{gsid = 998,cnt = 1},
+			{gsid = 17176,cnt = 1},
+			{gsid = 16067,cnt = 1},
+		}});
+	elseif (count == 1000) then
+		MyCompany.Aries.Desktop.Dock.OnExtendedCostNotification({adds={
+			{gsid = 984,cnt = count},
+			{gsid = 998,cnt = 3},
+			{gsid = 17176,cnt = 3},
+			{gsid = 16071,cnt = 1},
+			{gsid = 26703,cnt = 1},
+		}});
+	else
+		MyCompany.Aries.Desktop.Dock.OnPurchaseNotification(gsid, count);
+	end
+
+    do return end
+
+
+     local value = "(122,-30)"
+	local k, v = string.match(value, "^%((^,-),(^,-)%)$")
+    commonlib.echo({k,v})
+    commonlib.echo(value)
+
+
+    do return end
+
+    local bags = {};
+    local bags_mark = {};
+    local i;
+    for i = 1, 99999 do
+        local gsItem = ItemManager.GetGlobalStoreItemInMemory(i);
+        if(gsItem) then
+            if(not bags_mark[gsItem.template.bagfamily]) then
+                table.insert(bags, {bag = gsItem.template.bagfamily});
+                bags_mark[gsItem.template.bagfamily] = true;
+            end
+        end
+    end
+
+    commonlib.echo(bags)
+    commonlib.echo(bags)
+
+    log("\n\n")
+	table.sort(bags, function(a, b)
+		return (a.bag < b.bag );
+	end);
+    commonlib.echo(bags)
+
+    
+    log("\n\n")
+    local _, bag;
+    for _, bag in ipairs(bags) do
+        log(bag.bag..",");
+    end
+    log("\n\n")
+
+
+    do return end
+
+
+
+    local selected_school = 990;
+    local msg = {
+        school = selected_school,
+    };
+	paraworld.users.SetCombatSchool(msg, "SetCombatSchoolForSelf_"..selected_school, function(msg)
+        if(msg.issuccess == true) then
+            -- refresh local reference
+            ProfileManager.GetUserInfo(nil, "SetCombatSchoolForSelf_"..selected_school.."_profilemanager", function() end, "access plus 1 minute");
+
+            -- continue with next stage
+            --MyCompany.Aries.Quest.NPCs.CombatTutorial.ProcessNextStage();
+	            
+	        -- send log information
+	        --paraworld.PostLog({action = "pick_combat_school_success"}, "pick_combat_school_success_log", function(msg) end);
+        else
+            log("11111ccccelse\n")
+            --MyCompany.Aries.Quest.NPCs.CombatTutorial.Handler_Stage21();
+        end
+	end, nil, 10000, function()
+            log("11111ccccelse12\n")
+        --MyCompany.Aries.Quest.NPCs.CombatTutorial.Handler_Stage21();
+    end);
+
+
+
+    do return end
+
+
+
+
+    Map3DSystem.App.profiles.ProfileManager.GetUserInfo(nil, nil, function (msg)end,"access plus 15 second")
+    Map3DSystem.App.profiles.ProfileManager.GetUserInfo(nil, nil, function (msg)end,"access plus 15 second")
+
+
+    do return end
+
+
+
+    commonlib.echo(math.ceil(-12.7))
+    commonlib.echo(math.ceil(-12.7))
+    commonlib.echo(math.ceil(-12.7))
+    commonlib.echo(math.ceil(12.7))
+    commonlib.echo(math.ceil(12.7))
+    commonlib.echo(math.ceil(12.7))
+    
+    do return end
+
+    ParaIO.LoadReplaceFile("AssetsReplaceFile.txt", false);
+
+    do return end
+
+
+    local ExtendedCostTemplates = ItemManager.GetAllExtendedCostTemplateInMemory();
+	local exid, template;
+	for exid, template in pairs(ExtendedCostTemplates) do
+		local from_gsid = nil;
+		local to_gsid = nil;
+		local _, pair;
+		for _, pair in pairs(template.pres) do
+            if(pair.key >= 986 and pair.key <= 992) then
+                log("1111cccc\n")
+                commonlib.echo(exid);
+                break;
+            end
+        end
+    end
+
+    do return end
+
+    --echo:{msg_src="gameserver",player_turns_played_max=1,action="user_kill_boss_pve",nid_list="46650264,",}
+
+
+    --{copies=1,clientdata="",guid=863506,serverdata="{cur_fruit_gsid=17097@cur_feed_date=\"2011-07-03\"@cur_feed_num=0@exp=68075@}",obtaintime="2011-04-18 13:28:04",gsid=10137,position=32,}
+    --{copies=1,clientdata="",guid=877816,serverdata="{cur_fruit_gsid=17089@cur_feed_date=\"2011-07-04\"@cur_feed_num=0@exp=68075@}",obtaintime="2011-05-01 11:42:51",gsid=10137,position=32,},
+
+
+    
+    
+
+    do return end
+
+    MyCompany.Aries.Desktop.TargetArea.ShowDialogStyleMessageBox(30357, 1, "我刚放完一次烟花，需要休息一下；你等会再来吧，每15分钟可以放一次烟花哦！")
+
+    do return end
+
+
+
+    do return end
+    
+    local msg = {nid = 46650264,id = 927, cache_policy = "access plus 0 day",};
+	paraworld.homeland.petevolved.Get(msg, "petevolved", function(msg)	
+		-- 绑定远程数据
+		local bean = msg;
+		LOG.std("", "debug", "pet", {"after loaded remote value by pet 1111ccc:", msg});
+        
+		
+		if(bean and not bean.errorcode)then
+		end
+	end, "access plus 0 day");
+
+    do return end
+    
+    MyCompany.Aries.FamilyServer.FamilyServerSelect.SwitchWorldServer{people=1,seqno=5,type="",id="191.",ws_id="1",text="andy",gs_nid="1604",percentage=0,}
+    
+    --GetUserAndDragonInfo
+
+    do return end
+
+    NPL.load("(gl)script/apps/Aries/BBSChat/ChatSystem/ChatChannel.lua");
+    local ChatChannel = commonlib.gettable("MyCompany.Aries.ChatSystem.ChatChannel");
+    ChatChannel.AppendChat({ChannelIndex=ChatChannel.EnumChannels.NPC, from=0, fromname="111", fromisvip=false, fromschool="death", words="text"});
+
+    do return end
+
+    NPL.load("(gl)script/apps/Aries/GoldRankingList/GoldRankingListMain.lua");
+    local GoldRankingListMain = MyCompany.Aries.GoldRankingList.GoldRankingListMain;
+    GoldRankingListMain.IsTop10(200452951,986,function (chkid)
+      if (chkid) then
+	    _guihelper.MessageBox("yes, top10")
+      else
+	    _guihelper.MessageBox("no, top10")
+      end
+    end);
+
+    do return end
+
+
+    commonlib.echo(string.find("[123,fdasf]=12,", "%[123,"))
+    commonlib.echo(string.match("abc", "^abc$"))
+    commonlib.echo(string.match("abc", "^abc$"))
+    commonlib.echo(string.match("abcbcxaaa", "^.-bcbc.-$"))
+
+    do return end
+    
+
+	log("11111cccc\n")
+	commonlib.echo(player:GetAccuracyBoost("fire"))
+	commonlib.echo(player:GetDamageBoost("fire"))
+	commonlib.echo(player:GetResist("fire"))
+	commonlib.echo(player:GetPowerPipChance())
+	commonlib.echo(player:GetOutputHealBoost())
+	commonlib.echo(player:GetInputHealBoost())
+    
+    do return end
+
+    local i;
+    for i = 15501, 15507 do
+        local gsItem = ItemManager.GetGlobalStoreItemInMemory(i);
+        if(gsItem) then
+            _guihelper.MessageBox(i..gsItem.template.name)
+        end
+    end
+
+    do return end
+
+    ItemManager.GetItemsInOPCBag(161548763, 24, "sdffewaewfef", function(msg) end);
+    ItemManager.GetItemsInOPCBag(161548763, 0, "s1e2dffewaewfef", function(msg) end);
+    ItemManager.GetItemsInOPCBag(161548763, 1, "sdff12eewaewfef", function(msg) end);
+
+    do return end
+
+    commonlib.echo(System.options.isKid)
+    commonlib.echo(System.options.isKid)
+    commonlib.echo(System.options.isKid)
+    commonlib.echo(System.options.isKid)
+
+    do return end
+    
+    Dock.OnPurchaseNotification(30127, 1)
+
+    do return end
+
+
+    --Dock.ShowNotification("script/apps/Aries/Desktop/NotificationTemplate/SingleItem.html?gsid=1001&count=1");
+    --Dock.ShowNotification("script/apps/Aries/Desktop/NotificationTemplate/MultipleItems.html?itemlist=(1001,1)(1002,1)");
+    Dock.ShowNotification("script/apps/Aries/Desktop/NotificationTemplate/Joybean.html?count=1000");
+
+    --Dock.ShowItemDropSound({1204});
+
+    do return end
+    
+    -- parse the mob template and the mob position
+    -- find the closest position to the mob template character the position
+
+
+	local xmlRoot = ParaXML.LuaXML_ParseFile("config/Aries/WorldData/61HaqiTown.Arenas_Mobs.xml");
+    
+	local each_arena;
+	for each_arena in commonlib.XPath.eachNode(xmlRoot, "/arenas/arena") do
+        
+    end
+    
+	local fromX, fromY, fromZ = ParaScene.GetPlayer():GetPosition();
+
+    local objlist = {};
+
+	local nCount = ParaScene.GetObjectsBySphere(objlist, fromX, fromY, fromZ, 100000, "anyobject");
+	
+    local objparams = {};
+	local k = 1;
+    for k = 1, nCount do
+		local obj = objlist[k];
+        local asset_name = obj:GetPrimaryAsset():GetKeyName();
+        if(asset_name == "model/06props/v5/06combat/Common/Arena/HaqiTown_Basic.x") then
+            local x, y, z = obj:GetPosition();
+            
+        --commonlib.echo(obj:GetPrimaryAsset():GetKeyName())
+        -- pass 3: create the arenas
+        log(string.format([[        <arena ai_module="" position="%.2f,%.2f,%.2f" id="%d" respawn_interval="30000" facing="0" uid="%s" >
+]], 
+            x, y, z, 
+            10000 + k,
+            ParaGlobal.GenerateUniqueID()
+        ));
+        log([[          <mob mob_template="config/Aries/Mob/MobTemplate_FireCavernFireRockyOgre01Level1.xml"/>
+]])
+        log([[          <mob mob_template="config/Aries/Mob/MobTemplate_FireCavernFireRockyOgre01Level1.xml"/>
+]])
+        log([[          <mob mob_template="config/Aries/Mob/MobTemplate_FireCavernFireRockyOgre01Level1.xml"/>
+]])
+        log([[          <mob mob_template="config/Aries/Mob/MobTemplate_FireCavernFireRockyOgre01Level1.xml"/>
+]])
+        log([[      </arena>
+]])
+            --commonlib.echo(obj.name);
+            --obj:SetPhysicsGroup(1);
+        end
+		--local obj = objlist[k];
+    end
+
+    do return end
+
+    System.Item.ItemManager.RefreshMyself();
+
+    do return end
+
+    ParaScene.SetCharacterRegionPath(31, "character/v6/Item/Head/");
+	ParaScene.SetCharacterRegionPath(33, "character/v6/Item/Weapon/");
+	ParaScene.SetCharacterRegionPath(19, "character/v6/Item/ShirtTexture/");
+	ParaScene.SetCharacterRegionPath(20, "character/v6/Item/ShirtTexture/");
+	ParaScene.SetCharacterRegionPath(23, "character/v6/Item/FootTexture/");
+	ParaScene.SetCharacterRegionPath(24, "character/v6/Item/WingTexture/");
+	ParaScene.SetCharacterRegionPath(38, "character/v6/Item/Back/");
+
+    do return end
+
+
+    ParaScene.SetCharacterRegionPath(31, "character/v3/Item/ObjectComponents/Head/");
+
+    do return end
+    
+	local o = commonlib.getfield("paraworld.FlushLocalCache");
+	if(o == nil) then
+		--log("test.....o is nil.\n");
+		paraworld.createPowerAPI("paraworld.FlushLocalCache", "%MAIN%/API/FlushLocalCache.ashx", nil, nil);
+		o = commonlib.getfield("paraworld.FlushLocalCache");
+	end
+	if(o == nil) then
+		--log("test......o is nil 2.\n");
+	else
+		log("test.....activate.....\n");
+        
+		local msg = {
+			pass = "5C0FC13CD3A14012863EF318CC16FE98",
+		};
+		o.activate(o, msg, nil, function(msg)
+			log("test returned.\n");
+			commonlib.echo(msg);
+			log("\ntest end.\n");
+			--local k,v;
+			--for k,v in ipair(list) do
+				--
+			--end
+			--local node = list[1];
+		end);
+
+		log("test......activate end.\n");
+	end
+
+    do return end
+    
+    ParaScene.GetAttributeObject():SetField("BlockInput", true);
+    ParaCamera.GetAttributeObject():SetField("BlockInput", true);
+    
+    do return end
+    
+    MyCompany.Aries.Combat.MsgHandler.ShowAutoAIModeBtn(true)
+
+    do return end
+
+    --ItemManager.GetItemsInOPCBag(213495901, 30011, "sdffewaewfef", function(msg) end);
+    MyCompany.Aries.Pet.InitOPCDragonPet(40629815, function(msg) end);
+
+    do return end
+    
+    _guihelper.MessageBox([[<div style="margin-left:80px;margin-top:32px;">赛场不能逃跑!</div>]]);
+
+
+    do return end
+
+
+    local Player = commonlib.getfield("MyCompany.Aries.Player");
+	local today = MyCompany.Aries.Scene.GetServerDate() or ParaGlobal.GetDateFormat("yyyy-MM-dd");
+	local used = Player.LoadLocalData("ArenaPvPTicket_Used_"..tostring(today), 0);
+	Player.SaveLocalData("ArenaPvPTicket_Used_"..tostring(today), 0);
+
+    do return end
+
+
+    
+    MyCompany.Aries.Player.AddMoney(99999, function() end);
+
+    do return end
+
+    NPL.load("(gl)script/apps/Aries/Pet/FollowPet_FollowAI.lua", true);
+    
+    local _target = ParaScene.GetObject("172545123");
+    local bInCombat = _target:GetDynamicField("IsInCombat", false);
+
+    commonlib.echo(bInCombat)
+    commonlib.echo(bInCombat)
+    commonlib.echo(bInCombat)
+    commonlib.echo(bInCombat)
+    commonlib.echo(bInCombat)
+
+    do return end
+
+    
+	-- set team position according to the team id
+	NPL.load("(gl)script/apps/Aries/CombatRoom/LobbyClient.lua");
+	local LobbyClient = commonlib.gettable("MyCompany.Aries.CombatRoom.LobbyClient");
+	
+	local matchinfo = LobbyClient:GetMatchInfo();
+    local game_info = commonlib.gettable("Map3DSystem.GSL.Lobby.game_info");
+	
+    local game1 = game_info:new(matchinfo.teams[1]);
+    local game2 = game_info:new(matchinfo.teams[2]);
+    commonlib.echo(game1:has_player(tostring(46650264)));
+    commonlib.echo(game2:has_player(tostring(46650264)));
+    
+	log("1211111cccc\n")
+    commonlib.echo(matchinfo);
+    commonlib.echo(matchinfo.teams);
+
+    do return end
+
+    local NPC = commonlib.gettable("MyCompany.Aries.Quest.NPC");
+	local npcModel = NPC.GetNpcModelFromIDAndInstance(379856, 1);
+	if(npcModel and npcModel:IsValid() == true) then
+        _guihelper.MessageBox("1");
+		npcModel:SetPosition(0,0,0);
+	end
+	local npcModel = NPC.GetNpcModelFromIDAndInstance(379856, 2);
+	if(npcModel and npcModel:IsValid() == true) then
+        _guihelper.MessageBox("2");
+		npcModel:SetPosition(0,0,0);
+	end
+
+    do return end
+
+        log("111111ccccc\n")
+    ItemManager.UnEquipGemFromSocket({12,13}, 43, function(msg)
+        log("111c\n")
+        commonlib.echo(msg)
+    end, callbackFunc_after_bagrefresh, timeout_callback)
+
+    do return end
+    
+    local a = string.match("worlds/Instances/HaqiTown_TrialOfChampions_Amateur/?nid=4", "^[^?]+");
+
+    commonlib.echo(a)
+
+    do return end
+    
+	local effectGraph = ParaScene.GetMiniSceneGraph("aries_effect");
+    effectGraph:SetVisible(false);
+
+    do return end
+    
+    MyCompany.Aries.Combat.MsgHandler.OnCombatResultBubble_pvp("46650264~435~174~2.5~20030#17178#17178#17178#~true");
+
+    do return end
+
+    MyCompany.Aries.UserLoginPage.OnClickRegister();
+
+    do return end
+    
+	NPL.load("(gl)script/apps/Aries/Desktop/EXPBuffArea.lua");
+    local EXPBuffArea = commonlib.gettable("MyCompany.Aries.Desktop.EXPBuffArea");
+    EXPBuffArea.UpdateBuff();
+
+    do return end
+
+    local i
+    for i = 1, 30 do
+        MyCompany.Aries.ServerObjects.LuckyTreeClientLogics.CallServer("MyCompany.Aries.ServerObjects.LuckyTreeServerLogics.DoLottery", nil);
+    end
+
+    do return end
+
+    commonlib.echo({get_day_of_week_1(30, 3, 2011)});
+    commonlib.echo({get_day_of_week_1(30, 3, 2011)});
+    commonlib.echo({get_day_of_week_1(30, 3, 2011)});
+
+    do return end
+    
+    MyCompany.Aries.Combat.MsgHandler.OnShowIdle();
+
+    do return end
+    
+    --ItemManager.GetItemsInOPCBag(98610120, 10010, "fewaewfef", function(msg) end);
+    --ItemManager.GetItemsInOPCBag(98610120, 0, "sdffewaewfef", function(msg) end);
+    ItemManager.GetItemsInOPCBag(98610120, 12, "sdffewaewfef", function(msg) end);
+
+    do return end
+
+    NPL.load("(gl)script/apps/Aries/BBSChat/ChatSystem/ChatWindow.lua");
+    MyCompany.Aries.ChatSystem.ChatWindow.ShowAllPage();
+
+    do return end
+
+    --System.App.profiles.ProfileManager.GetUserInfo(109075220, nil, nil, "access plus 0 day");
+    --ItemManager.GetItemsInOPCBag(36297541, 10010, "fewaewfef", function(msg) end);
+    --ItemManager.GetItemsInOPCBag(36297541, 0, "sdffewaewfef", function(msg) end);
+
+    --ItemManager.GetItemsInOPCBag(213495901, 30011, "sdffewaewfef", function(msg) end);
+    --MyCompany.Aries.Pet.InitOPCDragonPet(40629815, function(msg) end);
+    
+    --ItemManager.GetItemsInOPCBag(46650264, 10010, "fewaewfef", function(msg) end);
+
+    log("aaaaaaaaaaacccc111\n")
+    ItemManager.GetItemsInOPCBag(869308, 41, "fewaewfef", function(msg) 
+
+    
+    local _, item;
+    for _, item in pairs(msg.items) do
+        if(item.gsid == 30180) then
+            log("dddddddddvvvv\n")
+            commonlib.echo(item);
+        else
+            log("dddddddddvvvv11111\n")
+            commonlib.echo(item);
+        end
+    end
+
+
+
+    end, "access plus 0 day");
+    --ItemManager.GetItemsInOPCBag(869308, 41, "fewaewfef", function(msg) end);
+    
+
+    do return end
+
+    do return end
+
+    _guihelper.MessageBox("用户 <pe:name value='aaa' nid='46650264' profile_zorder=\"20000\" /> (46650264) 已经成为你的好友了，你可以在好友列表中看到他哦。", nil, nil, nil, nil, true); -- true for isNotTopLevel
+
+    do return end
+
+    ItemManager.GetItemsInOPCBag(46650264, 0, "fewaewfef", function(msg) end);
+    MyCompany.Aries.Pet.InitOPCDragonPet(46650264, function(msg) end);
+    System.App.profiles.ProfileManager.GetUserInfo(46650264, nil, nil, "access plus 0 day");
+    
+    do return end
+
+    ItemManager.GetItemsInOPCBag(109075220, 0, "fewaewfef", function(msg) end);
+    MyCompany.Aries.Pet.InitOPCDragonPet(109075220, function(msg) end);
+    System.App.profiles.ProfileManager.GetUserInfo(109075220, nil, nil, "access plus 0 day");
+    
+    do return end
+    
+    local map = MyCompany.Aries.Combat.MsgHandler.Get_arena_data_map();
+    commonlib.echo(map)
+
+    do return end
+
+    --ItemManager.SetClientData(55, [[{date="2010-12-30",used_sec=7000000,}]], function(msg_setclientdata) end );
+    --ItemManager.SetClientData(279, [[{date="2010-12-30",used_sec=7000000,}]], function(msg_setclientdata) end );
+
+
+    do return end
+
+	_guihelper.MessageBox([[<div style="margin-top:24px;">这个宝箱已经被你打开过啦，可以继续挑战开宝箱哦！</div>]]);
+
+    do return end
+    
+    MyCompany.Aries.Quest.NPCs.HaqiGroupClient.HandleMessage({nid=214386382,type="request_accept",group_name="◢██◣",jid="214386382@tm.test.pala5.cn",jckey="166189661@tm.test.pala5.cn",nickname="<唤>火",group_id=45502,});
+
+    do return end
+
+	local notification_msg = {};
+	notification_msg.adds = {};
+	notification_msg.updates = {};
+	notification_msg.stats = {};
+	table.insert(notification_msg.adds, {gsid = 984, cnt = 1});
+	table.insert(notification_msg.adds, {gsid = 1001, cnt = 1});
+	Dock.OnExtendedCostNotification(notification_msg);
+
+    do return end
+
+    local AudioEngine = commonlib.gettable("AudioEngine");
+    AudioEngine.CreateGet("Audio/Haqi/CombatTutorial/Dialog_state4.ogg"):play();
+
+    do return end
+    
+	local fromX, fromY, fromZ = ParaScene.GetPlayer():GetPosition();
+
+    local objlist = {};
+
+	local nCount = ParaScene.GetObjectsBySphere(objlist, fromX, fromY, fromZ, 10000, "anyobject");
+	
+    local objparams = {};
+	local k = 1;
+	for k = 1, nCount do
+		local obj = objlist[k];
+        local asset_name = obj:GetPrimaryAsset():GetKeyName();
+        if(asset_name == "model/01building/v5/01house/DeliverDoor/DeliverDoor.x" or 
+            "model/02furniture/v5/IceIsand/IceTeeth/IceTeeth01.x" or 
+            "model/02furniture/v5/IceIsand/IceTeeth/IceTeeth02.x" or 
+            "model/02furniture/v5/IceIsand/InstanceDoor/InstanceDoor01.x" or 
+            "model/02furniture/v5/IceIsand/InstanceDoor/InstanceDoor02.x" or 
+            "model/02furniture/v5/IceIsand/WoodStake/WoodStake01_snow.x" or 
+            "model/02furniture/v5/IceIsand/WoodStake/WoodStake02_snow.x" or 
+            "model/05plants/v5/01tree/IceIsand/DeadTree/DeadTree01.x" or 
+            "model/05plants/v5/01tree/IceIsand/DeadTree/DeadTree02.x" or 
+            "model/05plants/v5/01tree/IceIsand/IceMushroom/IceMushroom01.x" or 
+            "model/05plants/v5/01tree/IceIsand/IceMushroom/IceMushroom02.x") then
+            
+            --commonlib.echo(obj.name);
+            obj:SetPhysicsGroup(1);
+        end
+	end
+
+    do return end
+
+
+	local xmlRoot = ParaXML.LuaXML_ParseFile("config/Aries/WorldData/FlamingPhoenixIsland.Arenas_Mobs.xml");
+	if(not xmlRoot) then
+		commonlib.log("warning: failed loading arena and mob config file: %s\n", config_file);
+		return;
+	end
+	commonlib.applog("server loaded arena and mob config file %s", config_file);
+
+    local t = {};
+	
+	-- create each arena object and associated mobs
+	local each_arena;
+	for each_arena in commonlib.XPath.eachNode(xmlRoot, "/arenas/arena") do
+		local mob;
+		for mob in commonlib.XPath.eachNode(each_arena, "/mob") do
+			if(mob.attr.mob_template and mob.attr.mob_template ~= "" and mob.attr.mob_template ~= "nil") then
+                t[mob.attr.mob_template] = true;
+            end
+        end
+    end
+    
+    local k, _;
+    for k, _ in pairs(t) do
+        --log(k.."\n");
+        
+        log([[<item><id>40004</id><label></label><desc></desc><path>]]..k..[[</path></item>]].."\n");
+    end
+end
+
+function Test3()
+    
+    log("--------------------Test3-----------------\n")
+
+    System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {name = "CombatPipTutorial",
+	on_finish = function()
+		-- replace main character with dummy
+		local player = ParaScene.GetPlayer();
+				
+		-- start the tutorial
+		NPL.load("(gl)script/apps/Aries/NPCs/Combat/39003_CombatPipTutorial.lua");
+
+
+        log("--------------------CombatPipTutorial.main-----------------\n")
+		MyCompany.Aries.Quest.NPCs.CombatPipTutorial.main(function()
+            
+				NPL.load("(gl)script/apps/Aries/Scene/WorldManager.lua");
+				local WorldManager = commonlib.gettable("MyCompany.Aries.WorldManager");
+
+				-- teleport back from instance world
+				WorldManager:TeleportBack();
+        end);
+	end});
+
+    do return end
+    
+    local bags = {};
+    local i;
+    for i = 1000, 8999 do
+        local gsItem = ItemManager.GetGlobalStoreItemInMemory(i);
+        if(gsItem) then
+            -- 138 combatlevel_requirement
+            local cansell = gsItem.template.cansell;
+            local level_req = gsItem.template.stats[138];
+            local esellprice = gsItem.esellprice;
+            local count = gsItem.count;
+            if(cansell == true and level_req) then
+                if(esellprice ~= (level_req * 50)) then
+                    commonlib.echo({i, esellprice, level_req})
+                end
+                --物品出售价格：等级*50  装饰服装出售价格：500
+            else
+                if(cansell == true and esellprice ~= 500) then
+                    commonlib.echo({i, esellprice, gsItem.template.name})
+                end
+            end
+        end
+    end
+
+    do return end
+    
+    local obj = System.obj.GetObject("selection");
+	local player = ParaScene.GetPlayer();
+	if(obj:IsValid()) then
+		local att = obj:GetAttributeObject();
+		att:SetField("AnimID", 70);
+	end
+
+    do return end
+    
+    MyCompany.Aries.Combat.InitItemSet_All()
+
+    do return end
+
+    log("---------------1\n")
+    ItemManager.MountGemInSocket(1143, 1140, {[1141] = 1}, function(msg)
+        log("---------------1callbackFunc\n")
+        commonlib.echo(msg);
+    end, function(msg)
+        log("---------------1callbackFunc_after_bagrefresh\n")
+        commonlib.echo(msg);
+    end, function()
+        log("---------------1timeout\n")
+    end);
+
+    do return end
+    
+    log("---------------1\n")
+    ItemManager.ItemSetExtendedCost(1143, function(msg)
+        log("---------------1callbackFunc\n")
+        commonlib.echo(msg);
+    end, function(msg)
+        log("---------------1callbackFunc_after_bagrefresh\n")
+        commonlib.echo(msg);
+    end, function()
+        log("---------------1timeout\n")
+    end);
+
+    do return end
+    
+    log("---------------1\n")
+    ItemManager.CraftGem({[1001] = 3, [1002] = 1}, 123, function(msg)
+        log("---------------1callbackFunc\n")
+        commonlib.echo(msg);
+    end);
+
+    do return end
+
+    local msg = { aries_type = "OnMapTeleport", 
+		    position = {20171.689453125, 166.63793945313, 20211.55078125}, 
+            --20171.689453125, 166.63793945313, 20211.55078125
+            camera = {15,0.46454423666,1.3507113456726};
+		    wndName = "map", 
+	    };
+    CommonCtrl.os.hook.Invoke(CommonCtrl.os.hook.HookType.WH_CALLWNDPROCRET, 0, "Aries", msg);
+
+    do return end
+    
+    local i = 1;
+    for i = 1, 30 do
+        local o = ParaScene.GetObject("g_test_shield"..i);
+		o:ToCharacter():MountOn(obj, 19 + i);
+    end
+    
+    NPL.load("(gl)script/apps/Aries/Scene/WorldManager.lua");
+    local WorldManager = commonlib.gettable("MyCompany.Aries.WorldManager");
+	WorldManager:TeleportBack();
+
+    do return end
+
+	local env_timer = commonlib.Timer:new({callbackFunc = function()
+        
+    end});
+	env_timer:Change(0, 2000);
+    
+    do return end
+end
+
+function Test2()
+    
+	ItemManager.DestroyItem(2207, 1, function(msg)
+		LOG.std("", "system","Item", "+++++++ DestroyItem return: +++++++"..LOG.tostring(msg));
+	end);
+
+    do return end
+
+    
+    
+    log("11111cccc\n")
+    local bags = {};
+    local i;
+    for i = 1000, 70000 do
+        local gsItem = ItemManager.GetGlobalStoreItemInMemory(i);
+        if(gsItem) then
+            if(gsItem.template.stats[46]) then
+                commonlib.echo({i, gsItem.assetkey, gsItem.template.stats[46]})
+            end
+        end
+    end
+
+    --echo:{16051,"16051_TransformPill_Elephant",3,}
+    --echo:{16058,"16058_TransformPill_MagicBesom",3,}
+    --echo:{16059,"16059_TransformPill_MagicAwingCarpet",3,}
+    --echo:{16066,"16066_TransformPill_XiYiJinJiaoLong",3,}
+
+    do return end
+    
+	System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {
+		name = "HaqiTown_YYsDream_S2",
+		-- instance = world_name,
+		-- uncomment if one wants to use local instance
+		-- is_local_instance = true, nid = ProfileManager.GetNID()..tostring(math.random(10000, 99999)), 
+		on_finish = function()
+		end,
+	});
+
+    do return end 
+    
+    local gsItem = ItemManager.GetGlobalStoreItemInMemory(1658);
+    if(gsItem) then
+        commonlib.echo(gsItem)
+    end
+
+    do return end
+
+	local id, ismob;
+	for id, ismob in string.gmatch("1,true;2,true;3,true;", "([^;]+),([^;]+)") do
+        commonlib.echo({id, ismob});
+    end
+
+    do return end
+    
+    local exid = 631;
+	ItemManager.ExtendedCost(exid, nil, nil, function(msg)end, function(msg) 
+		log("+++++++ Extended cost "..exid.." return: +++++++\n")
+		commonlib.echo(msg);
+	end);
+
+    do return end
+    
+    local obtain = ItemManager.GetGSObtainCntInTimeSpanInMemory(50321);
+    commonlib.echo(obtain)
+    commonlib.echo(obtain)
+    commonlib.echo(obtain)
+    commonlib.echo(obtain)
+
+    do return end
+    
+
+    do return end
+    
+    MyCompany.Aries.Combat.MsgHandler.OnCombatResultBubble([[46650264~26~17~1.1~4~1001#1002#1003~1]]);
+
+    do return end
+    
+    System.Item.ItemManager.RefreshMyself();
+
+    do return end
+    
+	local rr = math.random(0, 1599);
+	local i = math.floor(rr / 100);
+	local loot_gsid = 26000 + 1 + i * 5;
+
+    commonlib.echo(loot_gsid)
+    
+    do return end
+
+
+    System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {
+        worldpath = "worlds/Instances/FlamingPhoenixIsland_TheGreatTree",
+        instance = "FlamingPhoenixIsland_TheGreatTree",
+		is_local_instance = true,
+        --worldpath = "worlds/MyWorlds/CombatTutorial",
+        nid = "235001", 
+    });
+
+    do return end 
+
+    -- HaqiTown_FireCavern
+
+    System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {
+        worldpath = "worlds/Instances/FlamingPhoenixIsland_TheGreatTree",
+        instance = "FlamingPhoenixIsland_TheGreatTree",
+		is_local_instance = true,
+        --worldpath = "worlds/MyWorlds/CombatTutorial",
+        nid = "235001", 
+    });
+
+    do return end 
+
+
+    System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {
+        worldpath = "worlds/Instances/HaqiTown_FireCavern",
+        instance = "HaqiTown_FireCavern",
+        worldpath = "worlds/Instances/FlamingPhoenixIsland_TheGreatTree",
+        instance = "FlamingPhoenixIsland_TheGreatTree",
+        worldpath = "worlds/Instances/Instance_Test",
+        instance = "Instance_Test",
+        --worldpath = "worlds/MyWorlds/CombatTutorial",
+        nid = "235001", 
+    });
+
+    do return end
+
+    
+
+                    --<img src="Texture/Aries/Item/1248_CommonSuit3.png" style="width:24px;height:24px"/>
+	local anim_type = "plain";
+	local mcml_str = string.format([[
+        <div style="margin-left:270px;margin-top:-90px;">
+            <div style="margin-left:0px;width:300px;height:24px;color:#63d13e;base-font-size:18;font-weight:bold;text-shadow:true" >
+                <div style="float:left;margin-left:-30px;margin-top:-10px;width:32px;height:32px;" >
+                    <img src="Texture/alphadot.png" style="width:24px;height:24px"/>
+                </div>
+                <div style="float:left;padding-left:0px;padding-top:-10px;width:120px;height:24px;color:#d62d2d;base-font-size:14;font-weight:bold;text-shadow:true" >
+                    武器装备
+                </div>
+            </div>
+            <br/>
+            <div style="margin-left:0px;width:300px;height:24px;color:#63d13e;base-font-size:18;font-weight:bold;text-shadow:true" >
+                <div style="float:left;margin-left:-30px;margin-top:-10px;width:32px;height:32px;" >
+                    <img src="Texture/alphadot.png" style="width:24px;height:24px"/>
+                </div>
+                <div style="float:left;padding-left:0px;padding-top:-10px;width:120px;height:24px;color:#d62d2d;base-font-size:14;font-weight:bold;text-shadow:true" >
+                    武器装备
+                </div>
+            </div>
+            <br/>
+            <div style="margin-left:0px;width:300px;height:24px;color:#63d13e;base-font-size:18;font-weight:bold;text-shadow:true" >
+                <div style="float:left;padding-left:-10px;padding-top:-10px;width:120px;height:24px;color:#d62d2d;base-font-size:14;font-weight:bold;text-shadow:true" >
+                    武器装备
+                </div>
+            </div>
+        </div>
+    ]])
+	local sCtrlName = headon_speech.Speek("46650264", mcml_str, 2, false, true);
+	if(sCtrlName) then
+		if(anim_type == "plain") then
+			UIAnimManager.PlayCustomAnimation(2000, function(elapsedTime)
+				local parent = ParaUI.GetUIObject(sCtrlName);
+				if(parent:IsValid()) then
+					parent.translationy = 44 - elapsedTime * 10 / 1000;
+					parent.scalingx = 1.8;
+					parent.scalingy = 1.8;
+					parent:ApplyAnim();
+				end
+			end);
+		elseif(anim_type == "critical") then
+			UIAnimManager.PlayCustomAnimation(2500, function(elapsedTime)
+				local parent = ParaUI.GetUIObject(sCtrlName);
+				if(parent:IsValid()) then
+					parent.translationy = 44 - elapsedTime * 10 / 1000;
+					if(isCritical and elapsedTime < 200) then
+						parent.scalingx = 2.4 - 0.6 * math.abs(elapsedTime - 100) / 100;
+						parent.scalingy = 2.4 - 0.6 * math.abs(elapsedTime - 100) / 100;
+					else
+						parent.scalingx = 1.8;
+						parent.scalingy = 1.8;
+					end
+					parent:ApplyAnim();
+				end
+			end);
+		end
+	end
+    
+    do return end
+
+    --MyCompany.Aries.Combat.MsgHandler.OnGainExp([[23~17~1.3~(46650264,23,17,1.3)~4~(46650264,4)~#~(46650264,#)~config/Aries/Mob/MobTemplate_IronBee.xml#]]);
+    
+    --MyCompany.Aries.Player.AddExp(1000, function() end);
+    --MyCompany.Aries.Player.AddMoney(999, function() end);
+
+    --MyCompany.Aries.Combat.ObjectManager.RefreshBuffs(9991, 1, 0, "1,1");
+    --MyCompany.Aries.Combat.MsgHandler.OnArenaNormalUpdate_by_key_value("arena_1001", "1001,20083.066406,-1.353587,19630.933594,5{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,945,978,22,2,0#3,##fire,]}{[false,46650264,1,281,788,14,1,0###][][][]}{1,0,0,0,2,}")
+    --MyCompany.Aries.Combat.MsgHandler.OnGainExp("6~(46650264,6)~2~(46650264,2)~17114#~(46650264,17114#)");
+    ---MyCompany.Aries.Combat.MsgHandler.OnPlayTurn("1?46650264,<update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,5{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,1,0###]}{[false,46650264,1,788,788,14,1,0###][][][]}{1,0,0,0,1,}><movearrow:1001+5+5><PowerEnhanceBlade_Earth:1001,5,true,50001,5,true,50001,5,0,0#3,#3,#0,#3,####><movearrow:1001+5+1><Charm_AreaGlobalDamageWeakness_Level1_Wood:1001,1,false,46650264+++(true,50001,5,0#0,3,#6,3,####)><update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,1{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,1,0#6,3,##]}{[false,46650264,1,788,788,14,0,0###][][][]}{0,0,0,0,1,}><update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,5{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,1,0#6,3,##]}{[false,46650264,1,788,788,14,0,0###][][][]}{0,0,0,0,1,}>");
+    
+    --MyCompany.Aries.Combat.ObjectManager.RefreshArenaBuffs(9991, {{charms = "1,2,3,4,5,6,1,2,3,4,5,6,", wards = "1,2,3,4,5,6,7,8,9,10,11,12,", overtimes = "fire,fire,fire,fire,fire,fire,fire,fire,fire,fire,fire,fire,"}})
+
+    do return end
+
+    local ObjectManager = MyCompany.Aries.Combat.ObjectManager;
+    ObjectManager.RefreshBuffs(9991, 1, "charm", "11,12,13,14,15,16,11,12,13,14,15,16,");
+    ObjectManager.RefreshBuffs(9991, 1, "ward", "21,22,23,24,25,26,27,28,29,30,31,32,");
+    ObjectManager.RefreshBuffs(9991, 1, "overtime", "fire,ice,storm,life,death,hot,fire,ice,storm,life,death,hot,");
+end
+
+function Test4()
+    log("111\n")
+    MyCompany.Aries.Combat.MsgHandler.OnPlayTurn([[36?46650264,?<update_arena:arena_1080+1080,10750,5.2,20000,2{[true,50165,5,aaa,fire,character/v5/10mobs/HaqiTown/BlazeHairMonster/BlazeHairMonster.x,1,0,215,10,0,0###][true,50166,6,aaa,fire,character/v5/10mobs/HaqiTown/BlazeHairMonster/BlazeHairMonster.x,1,0,215,10,0,0###][true,50167,7,鏆寸唺,ice,character/v5/10mobs/HaqiTown/GreatIceBearLower/GreatIceBearLower.x,1,66,460,15,2,0##23,#][true,50168,8,鑻嶈潎椋炶醇,storm,character/v5/10mobs/HaqiTown/IronBee/IronBee.x,1,0,160,9,0,0###]}{[false,46650264,1,fire,4364,4518,41,0,0##28,28,#][false,14861822,2,storm,742,742,17,2,1###hot,][][]}{0,2,0,0,0,0,2,0,}{0,1,0,0,0,0,0,0,}{}{}{{facing=1,position={y=20005.2,x=10750,z=20000,},loot_id="Global_HaqiTown_TreasureHouse",}}>]]);
+    do return end
+
+    --MyCompany.Aries.Combat.MsgHandler.OnGainExp("6~(46650264,6)~2~(46650264,2)~17114#~(46650264,17114#)");
+    --MyCompany.Aries.Combat.MsgHandler.OnGainExp("8~(172545123,0)(46650264,8)~2~(172545123,2)(46650264,2)~17114#~(172545123,17114#)(46650264,17114#)");
+
+    -- script/apps/Taurus/Desktop/SettingsPage.html
+    --MyCompany.Aries.Combat.MsgHandler.OnPlayTurn("89?46650264,<update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,1{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,2,0###]}{[false,46650264,1,561,788,14,6,0##8,6,9,7,8,8,9,7,#][][][]}{6,0,0,0,2,}><movearrow:1001+1+1><DamageShieldAndThorn_Level2_Earth:1001,1,false,46650264,1,false,46650264,1,0,0#####0,0,8,6,9,7,8,8,9,7,#8,6,8,6,9,7,8,8,9,7,##><update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,1{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,2,0###]}{[false,46650264,1,561,788,14,6,0##8,6,8,6,9,7,8,8,9,7,#][][][]}{6,0,0,0,2,}><movearrow:1001+1+5><SingleAttack_Level2_Metal:1001,5,true,50001,5,false,46650264,1,102,0#####8,6,8,6,9,7,8,8,9,7,#8,6,8,9,7,8,8,9,7,##><update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,5{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,0,0###]}{[false,46650264,1,459,788,14,6,0##8,6,8,9,7,8,8,9,7,#][][][]}{6,0,0,0,0,}><update_value:false,46650264,1,459,788,14,6,0##8,6,8,9,7,8,8,9,7,#><update_arena:arena_1001+1001,20083.066406,-1.353587,19630.933594,1{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.300000,978,978,22,0,0###]}{[false,46650264,1,459,788,14,6,0##8,6,8,9,7,8,8,9,7,#][][][]}{6,0,0,0,0,}>");
+    MyCompany.Aries.Combat.MsgHandler.OnPlayTurn([[14?46650264,<update_arena:arena_1048+1048,19582.89,41.70,19844.38,1{[true,50102,5,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,0,350,15,0,0###][true,50103,6,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,350,350,15,3,0#11,##]}{[false,46650264,1,800,1068,16,3,0##21,21,#hot,][][][]}{3,0,0,0,0,3,}{0,0,0,0,0,0,}><movearrow:1048+1+1><hot:1048,1,false,46650264,90#21,21,><update_arena:arena_1048+1048,19582.89,41.70,19844.38,1{[true,50102,5,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,0,350,15,0,0###][true,50103,6,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,350,350,15,3,0#11,##]}{[false,46650264,1,890,1068,16,3,0##21,21,#][][][]}{3,0,0,0,0,3,}{0,0,0,0,0,0,}><update_value:false,46650264,1,890,1068,16,3,0##21,21,#><fizzle:1048,1,false,46650264,1,true,50103,1,death><movearrow:1048+1+6><Death_SingleAttack_Level3:1048,6,true,50103,6,false,46650264,1,252,0#11,#11,###21,21,#21,21,##><update_arena:arena_1048+1048,19582.89,41.70,19844.38,6{[true,50102,5,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,0,350,15,0,0###][true,50103,6,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,350,350,15,0,0#11,##]}{[false,46650264,1,638,1068,16,3,0##21,21,#][][][]}{3,0,0,0,0,0,}{0,0,0,0,0,0,}><update_value:false,46650264,1,638,1068,16,3,0##21,21,#><update_arena:arena_1048+1048,19582.89,41.70,19844.38,1{[true,50102,5,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,0,350,15,0,0###][true,50103,6,烈火蟹,fire,character/v5/10mobs/HaqiTown/RedCrabLower/RedCrabLower.x,1.50,350,350,15,0,0#11,##]}{[false,46650264,1,638,1068,16,3,0##21,21,#][][][]}{3,0,0,0,0,0,}{0,0,0,0,0,0,}>]]);
+    
+    --commonlib.echo(MyCompany.Aries.Combat.MsgHandler.Get_arena_key_valuedata_pairs()["arena_1001"])
+
+    --MyCompany.Aries.Combat.MsgHandler.MsgProc_combat_client("[Aries][combat_to_client]ArenaUpdate_EnterCombat:arena_1001+1001,20083.07,-1.35,19630.93,0{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.30,978,978,22,0,0###]}{[][][][]}{0,0,0,0,0,}+arena_inactiveplayer_1001+[false,46650264,1,1060,1060,21,0,0###][][][]");
+
+    --MyCompany.Aries.Combat.MsgHandler.OnPlayTurn("PlayTurn:13?78975924,50333182,<update_arena:arena_1003+1003,20050.42,-1.86,19601.73,5{[true,50004,5,沙漠毒蝎,earth,character/v5/10mobs/HaqiTown/SandScorpion/SandScorpion.x,1.00,488,1442,24,3,0#6,##]}{[false,78975924,1,336,713,12,1,0###][false,50333182,2,456,603,9,1,0##9,#][][]}{1,1,0,0,3,}><movearrow:1003+5+5><SingleAttack_Level2_Metal:1003,5,true,50004,5,false,50333182,2,159,0#6,####9,#9,##><update_arena:arena_1003+1003,20050.42,-1.86,19601.73,5{[true,50004,5,沙漠毒蝎,earth,character/v5/10mobs/HaqiTown/SandScorpion/SandScorpion.x,1.00,488,1442,24,1,0###]}{[false,78975924,1,336,713,12,1,0###][false,50333182,2,297,603,9,1,0##9,#][][]}{1,1,0,0,1,}><update_value:false,50333182,2,297,603,9,1,0##9,#><movearrow:1003+5+1><fizzle:1003,1,false,78975924,1,true,/,1,wood><movearrow:1003+1+2><AreaAttack_Level1_Wood:1003,2,false,50333182+++(true,50004,5,77######)><update_value:true,50004,5,沙漠毒蝎,earth,character/v5/10mobs/HaqiTown/SandScorpion/SandScorpion.x,1.00,411,1442,24,1,0###><update_arena:arena_1003+1003,20050.42,-1.86,19601.73,2{[true,50004,5,沙漠毒蝎,earth,character/v5/10mobs/HaqiTown/SandScorpion/SandScorpion.x,1.00,411,1442,24,1,0###]}{[false,78975924,1,336,713,12,1,0###][false,50333182,2,297,603,9,0,0##9,#][][]}{1,0,0,0,1,}><update_arena:arena_1003+1003,20050.42,-1.86,19601.73,5{[true,50004,5,沙漠毒蝎,earth,character/v5/10mobs/HaqiTown/SandScorpion/SandScorpion.x,1.00,411,1442,24,1,0###]}{[false,78975924,1,336,713,12,1,0###][false,50333182,2,297,603,9,0,0##9,#][][]}{1,0,0,0,1,}>");
+    --MyCompany.Aries.Combat.MsgHandler.OnArenaNormalUpdate_by_inactiveplayer_key_value("arena_inactiveplayer_1001", "[false,46650264,1,1060,1060,21,1,0###][][][]");
+    --MyCompany.Aries.Combat.MsgHandler.OnArenaNormalUpdate_by_key_value("arena_1001", "1001,20083.07,-1.35,19630.93,1{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.30,978,978,22,1,0###]}{[][][][]}{1,0,0,0,1,}");
+
+    --MyCompany.Aries.Combat.MsgHandler.OnArenaNormalUpdate_by_key_value("arena_1001", "1001,20083.07,-1.35,19630.93,5{[true,50001,5,aaa,metal,character/v5/10mobs/HaqiTown/IronShell/IronShell.x,1.30,978,978,22,1,0###]}{[false,46650264,1,1060,1060,21,1,0###][][][]}{1,0,0,0,1,}");
+
+    --MyCompany.Aries.Desktop.QuestArea.BounceNormalQuestIcon("script/apps/Aries/NPCs/MagicSchool/30408_HeroDragonQuest_panel.html", "bounce");
+    --MyCompany.Aries.Desktop.QuestArea.BounceNormalQuestIcon("script/apps/Aries/NPCs/MagicSchool/30408_HeroDragonQuest_panel.html", "stop");
+    
+	--NPL.load("(gl)script/kids/3DMapSystemItem/PowerItemManager.lua");
+    --local nid = 46650264;
+    --Map3DSystem.Item.PowerItemManager.GetUserAndDragonInfo(nid, function(msg)
+    --    log("-------------- PowerItemManager.SyncGlobalStore \n")
+    --    commonlib.echo(msg)
+    --end);
+
+    --NPL.load("(gl)script/kids/3DMapSystemApp/worlds/TeleportPortal.lua");
+    --Map3DSystem.App.worlds.TeleportPortal.CreatePortalPair(2);
+end
+
+function Test5()
+    
+	log("try aaaaaaaaaaaaaaaaaaa ItemManager.Inited\n")
+	NPL.load("(gl)script/kids/3DMapSystemItem/PowerItemManager.lua", true);
+    local nid = 46650264;
+	Map3DSystem.Item.PowerItemManager.SyncUserItems(nid, function(msg)
+		log("returned aaaaaaaaaaaaaaaaaaa GetItemsInBag\n")
+		commonlib.echo(msg);
+		Map3DSystem.Item.PowerItemManager.Init();
+	end);
+
+    --MyCompany.Aries.Player.AddExp(10000, function() end);
+    --MyCompany.Aries.Player.AddMoney(999, function() end);
+end
+
+function Test6()
+	--commonlib.echo(MyCompany.Aries.Combat.GetStats("fire", "damage"))
+    --commonlib.echo(MyCompany.Aries.Combat.GetEquipCards());
+
+    NPL.load("(gl)script/apps/Aries/NPCs/Combat/39002_CombatTutorial.lua", true);
+    MyCompany.Aries.Quest.NPCs.CombatTutorial.main();
+
+    do return end
+
+    --System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {name="FlamingPhoenixIsland"});
+    System.App.Commands.Call(System.App.Commands.GetDefaultCommand("LoadWorld"), {name="FrostRoarIsland"});
+end
+
+function Test7()
+    --NPL.load("(gl)script/apps/Aries/Login/Tutorial/CombatTutorialMain.lua");
+    --MyCompany.Aries.Tutorial.CombatTutorialMain.Start(function(msg)  end);
+    
+    do return end
+
+    ParaAudio.SetVolume(0);
+
+    
+	local gsItem = System.Item.ItemManager.GetGlobalStoreItemInMemory(19001);
+	if(gsItem) then
+		log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n")
+		commonlib.echo(gsItem);
+	end
+
+    do return end
+
+    local gsid = 22101;
+    for gsid = 22101, 22249 do
+		System.Item.ItemManager.PurchaseItem(gsid, 1, function(msg) 
+		end, function(msg) end, nil, "none", nil, nil, timeout, timeout_callback);
+    end
+end
+
+
+function Test8()
+    
+	local path = "config/Aries/fdsa.txt";
+	local file = ParaIO.open(path, "r");
+	if(file:IsValid() == true) then
+		-- read a line 
+		local line = file:readline();
+		while(line) do
+            
+            local asset = string.match(line, "AssetRequested (.+)$");
+            if(asset) then
+                if(string.match(asset, "^(.+)%.dds$")) then
+    log([[<asset type="texture" key="]]..asset..[["/>
+]]);
+                elseif(string.match(asset, "^(.+)%.x$")) then
+                    if(string.find(string.lower(asset), "character") == 1) then
+    log([[<asset type="parax" key="]]..asset..[["/>
+]]);
+                        
+                    elseif(string.find(string.lower(asset), "model") == 1) then
+    log([[<asset type="mesh" key="]]..asset..[["/>
+]]);
+                        
+                    end
+                end
+            end
+
+
+
+			line = file:readline();
+		end
+		file:close();
+	end
+end
+
+function Test7fdaf()
+    
+	log([[<?xml version="1.0" encoding="utf-8"?>]]);
+	log("\n")
+	log([[<items>]]);
+	log("\n")
+	local i;
+	for i = 22101, 22249 do
+		local gsItem = System.Item.ItemManager.GetGlobalStoreItemInMemory(i);
+		if(gsItem) then
+			log(commonlib.Encoding.Utf8ToDefault(string.format([[  <item><id>%d</id><label>%s</label><desc></desc></item>]], i, gsItem.template.name)));
+			log("\n");
+		end
+	end
+	log([[</items>]]);
+	log("\n")
+	log("\n")
+end
+
+function DoFollow()
+	local item = ItemManager.GetMyMountPetItem();
+	if(not item)then return end
+    item:FollowMe();
+end
+
+function DoRide()
+	local item = ItemManager.GetMyMountPetItem();
+	if(not item)then return end
+	item:MountMe();
+end
+
+
+function GenCharactersDB()
+    
+	local databaseFile = "Database/characters.db";
+    
+	local db = sqlite3.open(databaseFile);
+
+    local gsid;
+
+    -- right hand
+    if(true) then
+        local gsids = {1823, 1831, 1841, 1849, 1858};
+        for _, gsid in pairs(gsids) do
+        --for gsid = 1807, 1811 do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+	            db:exec(string.format("INSERT INTO ItemDatabase VALUES (%d, 0, 0, %d, %d, '%s');", 
+			            gsid, 21, gsid, gsItem.assetkey));
+                        
+                local anim;
+                if(gsid >= 1747 and gsid <= 1751) then
+                    anim = ".anim";
+                elseif(gsid >= 1747 and gsid <= 1751) then
+                    anim = ".anim";
+                    --anim = "";
+                end
+                anim = ".anim";
+
+	            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'w', %d, %d, 0, 0, 0, 0, 0, 0, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+			            gsid, gsItem.assetkey..anim..".x", "", gsItem.assetkey..".dds", "", 0, 0, "", "", "", "", "", "", "", ""));
+            end
+        end
+    end
+
+    -- hat
+    if(true) then
+        local gsids = {1822, 1833, 1840, 1848, 1856};
+        for _, gsid in pairs(gsids) do
+        --for gsid = 201, 202 do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+	            db:exec(string.format("INSERT INTO ItemDatabase VALUES (%d, 0, 0, %d, %d, '%s');", 
+			            gsid, 1, gsid, gsItem.assetkey));
+                    
+                -- GeosetVisID1: 0 with ear, 1 without ear
+                local anim;
+                local GeosetVisID1;
+                if(gsid >= 1789 and gsid <= 1789) then
+                    anim = ".anim";
+                    GeosetVisID1 = 1;
+                elseif(gsid >= 1792 and gsid <= 1792) then
+                    anim = ".anim";
+                    GeosetVisID1 = 1;
+                end
+                anim = ".anim";
+                GeosetVisID1 = 1;
+
+	            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'CHat', %d, %d, 0, 0, 0, 0, %d, 0, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+			            gsid, gsItem.assetkey..anim..".x", "", gsItem.assetkey..".dds", "", 0, 0, GeosetVisID1, "", "", "", "", "", "", "", ""));
+                        --gsid, gsItem.assetkey..anim..".x", "", gsItem.assetkey..".dds", "", 0, 0, GeosetVisID1, "", "", "", "", "", "", "", ""));
+            end
+        end
+    end
+    
+    -- suit
+    if(true) then
+        local gsids = {1819, 1827, 1837, 1847, 1855};
+        for _, gsid in pairs(gsids) do
+        --for gsid = 203, 204 do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+	            db:exec(string.format("INSERT INTO ItemDatabase VALUES (%d, 0, 0, %d, %d, '%s');", 
+			            gsid, 28, gsid, gsItem.assetkey));
+    
+                local style;
+                local style_p;
+                if(gsid >= 1790 and gsid <= 1790) then
+                    style = "01";
+                    style_p = "01";
+                elseif(gsid >= 1793 and gsid <= 1793) then
+                    style = "01";
+                    style_p = "01";
+                end
+                style = "08";
+                style_p = "01";
+
+                if(style) then
+		            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'CShirt', %d, %d, %d, %d, %d, %d, %d, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+				            gsid, "", "", gsItem.assetkey.."_"..style.."_CS.dds", gsItem.assetkey.."_"..style.."_CS_O.dds", tonumber(style)-1, 0, 0, -1, tonumber(style_p), 1, -1, -1, "", "", "", "", "", "", "", ""));
+                end
+            end
+        end
+    end
+    
+    -- boot
+    if(true) then
+        local gsids = {1821, 1834, 1835, 1843, 1853};
+        for _, gsid in pairs(gsids) do
+        --for gsid = 205, 205 do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+	            db:exec(string.format("INSERT INTO ItemDatabase VALUES (%d, 0, 0, %d, %d, '%s');", 
+			            gsid, 31, gsid, gsItem.assetkey));
+
+                local style;
+                if(gsid >= 1791 and gsid <= 1791) then
+                    style = 1;
+                elseif(gsid >= 1794 and gsid <= 1794) then
+                    style = 1;
+                end
+
+                style = 9;
+
+                if(style) then
+		            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'CFoot', %d, %d, %d, %d, %d, %d, %d, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+				            gsid, "", "", gsItem.assetkey.."_0"..style.."_CF.dds", "", style-1, 0, 0, -1, 1, 1, -1, -1, "", "", "", "", "", "", "", ""));
+                end
+            end
+        end
+    end
+    
+    -- wing
+    if(true) then
+        local gsids = {1820, 1832, 1839, 1844, 1851};
+        for _, gsid in pairs(gsids) do
+        --for gsid = 1812, 1812 do
+            local gsItem = ItemManager.GetGlobalStoreItemInMemory(gsid);
+            if(gsItem) then
+	            db:exec(string.format("INSERT INTO ItemDatabase VALUES (%d, 0, 0, %d, %d, '%s');", 
+			            gsid, 33, gsid, gsItem.assetkey));
+
+                local style;
+                if(gsid >= 206 and gsid <= 206) then
+                    style = 2;
+                elseif(gsid >= 1735 and gsid <= 1739) then
+                    style = 2;
+                elseif(gsid >= 1735 and gsid <= 1739) then
+                    style = 2;
+                end
+                style = 2;
+            
+                if(false) then
+		            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'CWing', %d, %d, %d, %d, %d, %d, %d, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+				            gsid, "", "", gsItem.assetkey.."_0"..style.."_CW.dds", "", style-1, 0, 0, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", ""));
+                end
+                if(style) then
+		            db:exec(string.format("INSERT INTO ItemDisplayDB VALUES (%d, '%s', '%s', '%s', '%s', 'CWing', %d, %d, %d, %d, %d, %d, %d, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', 0);", 
+				            gsid, gsItem.assetkey..".anim.x", "", gsItem.assetkey..".dds", "", style-1, 0, 0, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", ""));
+                end
+            end
+        end
+    end
+
+	-- close database
+	db:close();
+end
+
+local arena_and_mobs_config_file_pairs_xmlroot = {};
+
+local mobkey_dumpedlootline_mapping = {};
+
+function DumpLootLines()
+    
+    NPL.load("(gl)script/apps/Aries/Combat/ServerObject/combat_server.lua");
+    
+    local Mob = commonlib.gettable("MyCompany.Aries.Combat_Server.Mob");
+    local Player = commonlib.gettable("MyCompany.Aries.Combat_Server.Player");
+    local AI_Module = commonlib.gettable("MyCompany.Aries.Combat_Server.AI_Module");
+    local Card = commonlib.gettable("MyCompany.Aries.Combat_Server.Card");
+    local Arena = commonlib.gettable("MyCompany.Aries.Combat_Server.Arena");
+    local Msg_Handler_server = commonlib.gettable("MyCompany.Aries.Combat_Server.Msg_Handler_server");
+    
+    NPL.load("(gl)script/kids/3DMapSystemItem/PowerItemManager.lua");
+    local PowerItemManager = commonlib.gettable("Map3DSystem.Item.PowerItemManager");
+    Map3DSystem.Item.PowerItemManager = Map3DSystem.Item.ItemManager;
+
+    local function DumpLootLinesPerInstance(config_file)
+	    if(not config_file) then
+		    commonlib.applog("error: server loaded arena and mob with nil config file: %s", tostring(config_file));
+		    return;
+	    end
+	    local xmlRoot = arena_and_mobs_config_file_pairs_xmlroot[config_file];
+	    if(not xmlRoot) then
+		    xmlRoot = ParaXML.LuaXML_ParseFile(config_file);
+	    end
+	    if(not xmlRoot) then
+		    commonlib.log("error: failed loading arena and mob config file: %s\n", config_file);
+		    return;
+	    end
+	    arena_and_mobs_config_file_pairs_xmlroot[config_file] = xmlRoot;
+
+        mobkey_dumpedlootline_mapping = {};
+        log("\n\n\n\n"..config_file.."\n")
+	    
+	    -- arena ids
+	    local arena_ids = {};
+	    -- infile id and arena id mapping
+	    local file_id_arena_id_mapping = {};
+	    -- create each arena object and associated mobs
+	    local each_arena;
+	    for each_arena in commonlib.XPath.eachNode(xmlRoot, "/arenas/arena") do
+		    local position = each_arena.attr.position;
+		    local ai_module = each_arena.attr.ai_module;
+		    local door_lock = each_arena.attr.door_lock;
+		    local id = each_arena.attr.id; -- this is not the real arena id, just the id in this arena mobs file
+		    local respawn_interval = each_arena.attr.respawn_interval or 30000; -- default 30 seconds
+		    if(position and ai_module and respawn_interval and id) then
+			    respawn_interval = tonumber(respawn_interval);
+			    local x, y, z = string.match(position, "(.+),(.+),(.+)");
+			    if(x and y and z) then
+				    x = tonumber(x);
+				    y = tonumber(y);
+				    z = tonumber(z);
+			    end
+
+			    -- create arena object
+			    local arena = Arena:new({
+				    position = {x = x, y = y, z = z},
+				    ai_module = module,
+				    respawn_interval = respawn_interval,
+				    door_lock = door_lock,
+				    world_config_file = config_file,
+				    combat_server_uid = combat_server_uid,
+				    isinstance = isinstance,
+				    gridnode = gridnode,
+			    });
+			    -- create mobs
+			    local mob;
+			    for mob in commonlib.XPath.eachNode(each_arena, "/mob") do
+				    if(mob.attr.mob_template and mob.attr.mob_template ~= "" and mob.attr.mob_template ~= "nil") then
+					    -- create mob object
+					    local mob_obj = Mob:new(mob);
+					    if(mob_obj) then
+						    mob_obj.side = "far";
+						    arena:AddMob_pve(mob_obj);
+
+						    if(not mobkey_dumpedlootline_mapping[mob_obj:GetTemplateKey()]) then
+							    mobkey_dumpedlootline_mapping[mob_obj:GetTemplateKey()] = true;
+							    mob_obj:DumpLootLineToLog();
+						    end
+					    end
+				    end
+			    end
+            end
+        end
+    end
+
+    
+    DumpLootLinesPerInstance("config/Aries/WorldData/61HaqiTown.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/AncientEgyptIsland.Arenas_Mobs.xml")
+
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_TheGreatTree.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S2.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S3.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_LightHouse_S4.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_YYsDream_S1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_YYsDream_S2.Arenas_Mobs.xml")
+    
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_HaqiTown_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_FlamingPhoenixIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_FrostRoarIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/Global_AncientEgyptIsland_TreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_GoldenOgreTreasureHouse.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_110527_1.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_110527_2.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FlamingPhoenixIsland_TheGreatTree_110610_3.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland_IceBearLair.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/HaqiTown_FireCavern_Hero.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/FrostRoarIsland_IceKingCave.Arenas_Mobs.xml")
+    DumpLootLinesPerInstance("config/Aries/WorldData/AncientEgyptIsland_LostTemple.Arenas_Mobs.xml")
+end
+
+function BatchReplaceAssetModel()
+    
+    local replace = {
+        "model/05plants/v5/01tree/CrossedTree/CrossedTree_v.x",
+        "model/05plants/v5/02grass/DogTailGrass/DogTailGrass_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass1/LimeGreenLowGrass1_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass1/LimeGreenLowGrass1_all_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass2/LimeGreenLowGrass2_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass2/LimeGreenLowGrass2_all_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass3/LimeGreenLowGrass3_v.x",
+        "model/05plants/v5/02grass/LimeGreenLowGrass3/LimeGreenLowGrass3_all_v.x",
+        "model/05plants/v5/02grass/LowSpinyGrass/LowSpinyGrass02_v.x",
+        "model/05plants/v5/02grass/LowSpinyGrass/LowSpinyGrass01_v.x",
+        "model/05plants/v5/02grass/LowSpinyGrass/LowSpinyGrass_v.x",
+        "model/05plants/v5/02grass/PineAppleGrass/PineAppleGrass_02_v.x",
+        "model/05plants/v5/02grass/PineAppleGrass/PineAppleGrass_01_v.x",
+        "model/05plants/v5/02grass/ThicketGrass/ThicketGrass_04_v.x",
+        "model/05plants/v5/02grass/ThicketGrass/ThicketGrass_03_v.x",
+        "model/05plants/v5/02grass/ThicketGrass/ThicketGrass_02_v.x",
+        "model/05plants/v5/02grass/ThicketGrass/ThicketGrass_01_v.x",
+        "model/05plants/v5/02grass/WaterMelonGrow/WaterMelonYezi_x1_v.x",
+        "model/05plants/v5/02grass/WaterMelonGrow/WaterMelonYezi_x3_v.x",
+        "model/05plants/v5/02grass/WaterMelonGrow/WaterMelonYezi_x5_v.x",
+        "model/05plants/v5/06flower/BrownTriangleFlower/BrownTriangleFlower_v.x",
+        "model/05plants/v5/06flower/LanternFlower/LanternFlower_all_v.x",
+        "model/05plants/v5/06flower/LanternFlower/LanternFlower_v.x",
+        "model/05plants/v5/06flower/Lotus/LotusLeaf_v.x",
+        "model/05plants/v5/06flower/PinkLily/PinkLily_v.x",
+        "model/05plants/v5/06flower/PinkLily/PinkLily_all_v.x",
+        "model/05plants/v5/06flower/Quatrefoil/Quatrefoil_01_v.x",
+        "model/05plants/v5/06flower/Quatrefoil/Quatrefoil_02_v.x",
+        "model/05plants/v5/06flower/Quatrefoil/Quatrefoil_03_v.x",
+        "model/05plants/v5/06flower/Quatrefoil/Quatrefoil_04_v.x",
+    };
+    
+	local fromX, fromY, fromZ = ParaScene.GetPlayer():GetPosition();
+
+    local objlist = {};
+
+	local nCount = ParaScene.GetObjectsBySphere(objlist, fromX, fromY, fromZ, 10000, "anyobject");
+	
+    local objparams = {};
+	local k = 1;
+	for k = 1, nCount do
+		local obj = objlist[k];
+        local asset = obj:GetPrimaryAsset():GetKeyName();
+        local _, a;
+        for _, a in ipairs(replace) do
+            local original = string.gsub(a, "_v.x", ".x");
+            if(string.lower(asset) == string.lower(original)) then
+                local param = ObjEditor.GetObjectParams(obj, {});
+                -- destroy
+                ParaScene.Delete(obj);
+                -- recreate
+                param.AssetFile = a;
+                local oj = ObjEditor.CreateObjectByParams(param)
+                ParaScene.Attach(oj)
+            end
+        end
+	end
+end
+
+RadioCheck = false;
+
+--fire_dmg = Combat.GetStats("fire", "damage")
+fire_dmg = Combat.GetStats("fire", "damage", 46650264)
+hp_pts = Combat.GetUpdateMaxHP(nil, 46650264)
+power_pips = Combat.GetPowerPipChance(nil, 46650264)
+
+fire_dmg = Combat.GetStats("fire", "damage", 203757276)
+hp_pts = Combat.GetUpdateMaxHP(nil, 203757276)
+power_pips = Combat.GetPowerPipChance(nil, 203757276)
+
+
+commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory(203757276))
+commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory(203757276))
+commonlib.echo(System.App.profiles.ProfileManager.GetUserInfoInMemory(203757276))
+
+commonlib.echo(math.ceil((1200 - 400) * (10 - 1) / 49 + 400))
+commonlib.echo(math.ceil((1500 - 415) * (10 - 1) / 49 + 400))
+
+asset_table = {
+    name = "highlight_dragonpark",
+    --AssetFile="character/v5/09effect/Common/GemMergeProcess_effect.x",
+    AssetFile="character/v5/01human/AuntAngel/AuntAngel.x",
+    
+	IsCharacter = true,
+    x=0,y=0,z=0,
+};
+
+
+]]></script>
+<div style="width:800px;height:448px;margin:0px;background:url();">
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test1()" text="测试1" name='Test1'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test2()" text="测试2" name='Test2'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test3()" text="测试3" name='Test3'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test4()" text="测试4" name='Test4'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test5()" text="测试5" name='Test5'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test6()" text="测试6" name='Test6'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test7()" text="测试7" name='Test7'/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="Test8()" text="测试8" name='Test8'/>
+    <br/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="BatchReplaceAssetModel()" text="替换" name='Test4' enabled="<%=RadioCheck%>"/>
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="GenCharactersDB()" text="characters.db" name='Test43' />
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="DumpLootLines()" text="DumpLootLines" name='DumpLootLines' />
+    
+    
+    
+    <pe:item-shortcut shortcut_id="1" style="width:64px;height:64px"/>
+    <pe:item-shortcut shortcut_id="2" style="width:64px;height:64px"/>
+    <br/>
+    <!--<pe:slot bag="0" position="4" zorder=2 style = "width:30px;height:30px;" HideVIPTag="true"/>-->
+    <pe:slot guid='1140' nid='46650264' style="width:64px;height:64px;" HideVIPTag="true"/>
+    <pe:slot guid="1061" nid='46650264' style="width:64px;height:64px;" HideVIPTag="true"/>
+    <pe:slot bag="0" position="5" nid='172545123' style="width:64px;height:64px;" HideVIPTag="true"/>
+    <%=fire_dmg%>
+    <%=hp_pts%>
+    <%=power_pips%>
+    <br/>
+    <pe:item gsid='201' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1009' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1658' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='12007' style="width:64px;height:64px" showdebugdesc="true"/>
+    
+    <pe:item gsid='1718' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1725' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1732' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1751' style="width:64px;height:64px" showdebugdesc="true"/>
+
+    <pe:item gsid='1735' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='12010' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='16072' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='16073' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1773' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1774' style="width:64px;height:64px" showdebugdesc="true"/>
+    
+    <br/>
+    <pe:item gsid='1345' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1357' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='1369' style="width:64px;height:64px" showdebugdesc="true"/>
+    <br/>
+
+    <pe:item gsid='1273' style="width:64px;height:64px" showdebugdesc="true"/>
+    
+    <pe:item gsid='17140' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='17132' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='12014' style="width:64px;height:64px" showdebugdesc="true"/>
+    
+    <br/>
+    
+    <pe:item gsid='22319' style="width:64px;height:64px" showdebugdesc="true"/>
+    
+    <pe:item gsid='24001' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='24001' style="width:64px;height:64px" showdebugdesc="true"/>
+    <pe:item gsid='24001' style="width:64px;height:64px" showdebugdesc="true"/>
+    <div style="float:left;width:24px;height:24px" />
+    <pe:item gsid='24001' style="width:64px;height:64px" showdebugdesc="true"/>
+    <div style="float:left;width:24px;height:24px" />
+    <pe:item gsid='24001' style="width:48px;height:48px" showdebugdesc="true"/>
+    <div style="float:left;width:24px;height:24px" />
+    <pe:item gsid='24001' style="width:32px;height:32px" showdebugdesc="true"/>
+    <div style="float:left;width:24px;height:24px" />
+    <pe:item gsid='10128' style="width:64px;height:64px" showdebugdesc="true"/>
+    <br/>
+
+    <!--<pe:player nid="46650264" name="Ariesfdsaf" miniscenegraphname="fasef" style="width:256px;height:256px;" IsInteractive="false"/>-->
+    <!--<pe:player nid="46650264" name="AriesPlayer" zorder="3" miniscenegraphname="AvatarMyselfTabCharacter" style="width:256px;height:256px;" IsInteractive="false"/>-->
+    
+    <div style="width:256px;height:256px;background:Texture/blackdot.dds">
+        <pe:canvas3d name="merge_gem_test" style="width:256px;height:256px;" DefaultRotY="-1.57" DefaultCameraObjectDist = "7" LookAtHeight="10" DefaultLiftupAngle="1.57" RenderTargetSize="512" miniscenegraphname='haqitownmap' value='<%=commonlib.serialize(Eval("asset_table"))%>'/>
+    </div>
+    
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="DoRide()" text="驾驭" name='Test43342' />
+    <input type="button" zorder="1" style="width:96px;height:32px;" onclick="DoFollow()" text="跟随" name='Tes433132' />
+    <br/>
+    
+</div>
+</pe:mcml> 
+</body>
+</html>

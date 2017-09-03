@@ -1,0 +1,151 @@
+﻿<!-- "script/apps/Aries/Pipeline/PurChaseMagicBean.html" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Purchase MagicBean, by Spring, 2010/12/10</title>
+</head>
+<body>
+<pe:mcml>
+<script type="text/npl" src="PurChaseMagicBean.lua" refresh="true"><![CDATA[
+local pageCtrl = document:GetPageCtrl();
+local ItemPage = MyCompany.Aries.Inventory.PurChaseMagicBean;
+ItemPage.OnInit();
+
+gsid=984;
+name="魔豆";
+
+local ItemManager = System.Item.ItemManager;
+
+function GetBuyDesc()
+    local count = 300;
+    count = pageCtrl:GetValue("count", count);
+    local s = string.format("%d个魔豆需要%d米币，你确认要购买吗？",count,count*0.1);
+    return s;
+end
+defaultDesc = GetBuyDesc();
+
+function OnOK()
+    local count = pageCtrl:GetValue("count");
+    count = tonumber(count);
+    local passwd = pageCtrl:GetValue("passwd");
+    local tonid=System.App.profiles.ProfileManager.GetNID();
+	local errormsg={
+		[424]="本次支付失败！你已经购买了太多的魔豆！",
+		[411]="本次支付失败！你的米币不够哦，快去充值吧！",
+		[439]="本次支付失败！你没有米币帐户哦，快去开通充值吧！",
+		[440]="本次支付失败！你的米币帐户没有激活哦，快去激活吧！",
+		[441]="本次支付失败！你这个月已经花了太多米币了，下个月再买吧！好孩子要节省哦！",
+		[442]="本次支付失败！你这次花的米币太多了，减点数量吧！",
+		[500]="本次支付失败！网络原因导致购买失败，请稍候再试！",
+		[499]="本次支付失败！请重试一次！",
+		[420]="本次支付失败！支付密码错误，请重试一次！",
+		[497]="本次支付失败！请重试一次！",
+		[419]="本次支付失败！请重试一次！",			    	
+		}
+
+    if (string.len(passwd)>32) then
+        local s="你输入的支付密码太长了，请重新输入！"
+	    _guihelper.Custom_MessageBox(s,function(result)			
+	        end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+	else
+        if (string.len(passwd)==0) then
+            local s="请先输入支付密码，如果你还没有支付密码，请先设置哦！"
+		    _guihelper.Custom_MessageBox(s,function(result)
+				    if(result == _guihelper.DialogResult.No)then		
+                        ParaGlobal.ShellExecute("open", "iexplore.exe", "http://pay.61.com/account/pwd", "", 1);
+				    end
+		    end,_guihelper.MessageBoxButtons.YesNo,{yes = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49", no = "Texture/Aries/Desktop/CombatCharacterFrame/MagicStar/paypasswd_set.png; 0 0 153 49"},12);
+        else
+            if(count and count >= 10 and count <= 2000) then
+	            ItemManager.BuyWithRMB(tonid, gsid, count, passwd, function(msg)
+		            if(msg) then
+			            log("+++++++Purchase energyStone return: #"..tostring(gsid).." count: "..tostring(count).." +++++++\n")
+			            commonlib.echo(msg);
+			            if (msg.issuccess) then
+                            local s=string.format("<div style='margin-left:15px;margin-top:20px;text-align:center'>你已成功购买 %d 个魔豆!快快用它去商城买你喜欢的东西吧！</div>",count);
+	                        _guihelper.Custom_MessageBox(s,function(result)	
+	                            end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+                            MyCompany.Aries.Desktop.Dock.OnPurchaseNotification(gsid, count);
+                            ItemPage.StopTimer();
+                            pageCtrl:CloseWindow();
+			            else                       
+                            local s=errormsg[msg.errorcode];
+                            if (msg.errorcode==411 or msg.errorcode==439 or msg.errorcode==440) then
+		                        _guihelper.Custom_MessageBox(s,function(result)
+				                        if(result == _guihelper.DialogResult.No)then		
+                                            ParaGlobal.ShellExecute("open", "iexplore.exe", "http://pay.61.com/buy/paytype?type=cardpay", "", 1);
+				                        end
+		                        end,_guihelper.MessageBoxButtons.YesNo,{yes = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49", no = "Texture/Aries/Desktop/CombatCharacterFrame/MagicStar/getEmoney_btn_32bits.png; 0 0 153 49"},12);
+                                ItemPage.StopTimer();
+                                pageCtrl:CloseWindow();
+                            else
+                                _guihelper.Custom_MessageBox(s,function(result)			
+	                                end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+                                return;
+                            end;
+			            end;
+		            end
+	            end, 10000, function () 
+                    -- 如果超时，则返回 500 错误
+                    local s=errormsg[500];
+                    _guihelper.Custom_MessageBox(s,function(result)			
+	                    end,_guihelper.MessageBoxButtons.OK,{ok = "Texture/Aries/Common/IKnow_32bits.png; 0 0 153 49"},12);
+                    return;
+                end);
+            end
+        end
+    end
+end
+
+function pageCtrl.OnClose()
+    ItemPage.StopTimer();
+end
+
+ItemPage.StartTimer(pageCtrl.name, gsid);
+
+function OnCancel()
+    ItemPage.StopTimer();
+    pageCtrl:CloseWindow();
+end
+
+
+]]></script>
+<div style="width:560px;height:320px;">
+    <div style="width:560px;height:280px;padding:16px;background:url(Texture/Aries/Inventory/PurchaseItem/frame_bg_32bits.png#0 0 55 336:19 159 20 120)">
+        <div style="width:522px;height:225px;background:url(Texture/Aries/Inventory/PurchaseItem/content_bg_32bits.png#0 0 256 240:233 20 22 20)">
+            <div style="width:411px;height:120px;">
+                <div style="margin-left:20px;margin-top:20px;float:right;padding-left:10px;padding-top:10px;width:160px;height:120px;margin:21px;background:url(Texture/Aries/Inventory/PurchaseItem/Item_bg_32bits.png#0 0 8 135:2 68 3 65)">
+                    <pe:item gsid='<%=Eval("gsid")%>' style="margin-left:40px;margin-top:20px;width:64px;height:64px" isclickable="false"/>
+                </div>
+                <div style="margin-left:65px;float:right;margin-top:20px;padding-left:-124px;">
+                    <div style="margin-left:48px;color:#243b5d">请选择购买魔豆的数量</div>
+                    
+                    <div style="float:right;padding-left:50px;padding-top:8px;width:500px;height:40px;color:#243b5d;font-size:12;background:">
+                    		<input type="radio" name="count" value="10" /> 10 魔豆
+                    		<input type="radio" name="count" value="100" /> 100 魔豆
+                    		<input type="radio" name="count" value="300" checked="true" /> 300 魔豆
+                    		<input type="radio" name="count" value="1000" /> 1000 魔豆                        
+                    </div>
+                    
+                    <br/>
+                    <div style="margin-left:60px;margin-top:5px;color:#243b5d">请输入米币帐户支付密码</div>
+                    <div style="margin-left:68px;float:right;padding-left:10px;padding-top:8px;width:280px;height:36px;background:url(Texture/Aries/Inventory/PurchaseItem/count_input_32bits.png#0 0 119 40:12 12 12 12)">
+                        <input type="text" name="passwd" PasswordChar="*" value="" style="width:280px;height:26px;background:;"/>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div style="margin-left:190px;margin-top:42px;color:#011132">
+                <label name="buydesc" value='你确认要购买吗？'/>
+            </div>
+        </div>
+    </div>
+    <div style="width:560px;height:48px;margin-top:-40px;">
+        <input type="button" style="margin-left:100px;width:154px;height:48px;background:url(Texture/Aries/Inventory/PurchaseItem/buy_btn_32bits.png#0 0 154 48)" onclick="OnOK()"/>
+        <input type="button" style="margin-left:60px;width:154px;height:48px;background:url(Texture/Aries/Inventory/PurchaseItem/cancel_btn_32bits.png#0 0 154 48)" onclick="OnCancel()"/>
+    </div>
+</div>
+</pe:mcml> 
+</body>
+</html>

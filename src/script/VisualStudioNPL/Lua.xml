@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <!--lua libs: globals, math, string, table, bit tables-->
+  <tables>
+    <table name="math">
+      <function name="abs">
+        <summary>Returns the absolute value of the number.</summary>
+        <parameter name="value" />
+        <returns>The absolute value of the number.</returns>
+      </function>
+      <function name="acos">
+        <summary>Returns the arc cosine of the value in degrees.</summary>
+        <parameter name="value" />
+        <returns>The arc cosine of the value in degrees.</returns>
+      </function>
+      <function name="asin">
+        <summary>Returns the arc sine of the value in degrees.</summary>
+        <parameter name="value" />
+        <returns>The arc sine of the value in degrees.</returns>
+      </function>
+      <function name="atan">
+        <summary>Returns the arc tangent of the value in degrees.</summary>
+        <parameter name="value" />
+        <returns>The arc tangent of the value in degrees.</returns>
+      </function>
+      <function name="atan2">
+        <summary>Returns the arc tangent of Y/X in degrees.</summary>
+        <parameter name="y" />
+        <parameter name="x" />
+        <returns>The arc tangent of Y/X in degrees.</returns>
+      </function>
+      <function name="ceil">
+        <summary>Returns the ceiling of value.</summary>
+        <parameter name="value" />
+        <returns>The ceiling of value.</returns>
+      </function>
+      <function name="cos">
+        <summary>Returns the cosine of the degree value.</summary>
+        <parameter name="degrees" />
+        <returns>The cosine of the degree value.</returns>
+      </function>
+      <function name="deg">
+        <summary>Returns the degree equivalent of the radian value.</summary>
+        <parameter name="radians" />
+        <returns>The degree equivalent of the radian value.</returns>
+      </function>
+      <function name="exp">
+        <summary>Returns the exponent of value.</summary>
+        <parameter name="value" />
+        <returns>The exponent of value.</returns>
+      </function>
+      <function name="floor">
+        <summary>Returns the floor of value.</summary>
+        <parameter name="value" />
+        <returns>The floor of value.</returns>
+      </function>
+      <function name="frexp">
+        <summary>Extract mantissa and exponent from a floating point number.</summary>
+        <parameter name="num" />
+      </function>
+      <function name="ldexp">
+        <summary>Load exponent of a floating point number.</summary>
+        <parameter name="value" />
+        <parameter name="exponent" />
+      </function>
+      <function name="log">
+        <summary>Returns the natural logarithm (log base e) of value.</summary>
+        <parameter name="value" />
+        <returns>The natural logarithm (log base e) of value.</returns>
+      </function>
+      <function name="log10">
+        <summary>Returns the base-10 logarithm of value.</summary>
+        <parameter name="value" />
+        <returns>The base-10 logarithm of value.</returns>
+      </function>
+      <function name="max">
+        <summary>Returns the numeric maximum of the input values.</summary>
+        <parameter name="value" />
+        <parameter name="values" optional="true" />
+        <returns>The numeric maximum of the input values.</returns>
+      </function>
+      <function name="min">
+        <summary>Returns the numeric minimum of the input values.</summary>
+        <parameter name="value" />
+        <parameter name="values" optional="true" />
+        <returns>The numeric minimum of the input values.</returns>
+      </function>
+      <function name="mod">
+        <summary>Returns floating point modulus of value.</summary>
+        <parameter name="value" />
+        <parameter name="modulus" />
+        <returns>Floating point modulus of value.</returns>
+      </function>
+      <function name="rad">
+        <summary>Returns the radian equivalent of the degree value.</summary>
+        <parameter name="degrees" />
+        <returns>The radian equivalent of the degree value.</returns>
+      </function>
+      <function name="random">
+        <summary>Returns a random number (optionally bounded integer value)</summary>
+        <parameter name="lower" optional="true" />
+        <parameter name="upper" optional="true" />
+        <returns>A random number (optionally bounded integer value)</returns>
+      </function>
+      (seed)   - 
+      <function name="randomseed">
+        <summary>Seed the pseudo random number generator</summary>
+        <parameter name="seed" />
+      </function>
+      <function name="sin">
+        <summary>Returns the sine of the degree value.</summary>
+        <parameter name="degree" />
+        <returns>The sine of the degree value.</returns>
+      </function>
+      <function name="sqrt">
+        <summary>Returns the square root of value.</summary>
+        <parameter name="value" />
+        <returns>The square root of value.</returns>
+      </function>
+      <function name="tan">
+        <summary>Returns the tangent of the degree value.</summary>
+        <parameter name="degrees" />
+        <returns>Returns the tangent of the degree value.</returns>
+      </function>
+    </table>
+    <table name="bit">
+      <function name="bnot">
+        <summary>Calculates one's complement.</summary>
+        <parameter name="a" />
+        <returns>Returns the one's complement of a.</returns>
+      </function>
+      <function name="band">
+        <summary>Bitwise and operation.</summary>
+        <parameter name="w1"/>
+        <parameter name="w2"/>
+        <returns>Returns the bitwise and of the w's.</returns>
+      </function>
+      <function name="bor">
+        <summary>Bitwise or operation.</summary>
+        <parameter name="w1" />
+        <parameter name="w2" />
+        <returns>Returns the bitwise or of the w's.</returns>
+      </function>
+      <function name="bxor">
+        <summary>Bitwise exclusive or operation.</summary>
+        <parameter name="w1" />
+        <parameter name="w2" />
+        <returns>Returns the bitwise or of the w's.</returns>
+      </function>
+      <function name="lshift">
+        <summary>Shifts left a given number of places.</summary>
+        <parameter name="a">Value to be shifted.</parameter>
+        <parameter name="b">Shift value left b places.</parameter>
+        <returns>Returns a shifted left b places.</returns>
+      </function>
+      <function name="rshift">
+        <summary>Shifts right logically a given number of places.</summary>
+        <parameter name="a">Value to be shifted.</parameter>
+        <parameter name="b">Shift value logically right b places.</parameter>
+        <returns>Returns a shifted logically right b places.</returns>
+      </function>
+      <function name="arshift">
+        <summary>Shifts right arithmetically a given number of places.</summary>
+        <parameter name="a">Value to be shifted.</parameter>
+        <parameter name="b">Shift value arithmetically right b places.</parameter>
+        <returns>Returns a shifted arithmetically right b places.</returns>
+      </function>
+      <function name="mod">
+        <summary>Returns the integer remainder of a divided by b.</summary>
+        <parameter name="a" />
+        <parameter name="b" />
+        <returns>The integer remainder of the first parameter divided by the second parameter.</returns>
+      </function>
+    </table>
+    <table name="string">
+      <function name="format">
+        <summary>Return a formatted string using values passed in.</summary>
+        <parameter name="formatstring"/>
+        <parameter name="value"/>
+      </function>
+      <function name="gsub">
+        <summary>Globally substitute pattern for replacement in string.</summary>
+        <parameter name="string"/>
+        <parameter name="pattern"/>
+        <parameter name="replacement"/>
+        <parameter name="limitCount" optional="true"/>
+      </function>
+      <function name="strbyte">
+        <summary>Returns the internal numeric code of the i-th character of string.</summary>
+        <parameter name="string"/>
+        <parameter name="index" optional="true"/>
+      </function>
+      <function name="strchar">
+        <summary>Returns a string with length equal to number of arguments, with each character assigned the internal code for that argument.</summary>
+        <parameter name="asciiCode"/>
+      </function>
+      <function name="strfind">
+        <summary>Look for match of pattern in string, optionally from specific location or using plain substring.</summary>
+        <parameter name="string"/>
+        <parameter name="pattern"/>
+        <parameter name="initpos" optional="true"/>
+        <parameter name="plain" optional="true"/>
+      </function>
+      <function name="strlen">
+        <summary>Return length of the string.</summary>
+        <parameter name="string"/>
+      </function>
+      <function name="strlower">
+        <summary>Return string with all upper case changed to lower case.</summary>
+        <parameter name="string"/>
+      </function>
+      <function name="strmatch">
+        <summary>Similar to strfind but only returns the matches, not the string positions.</summary>
+        <parameter name="string"/>
+        <parameter name="pattern"/>
+        <parameter name="initpos" optional="true"/>
+      </function>
+      <function name="strrep">
+        <summary>Return a string which is count copies of seed.</summary>
+        <parameter name="seed"/>
+        <parameter name="count"/>
+      </function>
+      <function name="strsub">
+        <summary>Return a substring of string starting at index</summary>
+        <parameter name="string"/>
+        <parameter name="index"/>
+        <parameter name="endIndex" optional="true"/>
+      </function>
+      <function name="strupper">
+        <summary>Return string with all lower case changed to upper case.</summary>
+        <parameter name="string"/>
+      </function>
+      <function name="tonumber">
+        <summary>Return a number if arg can be converted to number. Optional argument specifies the base to interpret the numeral. Bases other than 10 accept only unsigned integers.</summary>
+        <parameter name="arg"/>
+        <parameter name="base" optional="true"/>
+      </function>
+      <function name="tostring">
+        <summary>Convert arg to a string.</summary>
+        <parameter name="arg"/>
+      </function>
+      <function name="strtrim">
+        <summary>Trim leading and trailing spaces from string.</summary>
+        <parameter name="string"/>
+      </function>
+      <function name="strsplit">
+        <summary>Return a list of substrings separated by occurrences of the delimiter.</summary>
+        <parameter name="delimiter"/>
+        <parameter name="string"/>
+      </function>
+      <function name="strjoin">
+        <summary>Join string arguments into a single string, separated by delimiter.</summary>
+        <parameter name="delimiter"/>
+        <parameter name="string1"/>
+        <parameter name="string2"/>
+      </function>
+    </table>
+    <table name="table">
+      <function name="foreach">
+        <summary>Execute function for each element in table.</summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+      <function name="foreachi">
+        <summary>Execute function for each element in table, indices are visited in sequential order.</summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+      <function name="getn">
+        <summary>Return the size of the table when seen as a list. This is deprecated, it is replaced by the # operator. Instead of table.getn(table), use #(table).</summary>
+        <parameter name="table" />
+      </function>
+      <function name="ipairs">
+        <summary>Returns an iterator of type integer to traverse a table.</summary>
+        <parameter name="table" />
+      </function>
+      <function name="pairs">
+        <summary>Returns an iterator to traverse a table.</summary>
+        <parameter name="table" />
+      </function>
+      <function name="sort">
+        <summary>Sort the elements in the table in-place, optionally using a custom comparator.</summary>
+        <parameter name="table" />
+        <parameter name="comp" optional="true"/>
+      </function>
+      <function name="tinsert">
+        <summary>Insert value into the table at position pos (defaults to end of table)</summary>
+        <parameter name="table" />
+        <parameter name="pos" optional="true" />
+        <parameter name="value" />
+      </function>
+      <function name="tremove">
+        <summary>Remove and return the table element at position pos (defaults to last entry in table)</summary>
+        <parameter name="table" />
+        <parameter name="pos" optional="true" />
+      </function>
+    </table>
+  </tables>
+  <globals>
+    <function name="assert">
+      <summary>Asserts a value is non-nil, otherwise shows dialog and outputs debug diagnostic information if you have a debugger attached to wow.exe.</summary>
+      <parameter name="value">The value to be asserted.</parameter>
+    </function>
+    <function name="collectgarbage">
+      <summary>
+        Forces garbage collection.
+      </summary>
+      <parameter name="opt" />
+    </function>
+    <function name="date">
+      <summary>
+        Returns the current date according to the user's machine.
+      </summary>
+      <parameter name="format" optional="true">
+        The format of the date to return.
+      </parameter>
+      <parameter name="time" optional="true">
+        The time to format.
+      </parameter>
+      <returns>
+        The current time formatted or the time specified by the caller.
+      </returns>
+    </function>
+    <function name="error">
+      <summary>Throws an error with the given error message. Use pcall() to catch errors.</summary>
+      <parameter name="message">
+        The error message.
+      </parameter>
+      <parameter name="level">
+        The error level.
+      </parameter>
+    </function>
+    <function name="gcinfo">
+      <summary>
+        Returns the number of kB of add-on memory in use and the current garbage collection threshold (in kB).
+      </summary>
+      <returns>
+        The number of kB of memory in use and the current garbage collection threshold in kB.
+      </returns>
+    </function>
+    <function name="getfenv">
+      <summary>
+        Returns the table representing the stack frame of the given function or stack level.
+      </summary>
+      <parameter name="param">
+        A function or an integer representing the stack level.
+      </parameter>
+      <returns>
+        A table representing the stack frame.
+      </returns>
+    </function>
+    <function name="getglobal">
+      <summary>
+        Returns the global variable with the given name.
+      </summary>
+      <parameter name="globalName" type="string">
+        Name of the global you want to get.
+      </parameter>
+      <returns>
+        The object from the given string, or nil if not found.
+      </returns>
+    </function>
+    <function name="getmetatable">
+      <summary>
+        Returns the metatable of the given table or userdata object.
+      </summary>
+      <parameter name="obj" />
+      <parameter name="mtable" />
+    </function>
+    <function name="loadstring">
+      <summary>
+        Parses the string as Lua code and returns it as a function reference.
+      </summary>
+      <parameter name="luaCodeBlock">
+        A string of Lua code.
+      </parameter>
+      <parameter name="chunkName" optional="true">
+        An optional name of the code block. Will be shown as the "file name" in error messages.
+      </parameter>
+      <returns>
+        A function reference - nil if there was a syntax error in the code block.
+      </returns>
+    </function>
+    <function name="next">
+      <summary>
+        Returns the next key, value pair of the table, allowing you to walk over the table.
+      </summary>
+      <parameter name="table" />
+      <parameter name="index" optional="true" />
+    </function>
+    <function name="pcall">
+      <summary>
+        Returns a boolean value indicating successful execution of func and the error message or func's results as additional values.
+      </summary>
+      <parameter name="func" />
+      <parameter name="arg1" />
+      <parameter name="arg2" />
+      <returns>
+        If the call to the function (that was passed to pcall) succeeded, returns true. If an error occured, returns false.
+      </returns>
+    </function>
+    <function name="setfenv">
+      <summary>
+        Sets the table representing the stack frame of the given function or stack level.
+      </summary>
+      <parameter name="param">
+        A function or an integer representing the stack level.
+      </parameter>
+      <parameter name="table">
+
+        A table representing the stack frame.
+
+      </parameter>
+    </function>
+    <function name="setmetatable">
+      <summary>
+        Sets the metatable of the given table or userdata object.
+      </summary>
+      <parameter name="obj" />
+      <parameter name="mtable" />
+    </function>
+    <function name="time">
+      <summary>
+        Returns time in seconds since epoch (00:00:00 Jan 1 1970)
+      </summary>
+      <parameter name="table" optional="true" />
+      <returns>
+        Returns the current time.
+      </returns>
+    </function>
+    <function name="type">
+      <summary>
+        Returns the type of a variable as a string, "number", "string", "table", "function" or "userdata".
+      </summary>
+      <parameter name="var" />
+      <returns>
+        Returns the type of a variable.
+      </returns>
+    </function>
+    <function name="unpack">
+      <summary>
+        Returns the contents of its argument as separate values.
+      </summary>
+      <parameter name="table"></parameter>
+      <returns>
+        The contents of the argument as separate values.
+      </returns>
+    </function>
+    <function name="xpcall">
+      <summary>
+        Returns a boolean indicating successful execution of func and calls err on failure, additionally returning func's or err's results.
+      </summary>
+      <parameter name="func" />
+      <parameter name="err" />
+      <returns>
+        If the call to the function (that was passed to xpcall) succeeded, returns true. If an error occured, returns false.
+      </returns>
+    </function>
+  </globals>
+  <variables>
+    <variable name="math" type="math" />
+    <variable name="bit" type="bit" ns="mathlib.bit"/>
+    <variable name="string" type="string" />
+    <variable name="table" type="table" />
+  </variables>
+</doc>
+

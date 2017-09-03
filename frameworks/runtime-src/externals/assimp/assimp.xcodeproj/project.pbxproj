@@ -1,0 +1,1782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DB87B271F468EC000FB440C /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B251F468EC000FB440C /* clipper.cpp */; };
+		3DB87B281F468EC000FB440C /* clipper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B261F468EC000FB440C /* clipper.hpp */; };
+		3DB87B461F46902E00FB440C /* BaseImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2A1F46902E00FB440C /* BaseImporter.cpp */; };
+		3DB87B471F46902E00FB440C /* BaseImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2B1F46902E00FB440C /* BaseImporter.h */; };
+		3DB87B481F46902E00FB440C /* BaseProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2C1F46902E00FB440C /* BaseProcess.cpp */; };
+		3DB87B491F46902E00FB440C /* BaseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2D1F46902E00FB440C /* BaseProcess.h */; };
+		3DB87B4A1F46902E00FB440C /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2E1F46902E00FB440C /* Bitmap.cpp */; };
+		3DB87B4B1F46902E00FB440C /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2F1F46902E00FB440C /* Bitmap.h */; };
+		3DB87B4C1F46902E00FB440C /* ByteSwapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B301F46902E00FB440C /* ByteSwapper.h */; };
+		3DB87B4D1F46902E00FB440C /* CInterfaceIOWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B311F46902E00FB440C /* CInterfaceIOWrapper.cpp */; };
+		3DB87B4E1F46902E00FB440C /* CInterfaceIOWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B321F46902E00FB440C /* CInterfaceIOWrapper.h */; };
+		3DB87B4F1F46902E00FB440C /* CreateAnimMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B331F46902E00FB440C /* CreateAnimMesh.cpp */; };
+		3DB87B501F46902E00FB440C /* CreateAnimMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B341F46902E00FB440C /* CreateAnimMesh.h */; };
+		3DB87B511F46902E00FB440C /* DefaultIOStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B351F46902E00FB440C /* DefaultIOStream.cpp */; };
+		3DB87B521F46902E00FB440C /* DefaultIOSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B361F46902E00FB440C /* DefaultIOSystem.cpp */; };
+		3DB87B531F46902E00FB440C /* DefaultProgressHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B371F46902E00FB440C /* DefaultProgressHandler.h */; };
+		3DB87B541F46902E00FB440C /* fast_atof.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B381F46902E00FB440C /* fast_atof.h */; };
+		3DB87B551F46902E00FB440C /* GenericProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B391F46902E00FB440C /* GenericProperty.h */; };
+		3DB87B561F46902E00FB440C /* Hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3A1F46902E00FB440C /* Hash.h */; };
+		3DB87B571F46902E00FB440C /* IFF.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3B1F46902E00FB440C /* IFF.h */; };
+		3DB87B581F46902E00FB440C /* Importer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B3C1F46902E00FB440C /* Importer.cpp */; };
+		3DB87B591F46902E00FB440C /* Importer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3D1F46902E00FB440C /* Importer.h */; };
+		3DB87B5A1F46902E00FB440C /* ImporterRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B3E1F46902E00FB440C /* ImporterRegistry.cpp */; };
+		3DB87B5B1F46902E00FB440C /* IOStreamBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3F1F46902E00FB440C /* IOStreamBuffer.h */; };
+		3DB87B5C1F46902E00FB440C /* LineSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B401F46902E00FB440C /* LineSplitter.h */; };
+		3DB87B5D1F46902E00FB440C /* LogAux.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B411F46902E00FB440C /* LogAux.h */; };
+		3DB87B5E1F46902E00FB440C /* MemoryIOWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B421F46902E00FB440C /* MemoryIOWrapper.h */; };
+		3DB87B5F1F46902E00FB440C /* ParsingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B431F46902E00FB440C /* ParsingUtils.h */; };
+		3DB87B601F46902E00FB440C /* PostStepRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B441F46902E00FB440C /* PostStepRegistry.cpp */; };
+		3DB87B611F46902E00FB440C /* Profiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B451F46902E00FB440C /* Profiler.h */; };
+		3DB87B801F4690AD00FB440C /* qnan.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B621F4690AD00FB440C /* qnan.h */; };
+		3DB87B811F4690AD00FB440C /* RemoveComments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B631F4690AD00FB440C /* RemoveComments.cpp */; };
+		3DB87B821F4690AD00FB440C /* RemoveComments.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B641F4690AD00FB440C /* RemoveComments.h */; };
+		3DB87B831F4690AD00FB440C /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B651F4690AD00FB440C /* scene.cpp */; };
+		3DB87B841F4690AD00FB440C /* SceneCombiner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B661F4690AD00FB440C /* SceneCombiner.cpp */; };
+		3DB87B851F4690AD00FB440C /* ScenePreprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B671F4690AD00FB440C /* ScenePreprocessor.cpp */; };
+		3DB87B861F4690AD00FB440C /* ScenePreprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B681F4690AD00FB440C /* ScenePreprocessor.h */; };
+		3DB87B871F4690AD00FB440C /* ScenePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B691F4690AD00FB440C /* ScenePrivate.h */; };
+		3DB87B881F4690AD00FB440C /* SGSpatialSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6A1F4690AD00FB440C /* SGSpatialSort.cpp */; };
+		3DB87B891F4690AD00FB440C /* SGSpatialSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6B1F4690AD00FB440C /* SGSpatialSort.h */; };
+		3DB87B8A1F4690AD00FB440C /* SkeletonMeshBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6C1F4690AD00FB440C /* SkeletonMeshBuilder.cpp */; };
+		3DB87B8B1F4690AD00FB440C /* SkeletonMeshBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6D1F4690AD00FB440C /* SkeletonMeshBuilder.h */; };
+		3DB87B8C1F4690AD00FB440C /* SmoothingGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6E1F4690AD00FB440C /* SmoothingGroups.h */; };
+		3DB87B8D1F4690AD00FB440C /* SpatialSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6F1F4690AD00FB440C /* SpatialSort.cpp */; };
+		3DB87B8E1F4690AD00FB440C /* SpatialSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B701F4690AD00FB440C /* SpatialSort.h */; };
+		3DB87B8F1F4690AD00FB440C /* SplitByBoneCountProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B711F4690AD00FB440C /* SplitByBoneCountProcess.cpp */; };
+		3DB87B901F4690AD00FB440C /* SplitByBoneCountProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B721F4690AD00FB440C /* SplitByBoneCountProcess.h */; };
+		3DB87B911F4690AD00FB440C /* StandardShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B731F4690AD00FB440C /* StandardShapes.cpp */; };
+		3DB87B921F4690AD00FB440C /* StandardShapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B741F4690AD00FB440C /* StandardShapes.h */; };
+		3DB87B931F4690AD00FB440C /* StreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B751F4690AD00FB440C /* StreamReader.h */; };
+		3DB87B941F4690AD00FB440C /* StreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B761F4690AD00FB440C /* StreamWriter.h */; };
+		3DB87B951F4690AD00FB440C /* StringComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B771F4690AD00FB440C /* StringComparison.h */; };
+		3DB87B961F4690AD00FB440C /* StringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B781F4690AD00FB440C /* StringUtils.h */; };
+		3DB87B971F4690AD00FB440C /* Subdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B791F4690AD00FB440C /* Subdivision.cpp */; };
+		3DB87B981F4690AD00FB440C /* Subdivision.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7A1F4690AD00FB440C /* Subdivision.h */; };
+		3DB87B991F4690AD00FB440C /* TargetAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B7B1F4690AD00FB440C /* TargetAnimation.cpp */; };
+		3DB87B9A1F4690AD00FB440C /* TargetAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7C1F4690AD00FB440C /* TargetAnimation.h */; };
+		3DB87B9B1F4690AD00FB440C /* TinyFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7D1F4690AD00FB440C /* TinyFormatter.h */; };
+		3DB87B9C1F4690AD00FB440C /* Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B7E1F4690AD00FB440C /* Version.cpp */; };
+		3DB87B9D1F4690AD00FB440C /* Vertex.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7F1F4690AD00FB440C /* Vertex.h */; };
+		3DB87BA11F4690D800FB440C /* VertexTriangleAdjacency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B9E1F4690D800FB440C /* VertexTriangleAdjacency.cpp */; };
+		3DB87BA21F4690D800FB440C /* VertexTriangleAdjacency.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B9F1F4690D800FB440C /* VertexTriangleAdjacency.h */; };
+		3DB87BA31F4690D800FB440C /* XMLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA01F4690D800FB440C /* XMLTools.h */; };
+		3DB87BA81F46911600FB440C /* poppack1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA51F46911600FB440C /* poppack1.h */; };
+		3DB87BA91F46911600FB440C /* pstdint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA61F46911600FB440C /* pstdint.h */; };
+		3DB87BAA1F46911600FB440C /* pushpack1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA71F46911600FB440C /* pushpack1.h */; };
+		3DB87BAF1F46915700FB440C /* AssimpCExport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BAC1F46915700FB440C /* AssimpCExport.cpp */; };
+		3DB87BB01F46915700FB440C /* BlobIOSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BAD1F46915700FB440C /* BlobIOSystem.h */; };
+		3DB87BB11F46915700FB440C /* Exporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BAE1F46915700FB440C /* Exporter.cpp */; };
+		3DB87BCD1F4691BD00FB440C /* FBXAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB31F4691BD00FB440C /* FBXAnimation.cpp */; };
+		3DB87BCE1F4691BD00FB440C /* FBXBinaryTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB41F4691BD00FB440C /* FBXBinaryTokenizer.cpp */; };
+		3DB87BCF1F4691BD00FB440C /* FBXCompileConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BB51F4691BD00FB440C /* FBXCompileConfig.h */; };
+		3DB87BD01F4691BD00FB440C /* FBXConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB61F4691BD00FB440C /* FBXConverter.cpp */; };
+		3DB87BD11F4691BD00FB440C /* FBXConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BB71F4691BD00FB440C /* FBXConverter.h */; };
+		3DB87BD21F4691BD00FB440C /* FBXDeformer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB81F4691BD00FB440C /* FBXDeformer.cpp */; };
+		3DB87BD31F4691BD00FB440C /* FBXDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB91F4691BD00FB440C /* FBXDocument.cpp */; };
+		3DB87BD41F4691BD00FB440C /* FBXDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBA1F4691BD00FB440C /* FBXDocument.h */; };
+		3DB87BD51F4691BD00FB440C /* FBXDocumentUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BBB1F4691BD00FB440C /* FBXDocumentUtil.cpp */; };
+		3DB87BD61F4691BD00FB440C /* FBXDocumentUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBC1F4691BD00FB440C /* FBXDocumentUtil.h */; };
+		3DB87BD71F4691BD00FB440C /* FBXImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BBD1F4691BD00FB440C /* FBXImporter.cpp */; };
+		3DB87BD81F4691BD00FB440C /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBE1F4691BD00FB440C /* FBXImporter.h */; };
+		3DB87BD91F4691BD00FB440C /* FBXImportSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBF1F4691BD00FB440C /* FBXImportSettings.h */; };
+		3DB87BDA1F4691BD00FB440C /* FBXMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC01F4691BD00FB440C /* FBXMaterial.cpp */; };
+		3DB87BDB1F4691BD00FB440C /* FBXMeshGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC11F4691BD00FB440C /* FBXMeshGeometry.cpp */; };
+		3DB87BDC1F4691BD00FB440C /* FBXMeshGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC21F4691BD00FB440C /* FBXMeshGeometry.h */; };
+		3DB87BDD1F4691BD00FB440C /* FBXModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC31F4691BD00FB440C /* FBXModel.cpp */; };
+		3DB87BDE1F4691BD00FB440C /* FBXNodeAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC41F4691BD00FB440C /* FBXNodeAttribute.cpp */; };
+		3DB87BDF1F4691BD00FB440C /* FBXParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC51F4691BD00FB440C /* FBXParser.cpp */; };
+		3DB87BE01F4691BD00FB440C /* FBXParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC61F4691BD00FB440C /* FBXParser.h */; };
+		3DB87BE11F4691BD00FB440C /* FBXProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC71F4691BD00FB440C /* FBXProperties.cpp */; };
+		3DB87BE21F4691BD00FB440C /* FBXProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC81F4691BD00FB440C /* FBXProperties.h */; };
+		3DB87BE31F4691BD00FB440C /* FBXTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC91F4691BD00FB440C /* FBXTokenizer.cpp */; };
+		3DB87BE41F4691BD00FB440C /* FBXTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BCA1F4691BD00FB440C /* FBXTokenizer.h */; };
+		3DB87BE51F4691BD00FB440C /* FBXUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BCB1F4691BD00FB440C /* FBXUtil.cpp */; };
+		3DB87BE61F4691BD00FB440C /* FBXUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BCC1F4691BD00FB440C /* FBXUtil.h */; };
+		3DB87BE91F4691E300FB440C /* irrXMLWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BE81F4691E300FB440C /* irrXMLWrapper.h */; };
+		3DB87BEC1F46921800FB440C /* DefaultLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BEB1F46921800FB440C /* DefaultLogger.cpp */; };
+		3DB87BEE1F46923C00FB440C /* DefaultLogger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BED1F46923C00FB440C /* DefaultLogger.hpp */; };
+		3DB87BF01F46925F00FB440C /* FileLogStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BEF1F46925F00FB440C /* FileLogStream.h */; };
+		3DB87BF21F46928800FB440C /* StdOStreamLogStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF11F46928800FB440C /* StdOStreamLogStream.h */; };
+		3DB87BF61F4692A900FB440C /* Logger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF31F4692A900FB440C /* Logger.hpp */; };
+		3DB87BF71F4692A900FB440C /* LogStream.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF41F4692A900FB440C /* LogStream.hpp */; };
+		3DB87BF81F4692A900FB440C /* NullLogger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF51F4692A900FB440C /* NullLogger.hpp */; };
+		3DB87BFC1F4692D400FB440C /* MaterialSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BFA1F4692D400FB440C /* MaterialSystem.cpp */; };
+		3DB87BFD1F4692D400FB440C /* MaterialSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BFB1F4692D400FB440C /* MaterialSystem.h */; };
+		3DB87C1C1F46930000FB440C /* o3dgcAdjacencyInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BFF1F46930000FB440C /* o3dgcAdjacencyInfo.h */; };
+		3DB87C1D1F46930000FB440C /* o3dgcArithmeticCodec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C001F46930000FB440C /* o3dgcArithmeticCodec.cpp */; };
+		3DB87C1E1F46930000FB440C /* o3dgcArithmeticCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C011F46930000FB440C /* o3dgcArithmeticCodec.h */; };
+		3DB87C1F1F46930000FB440C /* o3dgcBinaryStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C021F46930000FB440C /* o3dgcBinaryStream.h */; };
+		3DB87C201F46930000FB440C /* o3dgcCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C031F46930000FB440C /* o3dgcCommon.h */; };
+		3DB87C211F46930000FB440C /* o3dgcDVEncodeParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C041F46930000FB440C /* o3dgcDVEncodeParams.h */; };
+		3DB87C221F46930000FB440C /* o3dgcDynamicVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C051F46930000FB440C /* o3dgcDynamicVector.h */; };
+		3DB87C231F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C061F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp */; };
+		3DB87C241F46930000FB440C /* o3dgcDynamicVectorDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C071F46930000FB440C /* o3dgcDynamicVectorDecoder.h */; };
+		3DB87C251F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C081F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp */; };
+		3DB87C261F46930000FB440C /* o3dgcDynamicVectorEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C091F46930000FB440C /* o3dgcDynamicVectorEncoder.h */; };
+		3DB87C271F46930000FB440C /* o3dgcFIFO.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C0A1F46930000FB440C /* o3dgcFIFO.h */; };
+		3DB87C281F46930000FB440C /* o3dgcIndexedFaceSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C0B1F46930000FB440C /* o3dgcIndexedFaceSet.h */; };
+		3DB87C291F46930000FB440C /* o3dgcSC3DMCDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C0D1F46930000FB440C /* o3dgcSC3DMCDecoder.h */; };
+		3DB87C2A1F46930000FB440C /* o3dgcSC3DMCEncodeParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C0F1F46930000FB440C /* o3dgcSC3DMCEncodeParams.h */; };
+		3DB87C2B1F46930000FB440C /* o3dgcSC3DMCEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C101F46930000FB440C /* o3dgcSC3DMCEncoder.h */; };
+		3DB87C2C1F46930000FB440C /* o3dgcTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C121F46930000FB440C /* o3dgcTimer.h */; };
+		3DB87C2D1F46930000FB440C /* o3dgcTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C131F46930000FB440C /* o3dgcTools.cpp */; };
+		3DB87C2E1F46930000FB440C /* o3dgcTriangleFans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C141F46930000FB440C /* o3dgcTriangleFans.cpp */; };
+		3DB87C2F1F46930000FB440C /* o3dgcTriangleFans.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C151F46930000FB440C /* o3dgcTriangleFans.h */; };
+		3DB87C301F46930000FB440C /* o3dgcTriangleListDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C161F46930000FB440C /* o3dgcTriangleListDecoder.h */; };
+		3DB87C311F46930000FB440C /* o3dgcTriangleListEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C181F46930000FB440C /* o3dgcTriangleListEncoder.h */; };
+		3DB87C321F46930000FB440C /* o3dgcVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C1A1F46930000FB440C /* o3dgcVector.h */; };
+		3DB87C3A1F46933900FB440C /* DDLNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C341F46933900FB440C /* DDLNode.cpp */; };
+		3DB87C3B1F46933900FB440C /* OpenDDLCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C351F46933900FB440C /* OpenDDLCommon.cpp */; };
+		3DB87C3C1F46933900FB440C /* OpenDDLExport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C361F46933900FB440C /* OpenDDLExport.cpp */; };
+		3DB87C3D1F46933900FB440C /* OpenDDLParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C371F46933900FB440C /* OpenDDLParser.cpp */; };
+		3DB87C3E1F46933900FB440C /* OpenDDLStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C381F46933900FB440C /* OpenDDLStream.cpp */; };
+		3DB87C3F1F46933900FB440C /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C391F46933900FB440C /* Value.cpp */; };
+		3DB87C471F46935100FB440C /* DDLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C401F46935100FB440C /* DDLNode.h */; };
+		3DB87C481F46935100FB440C /* OpenDDLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C411F46935100FB440C /* OpenDDLCommon.h */; };
+		3DB87C491F46935100FB440C /* OpenDDLExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C421F46935100FB440C /* OpenDDLExport.h */; };
+		3DB87C4A1F46935100FB440C /* OpenDDLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C431F46935100FB440C /* OpenDDLParser.h */; };
+		3DB87C4B1F46935100FB440C /* OpenDDLParserUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C441F46935100FB440C /* OpenDDLParserUtils.h */; };
+		3DB87C4C1F46935100FB440C /* OpenDDLStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C451F46935100FB440C /* OpenDDLStream.h */; };
+		3DB87C4D1F46935100FB440C /* Value.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C461F46935100FB440C /* Value.h */; };
+		3DB87C521F46938300FB440C /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C4F1F46938300FB440C /* shapes.cc */; };
+		3DB87C531F46938300FB440C /* shapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C501F46938300FB440C /* shapes.h */; };
+		3DB87C541F46938300FB440C /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C511F46938300FB440C /* utils.h */; };
+		3DB87C5D1F46939200FB440C /* advancing_front.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C551F46939200FB440C /* advancing_front.cc */; };
+		3DB87C5E1F46939200FB440C /* advancing_front.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C561F46939200FB440C /* advancing_front.h */; };
+		3DB87C5F1F46939200FB440C /* cdt.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C571F46939200FB440C /* cdt.cc */; };
+		3DB87C601F46939200FB440C /* cdt.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C581F46939200FB440C /* cdt.h */; };
+		3DB87C611F46939200FB440C /* sweep_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C591F46939200FB440C /* sweep_context.cc */; };
+		3DB87C621F46939200FB440C /* sweep_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C5A1F46939200FB440C /* sweep_context.h */; };
+		3DB87C631F46939200FB440C /* sweep.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C5B1F46939200FB440C /* sweep.cc */; };
+		3DB87C641F46939200FB440C /* sweep.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C5C1F46939200FB440C /* sweep.h */; };
+		3DB87C861F46942800FB440C /* CalcTangentsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C661F46942800FB440C /* CalcTangentsProcess.cpp */; };
+		3DB87C871F46942800FB440C /* CalcTangentsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C671F46942800FB440C /* CalcTangentsProcess.h */; };
+		3DB87C881F46942800FB440C /* ComputeUVMappingProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C681F46942800FB440C /* ComputeUVMappingProcess.cpp */; };
+		3DB87C891F46942800FB440C /* ComputeUVMappingProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C691F46942800FB440C /* ComputeUVMappingProcess.h */; };
+		3DB87C8A1F46942800FB440C /* ConvertToLHProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6A1F46942800FB440C /* ConvertToLHProcess.cpp */; };
+		3DB87C8B1F46942800FB440C /* ConvertToLHProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6B1F46942800FB440C /* ConvertToLHProcess.h */; };
+		3DB87C8C1F46942800FB440C /* DeboneProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6C1F46942800FB440C /* DeboneProcess.cpp */; };
+		3DB87C8D1F46942800FB440C /* DeboneProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6D1F46942800FB440C /* DeboneProcess.h */; };
+		3DB87C8E1F46942800FB440C /* FindDegenerates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6E1F46942800FB440C /* FindDegenerates.cpp */; };
+		3DB87C8F1F46942800FB440C /* FindDegenerates.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6F1F46942800FB440C /* FindDegenerates.h */; };
+		3DB87C901F46942800FB440C /* FindInstancesProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C701F46942800FB440C /* FindInstancesProcess.cpp */; };
+		3DB87C911F46942800FB440C /* FindInstancesProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C711F46942800FB440C /* FindInstancesProcess.h */; };
+		3DB87C921F46942800FB440C /* FindInvalidDataProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C721F46942800FB440C /* FindInvalidDataProcess.cpp */; };
+		3DB87C931F46942800FB440C /* FindInvalidDataProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C731F46942800FB440C /* FindInvalidDataProcess.h */; };
+		3DB87C941F46942800FB440C /* FixNormalsStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C741F46942800FB440C /* FixNormalsStep.cpp */; };
+		3DB87C951F46942800FB440C /* FixNormalsStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C751F46942800FB440C /* FixNormalsStep.h */; };
+		3DB87C961F46942800FB440C /* GenFaceNormalsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C761F46942800FB440C /* GenFaceNormalsProcess.cpp */; };
+		3DB87C971F46942800FB440C /* GenFaceNormalsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C771F46942800FB440C /* GenFaceNormalsProcess.h */; };
+		3DB87C981F46942800FB440C /* GenVertexNormalsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C781F46942800FB440C /* GenVertexNormalsProcess.cpp */; };
+		3DB87C991F46942800FB440C /* GenVertexNormalsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C791F46942800FB440C /* GenVertexNormalsProcess.h */; };
+		3DB87C9A1F46942800FB440C /* ImproveCacheLocality.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7A1F46942800FB440C /* ImproveCacheLocality.cpp */; };
+		3DB87C9B1F46942800FB440C /* ImproveCacheLocality.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7B1F46942800FB440C /* ImproveCacheLocality.h */; };
+		3DB87C9C1F46942800FB440C /* JoinVerticesProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7C1F46942800FB440C /* JoinVerticesProcess.cpp */; };
+		3DB87C9D1F46942800FB440C /* JoinVerticesProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7D1F46942800FB440C /* JoinVerticesProcess.h */; };
+		3DB87C9E1F46942800FB440C /* LimitBoneWeightsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7E1F46942800FB440C /* LimitBoneWeightsProcess.cpp */; };
+		3DB87C9F1F46942800FB440C /* LimitBoneWeightsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7F1F46942800FB440C /* LimitBoneWeightsProcess.h */; };
+		3DB87CA01F46942800FB440C /* MakeVerboseFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C801F46942800FB440C /* MakeVerboseFormat.cpp */; };
+		3DB87CA11F46942800FB440C /* MakeVerboseFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C811F46942800FB440C /* MakeVerboseFormat.h */; };
+		3DB87CA21F46942800FB440C /* OptimizeGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C821F46942800FB440C /* OptimizeGraph.cpp */; };
+		3DB87CA31F46942800FB440C /* OptimizeGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C831F46942800FB440C /* OptimizeGraph.h */; };
+		3DB87CA41F46942800FB440C /* OptimizeMeshes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C841F46942800FB440C /* OptimizeMeshes.cpp */; };
+		3DB87CA51F46942800FB440C /* OptimizeMeshes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C851F46942800FB440C /* OptimizeMeshes.h */; };
+		3DB87CB71F46947600FB440C /* PolyTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CA61F46947600FB440C /* PolyTools.h */; };
+		3DB87CB81F46947600FB440C /* PretransformVertices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CA71F46947600FB440C /* PretransformVertices.cpp */; };
+		3DB87CB91F46947600FB440C /* PretransformVertices.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CA81F46947600FB440C /* PretransformVertices.h */; };
+		3DB87CBA1F46947600FB440C /* ProcessHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CA91F46947600FB440C /* ProcessHelper.cpp */; };
+		3DB87CBB1F46947600FB440C /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAA1F46947600FB440C /* ProcessHelper.h */; };
+		3DB87CBC1F46947600FB440C /* RemoveRedundantMaterials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAB1F46947600FB440C /* RemoveRedundantMaterials.cpp */; };
+		3DB87CBD1F46947600FB440C /* RemoveRedundantMaterials.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAC1F46947600FB440C /* RemoveRedundantMaterials.h */; };
+		3DB87CBE1F46947600FB440C /* RemoveVCProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAD1F46947600FB440C /* RemoveVCProcess.cpp */; };
+		3DB87CBF1F46947600FB440C /* RemoveVCProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAE1F46947600FB440C /* RemoveVCProcess.h */; };
+		3DB87CC01F46947600FB440C /* SortByPTypeProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAF1F46947600FB440C /* SortByPTypeProcess.cpp */; };
+		3DB87CC11F46947600FB440C /* SortByPTypeProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB01F46947600FB440C /* SortByPTypeProcess.h */; };
+		3DB87CC21F46947600FB440C /* TextureTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB11F46947600FB440C /* TextureTransform.cpp */; };
+		3DB87CC31F46947600FB440C /* TextureTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB21F46947600FB440C /* TextureTransform.h */; };
+		3DB87CC41F46947600FB440C /* TriangulateProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB31F46947600FB440C /* TriangulateProcess.cpp */; };
+		3DB87CC51F46947600FB440C /* TriangulateProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB41F46947600FB440C /* TriangulateProcess.h */; };
+		3DB87CC61F46947600FB440C /* ValidateDataStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB51F46947600FB440C /* ValidateDataStructure.cpp */; };
+		3DB87CC71F46947600FB440C /* ValidateDataStructure.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB61F46947600FB440C /* ValidateDataStructure.h */; };
+		3DB87CCB1F46949B00FB440C /* StepExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CC91F46949B00FB440C /* StepExporter.cpp */; };
+		3DB87CCC1F46949B00FB440C /* StepExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CCA1F46949B00FB440C /* StepExporter.h */; };
+		3DB87D921F46BC1A00FB440C /* MaterialSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BFA1F4692D400FB440C /* MaterialSystem.cpp */; };
+		3DB87D931F46BC2000FB440C /* RemoveRedundantMaterials.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAB1F46947600FB440C /* RemoveRedundantMaterials.cpp */; };
+		3DB87D941F46BC2700FB440C /* FBXMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC01F4691BD00FB440C /* FBXMaterial.cpp */; };
+		3DB87D9A1F46BC5200FB440C /* StepExporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CC91F46949B00FB440C /* StepExporter.cpp */; };
+		3DB87D9B1F46BC5200FB440C /* StepExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CCA1F46949B00FB440C /* StepExporter.h */; };
+		3DB87D9C1F46BC5C00FB440C /* PolyTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CA61F46947600FB440C /* PolyTools.h */; };
+		3DB87D9D1F46BC5C00FB440C /* PretransformVertices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CA71F46947600FB440C /* PretransformVertices.cpp */; };
+		3DB87D9E1F46BC5C00FB440C /* PretransformVertices.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CA81F46947600FB440C /* PretransformVertices.h */; };
+		3DB87D9F1F46BC5C00FB440C /* ProcessHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CA91F46947600FB440C /* ProcessHelper.cpp */; };
+		3DB87DA01F46BC5C00FB440C /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAA1F46947600FB440C /* ProcessHelper.h */; };
+		3DB87DA11F46BC5C00FB440C /* RemoveRedundantMaterials.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAC1F46947600FB440C /* RemoveRedundantMaterials.h */; };
+		3DB87DA21F46BC5C00FB440C /* RemoveVCProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAD1F46947600FB440C /* RemoveVCProcess.cpp */; };
+		3DB87DA31F46BC5C00FB440C /* RemoveVCProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CAE1F46947600FB440C /* RemoveVCProcess.h */; };
+		3DB87DA41F46BC5C00FB440C /* SortByPTypeProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CAF1F46947600FB440C /* SortByPTypeProcess.cpp */; };
+		3DB87DA51F46BC5C00FB440C /* SortByPTypeProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB01F46947600FB440C /* SortByPTypeProcess.h */; };
+		3DB87DA61F46BC5C00FB440C /* TextureTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB11F46947600FB440C /* TextureTransform.cpp */; };
+		3DB87DA71F46BC5C00FB440C /* TextureTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB21F46947600FB440C /* TextureTransform.h */; };
+		3DB87DA81F46BC5C00FB440C /* TriangulateProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB31F46947600FB440C /* TriangulateProcess.cpp */; };
+		3DB87DA91F46BC5C00FB440C /* TriangulateProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB41F46947600FB440C /* TriangulateProcess.h */; };
+		3DB87DAA1F46BC5C00FB440C /* ValidateDataStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87CB51F46947600FB440C /* ValidateDataStructure.cpp */; };
+		3DB87DAB1F46BC5C00FB440C /* ValidateDataStructure.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87CB61F46947600FB440C /* ValidateDataStructure.h */; };
+		3DB87DAC1F46BC5C00FB440C /* CalcTangentsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C661F46942800FB440C /* CalcTangentsProcess.cpp */; };
+		3DB87DAD1F46BC5C00FB440C /* CalcTangentsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C671F46942800FB440C /* CalcTangentsProcess.h */; };
+		3DB87DAE1F46BC5C00FB440C /* ComputeUVMappingProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C681F46942800FB440C /* ComputeUVMappingProcess.cpp */; };
+		3DB87DAF1F46BC5C00FB440C /* ComputeUVMappingProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C691F46942800FB440C /* ComputeUVMappingProcess.h */; };
+		3DB87DB01F46BC5C00FB440C /* ConvertToLHProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6A1F46942800FB440C /* ConvertToLHProcess.cpp */; };
+		3DB87DB11F46BC5C00FB440C /* ConvertToLHProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6B1F46942800FB440C /* ConvertToLHProcess.h */; };
+		3DB87DB21F46BC5C00FB440C /* DeboneProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6C1F46942800FB440C /* DeboneProcess.cpp */; };
+		3DB87DB31F46BC5C00FB440C /* DeboneProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6D1F46942800FB440C /* DeboneProcess.h */; };
+		3DB87DB41F46BC5C00FB440C /* FindDegenerates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C6E1F46942800FB440C /* FindDegenerates.cpp */; };
+		3DB87DB51F46BC5C00FB440C /* FindDegenerates.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C6F1F46942800FB440C /* FindDegenerates.h */; };
+		3DB87DB61F46BC5C00FB440C /* FindInstancesProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C701F46942800FB440C /* FindInstancesProcess.cpp */; };
+		3DB87DB71F46BC5C00FB440C /* FindInstancesProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C711F46942800FB440C /* FindInstancesProcess.h */; };
+		3DB87DB81F46BC5C00FB440C /* FindInvalidDataProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C721F46942800FB440C /* FindInvalidDataProcess.cpp */; };
+		3DB87DB91F46BC5C00FB440C /* FindInvalidDataProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C731F46942800FB440C /* FindInvalidDataProcess.h */; };
+		3DB87DBA1F46BC5C00FB440C /* FixNormalsStep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C741F46942800FB440C /* FixNormalsStep.cpp */; };
+		3DB87DBB1F46BC5C00FB440C /* FixNormalsStep.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C751F46942800FB440C /* FixNormalsStep.h */; };
+		3DB87DBC1F46BC5C00FB440C /* GenFaceNormalsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C761F46942800FB440C /* GenFaceNormalsProcess.cpp */; };
+		3DB87DBD1F46BC5C00FB440C /* GenFaceNormalsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C771F46942800FB440C /* GenFaceNormalsProcess.h */; };
+		3DB87DBE1F46BC5C00FB440C /* GenVertexNormalsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C781F46942800FB440C /* GenVertexNormalsProcess.cpp */; };
+		3DB87DBF1F46BC5C00FB440C /* GenVertexNormalsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C791F46942800FB440C /* GenVertexNormalsProcess.h */; };
+		3DB87DC01F46BC5C00FB440C /* ImproveCacheLocality.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7A1F46942800FB440C /* ImproveCacheLocality.cpp */; };
+		3DB87DC11F46BC5C00FB440C /* ImproveCacheLocality.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7B1F46942800FB440C /* ImproveCacheLocality.h */; };
+		3DB87DC21F46BC5C00FB440C /* JoinVerticesProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7C1F46942800FB440C /* JoinVerticesProcess.cpp */; };
+		3DB87DC31F46BC5C00FB440C /* JoinVerticesProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7D1F46942800FB440C /* JoinVerticesProcess.h */; };
+		3DB87DC41F46BC5C00FB440C /* LimitBoneWeightsProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C7E1F46942800FB440C /* LimitBoneWeightsProcess.cpp */; };
+		3DB87DC51F46BC5C00FB440C /* LimitBoneWeightsProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C7F1F46942800FB440C /* LimitBoneWeightsProcess.h */; };
+		3DB87DC61F46BC5C00FB440C /* MakeVerboseFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C801F46942800FB440C /* MakeVerboseFormat.cpp */; };
+		3DB87DC71F46BC5C00FB440C /* MakeVerboseFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C811F46942800FB440C /* MakeVerboseFormat.h */; };
+		3DB87DC81F46BC5C00FB440C /* OptimizeGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C821F46942800FB440C /* OptimizeGraph.cpp */; };
+		3DB87DC91F46BC5C00FB440C /* OptimizeGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C831F46942800FB440C /* OptimizeGraph.h */; };
+		3DB87DCA1F46BC5C00FB440C /* OptimizeMeshes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C841F46942800FB440C /* OptimizeMeshes.cpp */; };
+		3DB87DCB1F46BC5C00FB440C /* OptimizeMeshes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C851F46942800FB440C /* OptimizeMeshes.h */; };
+		3DB87DCC1F46BC6500FB440C /* advancing_front.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C551F46939200FB440C /* advancing_front.cc */; };
+		3DB87DCD1F46BC6500FB440C /* advancing_front.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C561F46939200FB440C /* advancing_front.h */; };
+		3DB87DCE1F46BC6500FB440C /* cdt.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C571F46939200FB440C /* cdt.cc */; };
+		3DB87DCF1F46BC6500FB440C /* cdt.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C581F46939200FB440C /* cdt.h */; };
+		3DB87DD01F46BC6500FB440C /* sweep_context.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C591F46939200FB440C /* sweep_context.cc */; };
+		3DB87DD11F46BC6500FB440C /* sweep_context.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C5A1F46939200FB440C /* sweep_context.h */; };
+		3DB87DD21F46BC6500FB440C /* sweep.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C5B1F46939200FB440C /* sweep.cc */; };
+		3DB87DD31F46BC6500FB440C /* sweep.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C5C1F46939200FB440C /* sweep.h */; };
+		3DB87DD41F46BC6500FB440C /* shapes.cc in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C4F1F46938300FB440C /* shapes.cc */; };
+		3DB87DD51F46BC6500FB440C /* shapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C501F46938300FB440C /* shapes.h */; };
+		3DB87DD61F46BC6500FB440C /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C511F46938300FB440C /* utils.h */; };
+		3DB87DD71F46BC7100FB440C /* DDLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C401F46935100FB440C /* DDLNode.h */; };
+		3DB87DD81F46BC7100FB440C /* OpenDDLCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C411F46935100FB440C /* OpenDDLCommon.h */; };
+		3DB87DD91F46BC7100FB440C /* OpenDDLExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C421F46935100FB440C /* OpenDDLExport.h */; };
+		3DB87DDA1F46BC7100FB440C /* OpenDDLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C431F46935100FB440C /* OpenDDLParser.h */; };
+		3DB87DDB1F46BC7100FB440C /* OpenDDLParserUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C441F46935100FB440C /* OpenDDLParserUtils.h */; };
+		3DB87DDC1F46BC7100FB440C /* OpenDDLStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C451F46935100FB440C /* OpenDDLStream.h */; };
+		3DB87DDD1F46BC7100FB440C /* Value.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87C461F46935100FB440C /* Value.h */; };
+		3DB87DDE1F46BC7100FB440C /* DDLNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C341F46933900FB440C /* DDLNode.cpp */; };
+		3DB87DDF1F46BC7100FB440C /* OpenDDLCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C351F46933900FB440C /* OpenDDLCommon.cpp */; };
+		3DB87DE01F46BC7100FB440C /* OpenDDLExport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C361F46933900FB440C /* OpenDDLExport.cpp */; };
+		3DB87DE11F46BC7100FB440C /* OpenDDLParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C371F46933900FB440C /* OpenDDLParser.cpp */; };
+		3DB87DE21F46BC7100FB440C /* OpenDDLStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C381F46933900FB440C /* OpenDDLStream.cpp */; };
+		3DB87DE31F46BC7100FB440C /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C391F46933900FB440C /* Value.cpp */; };
+		3DB87DE41F46BC8F00FB440C /* o3dgcArithmeticCodec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C001F46930000FB440C /* o3dgcArithmeticCodec.cpp */; };
+		3DB87DE51F46BC8F00FB440C /* o3dgcDynamicVectorDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C061F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp */; };
+		3DB87DE61F46BC8F00FB440C /* o3dgcDynamicVectorEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C081F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp */; };
+		3DB87DE71F46BC8F00FB440C /* o3dgcTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C131F46930000FB440C /* o3dgcTools.cpp */; };
+		3DB87DE81F46BC8F00FB440C /* o3dgcTriangleFans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87C141F46930000FB440C /* o3dgcTriangleFans.cpp */; };
+		3DB87DE91F46BC9A00FB440C /* MaterialSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BFB1F4692D400FB440C /* MaterialSystem.h */; };
+		3DB87DEA1F46BCA100FB440C /* Logger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF31F4692A900FB440C /* Logger.hpp */; };
+		3DB87DEB1F46BCA100FB440C /* LogStream.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF41F4692A900FB440C /* LogStream.hpp */; };
+		3DB87DEC1F46BCA100FB440C /* NullLogger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF51F4692A900FB440C /* NullLogger.hpp */; };
+		3DB87DED1F46BCA100FB440C /* StdOStreamLogStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BF11F46928800FB440C /* StdOStreamLogStream.h */; };
+		3DB87DEE1F46BCA100FB440C /* FileLogStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BEF1F46925F00FB440C /* FileLogStream.h */; };
+		3DB87DEF1F46BCA100FB440C /* DefaultLogger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BED1F46923C00FB440C /* DefaultLogger.hpp */; };
+		3DB87DF01F46BCA100FB440C /* DefaultLogger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BEB1F46921800FB440C /* DefaultLogger.cpp */; };
+		3DB87DF11F46BCA700FB440C /* irrXMLWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BE81F4691E300FB440C /* irrXMLWrapper.h */; };
+		3DB87DF21F46BCAF00FB440C /* FBXAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB31F4691BD00FB440C /* FBXAnimation.cpp */; };
+		3DB87DF31F46BCAF00FB440C /* FBXBinaryTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB41F4691BD00FB440C /* FBXBinaryTokenizer.cpp */; };
+		3DB87DF41F46BCAF00FB440C /* FBXCompileConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BB51F4691BD00FB440C /* FBXCompileConfig.h */; };
+		3DB87DF51F46BCAF00FB440C /* FBXConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB61F4691BD00FB440C /* FBXConverter.cpp */; };
+		3DB87DF61F46BCAF00FB440C /* FBXConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BB71F4691BD00FB440C /* FBXConverter.h */; };
+		3DB87DF71F46BCAF00FB440C /* FBXDeformer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB81F4691BD00FB440C /* FBXDeformer.cpp */; };
+		3DB87DF81F46BCAF00FB440C /* FBXDocument.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BB91F4691BD00FB440C /* FBXDocument.cpp */; };
+		3DB87DF91F46BCAF00FB440C /* FBXDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBA1F4691BD00FB440C /* FBXDocument.h */; };
+		3DB87DFA1F46BCAF00FB440C /* FBXDocumentUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BBB1F4691BD00FB440C /* FBXDocumentUtil.cpp */; };
+		3DB87DFB1F46BCAF00FB440C /* FBXDocumentUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBC1F4691BD00FB440C /* FBXDocumentUtil.h */; };
+		3DB87DFC1F46BCAF00FB440C /* FBXImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BBD1F4691BD00FB440C /* FBXImporter.cpp */; };
+		3DB87DFD1F46BCAF00FB440C /* FBXImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBE1F4691BD00FB440C /* FBXImporter.h */; };
+		3DB87DFE1F46BCAF00FB440C /* FBXImportSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BBF1F4691BD00FB440C /* FBXImportSettings.h */; };
+		3DB87DFF1F46BCAF00FB440C /* FBXMeshGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC11F4691BD00FB440C /* FBXMeshGeometry.cpp */; };
+		3DB87E001F46BCAF00FB440C /* FBXMeshGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC21F4691BD00FB440C /* FBXMeshGeometry.h */; };
+		3DB87E011F46BCAF00FB440C /* FBXModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC31F4691BD00FB440C /* FBXModel.cpp */; };
+		3DB87E021F46BCAF00FB440C /* FBXNodeAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC41F4691BD00FB440C /* FBXNodeAttribute.cpp */; };
+		3DB87E031F46BCAF00FB440C /* FBXParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC51F4691BD00FB440C /* FBXParser.cpp */; };
+		3DB87E041F46BCAF00FB440C /* FBXParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC61F4691BD00FB440C /* FBXParser.h */; };
+		3DB87E051F46BCAF00FB440C /* FBXProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC71F4691BD00FB440C /* FBXProperties.cpp */; };
+		3DB87E061F46BCAF00FB440C /* FBXProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BC81F4691BD00FB440C /* FBXProperties.h */; };
+		3DB87E071F46BCAF00FB440C /* FBXTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BC91F4691BD00FB440C /* FBXTokenizer.cpp */; };
+		3DB87E081F46BCAF00FB440C /* FBXTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BCA1F4691BD00FB440C /* FBXTokenizer.h */; };
+		3DB87E091F46BCAF00FB440C /* FBXUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BCB1F4691BD00FB440C /* FBXUtil.cpp */; };
+		3DB87E0A1F46BCAF00FB440C /* FBXUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BCC1F4691BD00FB440C /* FBXUtil.h */; };
+		3DB87E0B1F46BCBD00FB440C /* AssimpCExport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BAC1F46915700FB440C /* AssimpCExport.cpp */; };
+		3DB87E0C1F46BCBD00FB440C /* BlobIOSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BAD1F46915700FB440C /* BlobIOSystem.h */; };
+		3DB87E0D1F46BCBD00FB440C /* Exporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87BAE1F46915700FB440C /* Exporter.cpp */; };
+		3DB87E0E1F46BCC400FB440C /* poppack1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA51F46911600FB440C /* poppack1.h */; };
+		3DB87E0F1F46BCC400FB440C /* pstdint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA61F46911600FB440C /* pstdint.h */; };
+		3DB87E101F46BCC400FB440C /* pushpack1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA71F46911600FB440C /* pushpack1.h */; };
+		3DB87E111F46BCCF00FB440C /* VertexTriangleAdjacency.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B9E1F4690D800FB440C /* VertexTriangleAdjacency.cpp */; };
+		3DB87E121F46BCCF00FB440C /* VertexTriangleAdjacency.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B9F1F4690D800FB440C /* VertexTriangleAdjacency.h */; };
+		3DB87E131F46BCCF00FB440C /* XMLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87BA01F4690D800FB440C /* XMLTools.h */; };
+		3DB87E141F46BCCF00FB440C /* qnan.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B621F4690AD00FB440C /* qnan.h */; };
+		3DB87E151F46BCCF00FB440C /* RemoveComments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B631F4690AD00FB440C /* RemoveComments.cpp */; };
+		3DB87E161F46BCCF00FB440C /* RemoveComments.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B641F4690AD00FB440C /* RemoveComments.h */; };
+		3DB87E171F46BCCF00FB440C /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B651F4690AD00FB440C /* scene.cpp */; };
+		3DB87E181F46BCCF00FB440C /* SceneCombiner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B661F4690AD00FB440C /* SceneCombiner.cpp */; };
+		3DB87E191F46BCCF00FB440C /* ScenePreprocessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B671F4690AD00FB440C /* ScenePreprocessor.cpp */; };
+		3DB87E1A1F46BCCF00FB440C /* ScenePreprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B681F4690AD00FB440C /* ScenePreprocessor.h */; };
+		3DB87E1B1F46BCCF00FB440C /* ScenePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B691F4690AD00FB440C /* ScenePrivate.h */; };
+		3DB87E1C1F46BCCF00FB440C /* SGSpatialSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6A1F4690AD00FB440C /* SGSpatialSort.cpp */; };
+		3DB87E1D1F46BCCF00FB440C /* SGSpatialSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6B1F4690AD00FB440C /* SGSpatialSort.h */; };
+		3DB87E1E1F46BCCF00FB440C /* SkeletonMeshBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6C1F4690AD00FB440C /* SkeletonMeshBuilder.cpp */; };
+		3DB87E1F1F46BCCF00FB440C /* SkeletonMeshBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6D1F4690AD00FB440C /* SkeletonMeshBuilder.h */; };
+		3DB87E201F46BCCF00FB440C /* SmoothingGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B6E1F4690AD00FB440C /* SmoothingGroups.h */; };
+		3DB87E211F46BCCF00FB440C /* SpatialSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B6F1F4690AD00FB440C /* SpatialSort.cpp */; };
+		3DB87E221F46BCCF00FB440C /* SpatialSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B701F4690AD00FB440C /* SpatialSort.h */; };
+		3DB87E231F46BCCF00FB440C /* SplitByBoneCountProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B711F4690AD00FB440C /* SplitByBoneCountProcess.cpp */; };
+		3DB87E241F46BCCF00FB440C /* SplitByBoneCountProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B721F4690AD00FB440C /* SplitByBoneCountProcess.h */; };
+		3DB87E251F46BCCF00FB440C /* StandardShapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B731F4690AD00FB440C /* StandardShapes.cpp */; };
+		3DB87E261F46BCCF00FB440C /* StandardShapes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B741F4690AD00FB440C /* StandardShapes.h */; };
+		3DB87E271F46BCCF00FB440C /* StreamReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B751F4690AD00FB440C /* StreamReader.h */; };
+		3DB87E281F46BCCF00FB440C /* StreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B761F4690AD00FB440C /* StreamWriter.h */; };
+		3DB87E291F46BCCF00FB440C /* StringComparison.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B771F4690AD00FB440C /* StringComparison.h */; };
+		3DB87E2A1F46BCCF00FB440C /* StringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B781F4690AD00FB440C /* StringUtils.h */; };
+		3DB87E2B1F46BCCF00FB440C /* Subdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B791F4690AD00FB440C /* Subdivision.cpp */; };
+		3DB87E2C1F46BCCF00FB440C /* Subdivision.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7A1F4690AD00FB440C /* Subdivision.h */; };
+		3DB87E2D1F46BCCF00FB440C /* TargetAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B7B1F4690AD00FB440C /* TargetAnimation.cpp */; };
+		3DB87E2E1F46BCCF00FB440C /* TargetAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7C1F4690AD00FB440C /* TargetAnimation.h */; };
+		3DB87E2F1F46BCCF00FB440C /* TinyFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7D1F4690AD00FB440C /* TinyFormatter.h */; };
+		3DB87E301F46BCCF00FB440C /* Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B7E1F4690AD00FB440C /* Version.cpp */; };
+		3DB87E311F46BCCF00FB440C /* Vertex.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B7F1F4690AD00FB440C /* Vertex.h */; };
+		3DB87E321F46BCCF00FB440C /* BaseImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2A1F46902E00FB440C /* BaseImporter.cpp */; };
+		3DB87E331F46BCCF00FB440C /* BaseImporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2B1F46902E00FB440C /* BaseImporter.h */; };
+		3DB87E341F46BCCF00FB440C /* BaseProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2C1F46902E00FB440C /* BaseProcess.cpp */; };
+		3DB87E351F46BCCF00FB440C /* BaseProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2D1F46902E00FB440C /* BaseProcess.h */; };
+		3DB87E361F46BCCF00FB440C /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B2E1F46902E00FB440C /* Bitmap.cpp */; };
+		3DB87E371F46BCCF00FB440C /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B2F1F46902E00FB440C /* Bitmap.h */; };
+		3DB87E381F46BCCF00FB440C /* ByteSwapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B301F46902E00FB440C /* ByteSwapper.h */; };
+		3DB87E391F46BCCF00FB440C /* CInterfaceIOWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B311F46902E00FB440C /* CInterfaceIOWrapper.cpp */; };
+		3DB87E3A1F46BCCF00FB440C /* CInterfaceIOWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B321F46902E00FB440C /* CInterfaceIOWrapper.h */; };
+		3DB87E3B1F46BCCF00FB440C /* CreateAnimMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B331F46902E00FB440C /* CreateAnimMesh.cpp */; };
+		3DB87E3C1F46BCCF00FB440C /* CreateAnimMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B341F46902E00FB440C /* CreateAnimMesh.h */; };
+		3DB87E3D1F46BCCF00FB440C /* DefaultIOStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B351F46902E00FB440C /* DefaultIOStream.cpp */; };
+		3DB87E3E1F46BCCF00FB440C /* DefaultIOSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B361F46902E00FB440C /* DefaultIOSystem.cpp */; };
+		3DB87E3F1F46BCCF00FB440C /* DefaultProgressHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B371F46902E00FB440C /* DefaultProgressHandler.h */; };
+		3DB87E401F46BCCF00FB440C /* fast_atof.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B381F46902E00FB440C /* fast_atof.h */; };
+		3DB87E411F46BCCF00FB440C /* GenericProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B391F46902E00FB440C /* GenericProperty.h */; };
+		3DB87E421F46BCCF00FB440C /* Hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3A1F46902E00FB440C /* Hash.h */; };
+		3DB87E431F46BCCF00FB440C /* IFF.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3B1F46902E00FB440C /* IFF.h */; };
+		3DB87E441F46BCCF00FB440C /* Importer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B3C1F46902E00FB440C /* Importer.cpp */; };
+		3DB87E451F46BCCF00FB440C /* Importer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3D1F46902E00FB440C /* Importer.h */; };
+		3DB87E461F46BCCF00FB440C /* ImporterRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B3E1F46902E00FB440C /* ImporterRegistry.cpp */; };
+		3DB87E471F46BCCF00FB440C /* IOStreamBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B3F1F46902E00FB440C /* IOStreamBuffer.h */; };
+		3DB87E481F46BCCF00FB440C /* LineSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B401F46902E00FB440C /* LineSplitter.h */; };
+		3DB87E491F46BCCF00FB440C /* LogAux.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B411F46902E00FB440C /* LogAux.h */; };
+		3DB87E4A1F46BCCF00FB440C /* MemoryIOWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B421F46902E00FB440C /* MemoryIOWrapper.h */; };
+		3DB87E4B1F46BCCF00FB440C /* ParsingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B431F46902E00FB440C /* ParsingUtils.h */; };
+		3DB87E4C1F46BCCF00FB440C /* PostStepRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B441F46902E00FB440C /* PostStepRegistry.cpp */; };
+		3DB87E4D1F46BCCF00FB440C /* Profiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B451F46902E00FB440C /* Profiler.h */; };
+		3DB87E4E1F46BCD800FB440C /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87B251F468EC000FB440C /* clipper.cpp */; };
+		3DB87E4F1F46BCD800FB440C /* clipper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87B261F468EC000FB440C /* clipper.hpp */; };
+		3DB87E671F46CE7800FB440C /* SplitLargeMeshes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87E651F46CE7800FB440C /* SplitLargeMeshes.cpp */; };
+		3DB87E681F46CE7800FB440C /* SplitLargeMeshes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87E661F46CE7800FB440C /* SplitLargeMeshes.h */; };
+		3DB87E691F46CF2A00FB440C /* SplitLargeMeshes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB87E651F46CE7800FB440C /* SplitLargeMeshes.cpp */; };
+		3DB87E6A1F46CF2E00FB440C /* SplitLargeMeshes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DB87E661F46CE7800FB440C /* SplitLargeMeshes.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DB87B251F468EC000FB440C /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = clipper.cpp; path = contrib/clipper/clipper.cpp; sourceTree = "<group>"; };
+		3DB87B261F468EC000FB440C /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = clipper.hpp; path = contrib/clipper/clipper.hpp; sourceTree = "<group>"; };
+		3DB87B2A1F46902E00FB440C /* BaseImporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseImporter.cpp; path = code/BaseImporter.cpp; sourceTree = "<group>"; };
+		3DB87B2B1F46902E00FB440C /* BaseImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseImporter.h; path = code/BaseImporter.h; sourceTree = "<group>"; };
+		3DB87B2C1F46902E00FB440C /* BaseProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseProcess.cpp; path = code/BaseProcess.cpp; sourceTree = "<group>"; };
+		3DB87B2D1F46902E00FB440C /* BaseProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseProcess.h; path = code/BaseProcess.h; sourceTree = "<group>"; };
+		3DB87B2E1F46902E00FB440C /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bitmap.cpp; path = code/Bitmap.cpp; sourceTree = "<group>"; };
+		3DB87B2F1F46902E00FB440C /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bitmap.h; path = code/Bitmap.h; sourceTree = "<group>"; };
+		3DB87B301F46902E00FB440C /* ByteSwapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ByteSwapper.h; path = code/ByteSwapper.h; sourceTree = "<group>"; };
+		3DB87B311F46902E00FB440C /* CInterfaceIOWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CInterfaceIOWrapper.cpp; path = code/CInterfaceIOWrapper.cpp; sourceTree = "<group>"; };
+		3DB87B321F46902E00FB440C /* CInterfaceIOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CInterfaceIOWrapper.h; path = code/CInterfaceIOWrapper.h; sourceTree = "<group>"; };
+		3DB87B331F46902E00FB440C /* CreateAnimMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CreateAnimMesh.cpp; path = code/CreateAnimMesh.cpp; sourceTree = "<group>"; };
+		3DB87B341F46902E00FB440C /* CreateAnimMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateAnimMesh.h; path = code/CreateAnimMesh.h; sourceTree = "<group>"; };
+		3DB87B351F46902E00FB440C /* DefaultIOStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DefaultIOStream.cpp; path = code/DefaultIOStream.cpp; sourceTree = "<group>"; };
+		3DB87B361F46902E00FB440C /* DefaultIOSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DefaultIOSystem.cpp; path = code/DefaultIOSystem.cpp; sourceTree = "<group>"; };
+		3DB87B371F46902E00FB440C /* DefaultProgressHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultProgressHandler.h; path = code/DefaultProgressHandler.h; sourceTree = "<group>"; };
+		3DB87B381F46902E00FB440C /* fast_atof.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fast_atof.h; path = code/fast_atof.h; sourceTree = "<group>"; };
+		3DB87B391F46902E00FB440C /* GenericProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericProperty.h; path = code/GenericProperty.h; sourceTree = "<group>"; };
+		3DB87B3A1F46902E00FB440C /* Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hash.h; path = code/Hash.h; sourceTree = "<group>"; };
+		3DB87B3B1F46902E00FB440C /* IFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFF.h; path = code/IFF.h; sourceTree = "<group>"; };
+		3DB87B3C1F46902E00FB440C /* Importer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Importer.cpp; path = code/Importer.cpp; sourceTree = "<group>"; };
+		3DB87B3D1F46902E00FB440C /* Importer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Importer.h; path = code/Importer.h; sourceTree = "<group>"; };
+		3DB87B3E1F46902E00FB440C /* ImporterRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImporterRegistry.cpp; path = code/ImporterRegistry.cpp; sourceTree = "<group>"; };
+		3DB87B3F1F46902E00FB440C /* IOStreamBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOStreamBuffer.h; path = code/IOStreamBuffer.h; sourceTree = "<group>"; };
+		3DB87B401F46902E00FB440C /* LineSplitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineSplitter.h; path = code/LineSplitter.h; sourceTree = "<group>"; };
+		3DB87B411F46902E00FB440C /* LogAux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogAux.h; path = code/LogAux.h; sourceTree = "<group>"; };
+		3DB87B421F46902E00FB440C /* MemoryIOWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryIOWrapper.h; path = code/MemoryIOWrapper.h; sourceTree = "<group>"; };
+		3DB87B431F46902E00FB440C /* ParsingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParsingUtils.h; path = code/ParsingUtils.h; sourceTree = "<group>"; };
+		3DB87B441F46902E00FB440C /* PostStepRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PostStepRegistry.cpp; path = code/PostStepRegistry.cpp; sourceTree = "<group>"; };
+		3DB87B451F46902E00FB440C /* Profiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Profiler.h; path = code/Profiler.h; sourceTree = "<group>"; };
+		3DB87B621F4690AD00FB440C /* qnan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = qnan.h; path = code/qnan.h; sourceTree = "<group>"; };
+		3DB87B631F4690AD00FB440C /* RemoveComments.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RemoveComments.cpp; path = code/RemoveComments.cpp; sourceTree = "<group>"; };
+		3DB87B641F4690AD00FB440C /* RemoveComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoveComments.h; path = code/RemoveComments.h; sourceTree = "<group>"; };
+		3DB87B651F4690AD00FB440C /* scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = scene.cpp; path = code/scene.cpp; sourceTree = "<group>"; };
+		3DB87B661F4690AD00FB440C /* SceneCombiner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneCombiner.cpp; path = code/SceneCombiner.cpp; sourceTree = "<group>"; };
+		3DB87B671F4690AD00FB440C /* ScenePreprocessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScenePreprocessor.cpp; path = code/ScenePreprocessor.cpp; sourceTree = "<group>"; };
+		3DB87B681F4690AD00FB440C /* ScenePreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScenePreprocessor.h; path = code/ScenePreprocessor.h; sourceTree = "<group>"; };
+		3DB87B691F4690AD00FB440C /* ScenePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScenePrivate.h; path = code/ScenePrivate.h; sourceTree = "<group>"; };
+		3DB87B6A1F4690AD00FB440C /* SGSpatialSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SGSpatialSort.cpp; path = code/SGSpatialSort.cpp; sourceTree = "<group>"; };
+		3DB87B6B1F4690AD00FB440C /* SGSpatialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSpatialSort.h; path = code/SGSpatialSort.h; sourceTree = "<group>"; };
+		3DB87B6C1F4690AD00FB440C /* SkeletonMeshBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkeletonMeshBuilder.cpp; path = code/SkeletonMeshBuilder.cpp; sourceTree = "<group>"; };
+		3DB87B6D1F4690AD00FB440C /* SkeletonMeshBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkeletonMeshBuilder.h; path = code/SkeletonMeshBuilder.h; sourceTree = "<group>"; };
+		3DB87B6E1F4690AD00FB440C /* SmoothingGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmoothingGroups.h; path = code/SmoothingGroups.h; sourceTree = "<group>"; };
+		3DB87B6F1F4690AD00FB440C /* SpatialSort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpatialSort.cpp; path = code/SpatialSort.cpp; sourceTree = "<group>"; };
+		3DB87B701F4690AD00FB440C /* SpatialSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpatialSort.h; path = code/SpatialSort.h; sourceTree = "<group>"; };
+		3DB87B711F4690AD00FB440C /* SplitByBoneCountProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SplitByBoneCountProcess.cpp; path = code/SplitByBoneCountProcess.cpp; sourceTree = "<group>"; };
+		3DB87B721F4690AD00FB440C /* SplitByBoneCountProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplitByBoneCountProcess.h; path = code/SplitByBoneCountProcess.h; sourceTree = "<group>"; };
+		3DB87B731F4690AD00FB440C /* StandardShapes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StandardShapes.cpp; path = code/StandardShapes.cpp; sourceTree = "<group>"; };
+		3DB87B741F4690AD00FB440C /* StandardShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardShapes.h; path = code/StandardShapes.h; sourceTree = "<group>"; };
+		3DB87B751F4690AD00FB440C /* StreamReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamReader.h; path = code/StreamReader.h; sourceTree = "<group>"; };
+		3DB87B761F4690AD00FB440C /* StreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StreamWriter.h; path = code/StreamWriter.h; sourceTree = "<group>"; };
+		3DB87B771F4690AD00FB440C /* StringComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringComparison.h; path = code/StringComparison.h; sourceTree = "<group>"; };
+		3DB87B781F4690AD00FB440C /* StringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtils.h; path = code/StringUtils.h; sourceTree = "<group>"; };
+		3DB87B791F4690AD00FB440C /* Subdivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subdivision.cpp; path = code/Subdivision.cpp; sourceTree = "<group>"; };
+		3DB87B7A1F4690AD00FB440C /* Subdivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subdivision.h; path = code/Subdivision.h; sourceTree = "<group>"; };
+		3DB87B7B1F4690AD00FB440C /* TargetAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TargetAnimation.cpp; path = code/TargetAnimation.cpp; sourceTree = "<group>"; };
+		3DB87B7C1F4690AD00FB440C /* TargetAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetAnimation.h; path = code/TargetAnimation.h; sourceTree = "<group>"; };
+		3DB87B7D1F4690AD00FB440C /* TinyFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyFormatter.h; path = code/TinyFormatter.h; sourceTree = "<group>"; };
+		3DB87B7E1F4690AD00FB440C /* Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Version.cpp; path = code/Version.cpp; sourceTree = "<group>"; };
+		3DB87B7F1F4690AD00FB440C /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex.h; path = code/Vertex.h; sourceTree = "<group>"; };
+		3DB87B9E1F4690D800FB440C /* VertexTriangleAdjacency.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexTriangleAdjacency.cpp; path = code/VertexTriangleAdjacency.cpp; sourceTree = "<group>"; };
+		3DB87B9F1F4690D800FB440C /* VertexTriangleAdjacency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexTriangleAdjacency.h; path = code/VertexTriangleAdjacency.h; sourceTree = "<group>"; };
+		3DB87BA01F4690D800FB440C /* XMLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLTools.h; path = code/XMLTools.h; sourceTree = "<group>"; };
+		3DB87BA51F46911600FB440C /* poppack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = poppack1.h; path = include/assimp/Compiler/poppack1.h; sourceTree = "<group>"; };
+		3DB87BA61F46911600FB440C /* pstdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pstdint.h; path = include/assimp/Compiler/pstdint.h; sourceTree = "<group>"; };
+		3DB87BA71F46911600FB440C /* pushpack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pushpack1.h; path = include/assimp/Compiler/pushpack1.h; sourceTree = "<group>"; };
+		3DB87BAC1F46915700FB440C /* AssimpCExport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AssimpCExport.cpp; path = code/AssimpCExport.cpp; sourceTree = "<group>"; };
+		3DB87BAD1F46915700FB440C /* BlobIOSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlobIOSystem.h; path = code/BlobIOSystem.h; sourceTree = "<group>"; };
+		3DB87BAE1F46915700FB440C /* Exporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Exporter.cpp; path = code/Exporter.cpp; sourceTree = "<group>"; };
+		3DB87BB31F4691BD00FB440C /* FBXAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXAnimation.cpp; path = code/FBXAnimation.cpp; sourceTree = "<group>"; };
+		3DB87BB41F4691BD00FB440C /* FBXBinaryTokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXBinaryTokenizer.cpp; path = code/FBXBinaryTokenizer.cpp; sourceTree = "<group>"; };
+		3DB87BB51F4691BD00FB440C /* FBXCompileConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXCompileConfig.h; path = code/FBXCompileConfig.h; sourceTree = "<group>"; };
+		3DB87BB61F4691BD00FB440C /* FBXConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXConverter.cpp; path = code/FBXConverter.cpp; sourceTree = "<group>"; };
+		3DB87BB71F4691BD00FB440C /* FBXConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXConverter.h; path = code/FBXConverter.h; sourceTree = "<group>"; };
+		3DB87BB81F4691BD00FB440C /* FBXDeformer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXDeformer.cpp; path = code/FBXDeformer.cpp; sourceTree = "<group>"; };
+		3DB87BB91F4691BD00FB440C /* FBXDocument.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXDocument.cpp; path = code/FBXDocument.cpp; sourceTree = "<group>"; };
+		3DB87BBA1F4691BD00FB440C /* FBXDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXDocument.h; path = code/FBXDocument.h; sourceTree = "<group>"; };
+		3DB87BBB1F4691BD00FB440C /* FBXDocumentUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXDocumentUtil.cpp; path = code/FBXDocumentUtil.cpp; sourceTree = "<group>"; };
+		3DB87BBC1F4691BD00FB440C /* FBXDocumentUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXDocumentUtil.h; path = code/FBXDocumentUtil.h; sourceTree = "<group>"; };
+		3DB87BBD1F4691BD00FB440C /* FBXImporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXImporter.cpp; path = code/FBXImporter.cpp; sourceTree = "<group>"; };
+		3DB87BBE1F4691BD00FB440C /* FBXImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXImporter.h; path = code/FBXImporter.h; sourceTree = "<group>"; };
+		3DB87BBF1F4691BD00FB440C /* FBXImportSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXImportSettings.h; path = code/FBXImportSettings.h; sourceTree = "<group>"; };
+		3DB87BC01F4691BD00FB440C /* FBXMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXMaterial.cpp; path = code/FBXMaterial.cpp; sourceTree = "<group>"; };
+		3DB87BC11F4691BD00FB440C /* FBXMeshGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXMeshGeometry.cpp; path = code/FBXMeshGeometry.cpp; sourceTree = "<group>"; };
+		3DB87BC21F4691BD00FB440C /* FBXMeshGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXMeshGeometry.h; path = code/FBXMeshGeometry.h; sourceTree = "<group>"; };
+		3DB87BC31F4691BD00FB440C /* FBXModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXModel.cpp; path = code/FBXModel.cpp; sourceTree = "<group>"; };
+		3DB87BC41F4691BD00FB440C /* FBXNodeAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXNodeAttribute.cpp; path = code/FBXNodeAttribute.cpp; sourceTree = "<group>"; };
+		3DB87BC51F4691BD00FB440C /* FBXParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXParser.cpp; path = code/FBXParser.cpp; sourceTree = "<group>"; };
+		3DB87BC61F4691BD00FB440C /* FBXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXParser.h; path = code/FBXParser.h; sourceTree = "<group>"; };
+		3DB87BC71F4691BD00FB440C /* FBXProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXProperties.cpp; path = code/FBXProperties.cpp; sourceTree = "<group>"; };
+		3DB87BC81F4691BD00FB440C /* FBXProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXProperties.h; path = code/FBXProperties.h; sourceTree = "<group>"; };
+		3DB87BC91F4691BD00FB440C /* FBXTokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXTokenizer.cpp; path = code/FBXTokenizer.cpp; sourceTree = "<group>"; };
+		3DB87BCA1F4691BD00FB440C /* FBXTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXTokenizer.h; path = code/FBXTokenizer.h; sourceTree = "<group>"; };
+		3DB87BCB1F4691BD00FB440C /* FBXUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FBXUtil.cpp; path = code/FBXUtil.cpp; sourceTree = "<group>"; };
+		3DB87BCC1F4691BD00FB440C /* FBXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXUtil.h; path = code/FBXUtil.h; sourceTree = "<group>"; };
+		3DB87BE81F4691E300FB440C /* irrXMLWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = irrXMLWrapper.h; path = code/irrXMLWrapper.h; sourceTree = "<group>"; };
+		3DB87BEB1F46921800FB440C /* DefaultLogger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DefaultLogger.cpp; path = code/DefaultLogger.cpp; sourceTree = "<group>"; };
+		3DB87BED1F46923C00FB440C /* DefaultLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DefaultLogger.hpp; path = include/assimp/DefaultLogger.hpp; sourceTree = "<group>"; };
+		3DB87BEF1F46925F00FB440C /* FileLogStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileLogStream.h; path = code/FileLogStream.h; sourceTree = "<group>"; };
+		3DB87BF11F46928800FB440C /* StdOStreamLogStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdOStreamLogStream.h; path = code/StdOStreamLogStream.h; sourceTree = "<group>"; };
+		3DB87BF31F4692A900FB440C /* Logger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Logger.hpp; path = include/assimp/Logger.hpp; sourceTree = "<group>"; };
+		3DB87BF41F4692A900FB440C /* LogStream.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LogStream.hpp; path = include/assimp/LogStream.hpp; sourceTree = "<group>"; };
+		3DB87BF51F4692A900FB440C /* NullLogger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NullLogger.hpp; path = include/assimp/NullLogger.hpp; sourceTree = "<group>"; };
+		3DB87BFA1F4692D400FB440C /* MaterialSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MaterialSystem.cpp; path = code/MaterialSystem.cpp; sourceTree = "<group>"; };
+		3DB87BFB1F4692D400FB440C /* MaterialSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialSystem.h; path = code/MaterialSystem.h; sourceTree = "<group>"; };
+		3DB87BFF1F46930000FB440C /* o3dgcAdjacencyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcAdjacencyInfo.h; path = contrib/Open3DGC/o3dgcAdjacencyInfo.h; sourceTree = "<group>"; };
+		3DB87C001F46930000FB440C /* o3dgcArithmeticCodec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o3dgcArithmeticCodec.cpp; path = contrib/Open3DGC/o3dgcArithmeticCodec.cpp; sourceTree = "<group>"; };
+		3DB87C011F46930000FB440C /* o3dgcArithmeticCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcArithmeticCodec.h; path = contrib/Open3DGC/o3dgcArithmeticCodec.h; sourceTree = "<group>"; };
+		3DB87C021F46930000FB440C /* o3dgcBinaryStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcBinaryStream.h; path = contrib/Open3DGC/o3dgcBinaryStream.h; sourceTree = "<group>"; };
+		3DB87C031F46930000FB440C /* o3dgcCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcCommon.h; path = contrib/Open3DGC/o3dgcCommon.h; sourceTree = "<group>"; };
+		3DB87C041F46930000FB440C /* o3dgcDVEncodeParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcDVEncodeParams.h; path = contrib/Open3DGC/o3dgcDVEncodeParams.h; sourceTree = "<group>"; };
+		3DB87C051F46930000FB440C /* o3dgcDynamicVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcDynamicVector.h; path = contrib/Open3DGC/o3dgcDynamicVector.h; sourceTree = "<group>"; };
+		3DB87C061F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o3dgcDynamicVectorDecoder.cpp; path = contrib/Open3DGC/o3dgcDynamicVectorDecoder.cpp; sourceTree = "<group>"; };
+		3DB87C071F46930000FB440C /* o3dgcDynamicVectorDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcDynamicVectorDecoder.h; path = contrib/Open3DGC/o3dgcDynamicVectorDecoder.h; sourceTree = "<group>"; };
+		3DB87C081F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o3dgcDynamicVectorEncoder.cpp; path = contrib/Open3DGC/o3dgcDynamicVectorEncoder.cpp; sourceTree = "<group>"; };
+		3DB87C091F46930000FB440C /* o3dgcDynamicVectorEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcDynamicVectorEncoder.h; path = contrib/Open3DGC/o3dgcDynamicVectorEncoder.h; sourceTree = "<group>"; };
+		3DB87C0A1F46930000FB440C /* o3dgcFIFO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcFIFO.h; path = contrib/Open3DGC/o3dgcFIFO.h; sourceTree = "<group>"; };
+		3DB87C0B1F46930000FB440C /* o3dgcIndexedFaceSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcIndexedFaceSet.h; path = contrib/Open3DGC/o3dgcIndexedFaceSet.h; sourceTree = "<group>"; };
+		3DB87C0C1F46930000FB440C /* o3dgcIndexedFaceSet.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcIndexedFaceSet.inl; path = contrib/Open3DGC/o3dgcIndexedFaceSet.inl; sourceTree = "<group>"; };
+		3DB87C0D1F46930000FB440C /* o3dgcSC3DMCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcSC3DMCDecoder.h; path = contrib/Open3DGC/o3dgcSC3DMCDecoder.h; sourceTree = "<group>"; };
+		3DB87C0E1F46930000FB440C /* o3dgcSC3DMCDecoder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcSC3DMCDecoder.inl; path = contrib/Open3DGC/o3dgcSC3DMCDecoder.inl; sourceTree = "<group>"; };
+		3DB87C0F1F46930000FB440C /* o3dgcSC3DMCEncodeParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcSC3DMCEncodeParams.h; path = contrib/Open3DGC/o3dgcSC3DMCEncodeParams.h; sourceTree = "<group>"; };
+		3DB87C101F46930000FB440C /* o3dgcSC3DMCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcSC3DMCEncoder.h; path = contrib/Open3DGC/o3dgcSC3DMCEncoder.h; sourceTree = "<group>"; };
+		3DB87C111F46930000FB440C /* o3dgcSC3DMCEncoder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcSC3DMCEncoder.inl; path = contrib/Open3DGC/o3dgcSC3DMCEncoder.inl; sourceTree = "<group>"; };
+		3DB87C121F46930000FB440C /* o3dgcTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcTimer.h; path = contrib/Open3DGC/o3dgcTimer.h; sourceTree = "<group>"; };
+		3DB87C131F46930000FB440C /* o3dgcTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o3dgcTools.cpp; path = contrib/Open3DGC/o3dgcTools.cpp; sourceTree = "<group>"; };
+		3DB87C141F46930000FB440C /* o3dgcTriangleFans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = o3dgcTriangleFans.cpp; path = contrib/Open3DGC/o3dgcTriangleFans.cpp; sourceTree = "<group>"; };
+		3DB87C151F46930000FB440C /* o3dgcTriangleFans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcTriangleFans.h; path = contrib/Open3DGC/o3dgcTriangleFans.h; sourceTree = "<group>"; };
+		3DB87C161F46930000FB440C /* o3dgcTriangleListDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcTriangleListDecoder.h; path = contrib/Open3DGC/o3dgcTriangleListDecoder.h; sourceTree = "<group>"; };
+		3DB87C171F46930000FB440C /* o3dgcTriangleListDecoder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcTriangleListDecoder.inl; path = contrib/Open3DGC/o3dgcTriangleListDecoder.inl; sourceTree = "<group>"; };
+		3DB87C181F46930000FB440C /* o3dgcTriangleListEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcTriangleListEncoder.h; path = contrib/Open3DGC/o3dgcTriangleListEncoder.h; sourceTree = "<group>"; };
+		3DB87C191F46930000FB440C /* o3dgcTriangleListEncoder.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcTriangleListEncoder.inl; path = contrib/Open3DGC/o3dgcTriangleListEncoder.inl; sourceTree = "<group>"; };
+		3DB87C1A1F46930000FB440C /* o3dgcVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = o3dgcVector.h; path = contrib/Open3DGC/o3dgcVector.h; sourceTree = "<group>"; };
+		3DB87C1B1F46930000FB440C /* o3dgcVector.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = o3dgcVector.inl; path = contrib/Open3DGC/o3dgcVector.inl; sourceTree = "<group>"; };
+		3DB87C341F46933900FB440C /* DDLNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DDLNode.cpp; path = contrib/openddlparser/code/DDLNode.cpp; sourceTree = "<group>"; };
+		3DB87C351F46933900FB440C /* OpenDDLCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenDDLCommon.cpp; path = contrib/openddlparser/code/OpenDDLCommon.cpp; sourceTree = "<group>"; };
+		3DB87C361F46933900FB440C /* OpenDDLExport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenDDLExport.cpp; path = contrib/openddlparser/code/OpenDDLExport.cpp; sourceTree = "<group>"; };
+		3DB87C371F46933900FB440C /* OpenDDLParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenDDLParser.cpp; path = contrib/openddlparser/code/OpenDDLParser.cpp; sourceTree = "<group>"; };
+		3DB87C381F46933900FB440C /* OpenDDLStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpenDDLStream.cpp; path = contrib/openddlparser/code/OpenDDLStream.cpp; sourceTree = "<group>"; };
+		3DB87C391F46933900FB440C /* Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Value.cpp; path = contrib/openddlparser/code/Value.cpp; sourceTree = "<group>"; };
+		3DB87C401F46935100FB440C /* DDLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDLNode.h; path = contrib/openddlparser/include/openddlparser/DDLNode.h; sourceTree = "<group>"; };
+		3DB87C411F46935100FB440C /* OpenDDLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenDDLCommon.h; path = contrib/openddlparser/include/openddlparser/OpenDDLCommon.h; sourceTree = "<group>"; };
+		3DB87C421F46935100FB440C /* OpenDDLExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenDDLExport.h; path = contrib/openddlparser/include/openddlparser/OpenDDLExport.h; sourceTree = "<group>"; };
+		3DB87C431F46935100FB440C /* OpenDDLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenDDLParser.h; path = contrib/openddlparser/include/openddlparser/OpenDDLParser.h; sourceTree = "<group>"; };
+		3DB87C441F46935100FB440C /* OpenDDLParserUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenDDLParserUtils.h; path = contrib/openddlparser/include/openddlparser/OpenDDLParserUtils.h; sourceTree = "<group>"; };
+		3DB87C451F46935100FB440C /* OpenDDLStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenDDLStream.h; path = contrib/openddlparser/include/openddlparser/OpenDDLStream.h; sourceTree = "<group>"; };
+		3DB87C461F46935100FB440C /* Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Value.h; path = contrib/openddlparser/include/openddlparser/Value.h; sourceTree = "<group>"; };
+		3DB87C4F1F46938300FB440C /* shapes.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shapes.cc; path = contrib/poly2tri/poly2tri/common/shapes.cc; sourceTree = "<group>"; };
+		3DB87C501F46938300FB440C /* shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shapes.h; path = contrib/poly2tri/poly2tri/common/shapes.h; sourceTree = "<group>"; };
+		3DB87C511F46938300FB440C /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = contrib/poly2tri/poly2tri/common/utils.h; sourceTree = "<group>"; };
+		3DB87C551F46939200FB440C /* advancing_front.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = advancing_front.cc; path = contrib/poly2tri/poly2tri/sweep/advancing_front.cc; sourceTree = "<group>"; };
+		3DB87C561F46939200FB440C /* advancing_front.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = advancing_front.h; path = contrib/poly2tri/poly2tri/sweep/advancing_front.h; sourceTree = "<group>"; };
+		3DB87C571F46939200FB440C /* cdt.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cdt.cc; path = contrib/poly2tri/poly2tri/sweep/cdt.cc; sourceTree = "<group>"; };
+		3DB87C581F46939200FB440C /* cdt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cdt.h; path = contrib/poly2tri/poly2tri/sweep/cdt.h; sourceTree = "<group>"; };
+		3DB87C591F46939200FB440C /* sweep_context.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sweep_context.cc; path = contrib/poly2tri/poly2tri/sweep/sweep_context.cc; sourceTree = "<group>"; };
+		3DB87C5A1F46939200FB440C /* sweep_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sweep_context.h; path = contrib/poly2tri/poly2tri/sweep/sweep_context.h; sourceTree = "<group>"; };
+		3DB87C5B1F46939200FB440C /* sweep.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sweep.cc; path = contrib/poly2tri/poly2tri/sweep/sweep.cc; sourceTree = "<group>"; };
+		3DB87C5C1F46939200FB440C /* sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sweep.h; path = contrib/poly2tri/poly2tri/sweep/sweep.h; sourceTree = "<group>"; };
+		3DB87C661F46942800FB440C /* CalcTangentsProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CalcTangentsProcess.cpp; path = code/CalcTangentsProcess.cpp; sourceTree = "<group>"; };
+		3DB87C671F46942800FB440C /* CalcTangentsProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalcTangentsProcess.h; path = code/CalcTangentsProcess.h; sourceTree = "<group>"; };
+		3DB87C681F46942800FB440C /* ComputeUVMappingProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ComputeUVMappingProcess.cpp; path = code/ComputeUVMappingProcess.cpp; sourceTree = "<group>"; };
+		3DB87C691F46942800FB440C /* ComputeUVMappingProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputeUVMappingProcess.h; path = code/ComputeUVMappingProcess.h; sourceTree = "<group>"; };
+		3DB87C6A1F46942800FB440C /* ConvertToLHProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConvertToLHProcess.cpp; path = code/ConvertToLHProcess.cpp; sourceTree = "<group>"; };
+		3DB87C6B1F46942800FB440C /* ConvertToLHProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConvertToLHProcess.h; path = code/ConvertToLHProcess.h; sourceTree = "<group>"; };
+		3DB87C6C1F46942800FB440C /* DeboneProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DeboneProcess.cpp; path = code/DeboneProcess.cpp; sourceTree = "<group>"; };
+		3DB87C6D1F46942800FB440C /* DeboneProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeboneProcess.h; path = code/DeboneProcess.h; sourceTree = "<group>"; };
+		3DB87C6E1F46942800FB440C /* FindDegenerates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FindDegenerates.cpp; path = code/FindDegenerates.cpp; sourceTree = "<group>"; };
+		3DB87C6F1F46942800FB440C /* FindDegenerates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindDegenerates.h; path = code/FindDegenerates.h; sourceTree = "<group>"; };
+		3DB87C701F46942800FB440C /* FindInstancesProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FindInstancesProcess.cpp; path = code/FindInstancesProcess.cpp; sourceTree = "<group>"; };
+		3DB87C711F46942800FB440C /* FindInstancesProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindInstancesProcess.h; path = code/FindInstancesProcess.h; sourceTree = "<group>"; };
+		3DB87C721F46942800FB440C /* FindInvalidDataProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FindInvalidDataProcess.cpp; path = code/FindInvalidDataProcess.cpp; sourceTree = "<group>"; };
+		3DB87C731F46942800FB440C /* FindInvalidDataProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindInvalidDataProcess.h; path = code/FindInvalidDataProcess.h; sourceTree = "<group>"; };
+		3DB87C741F46942800FB440C /* FixNormalsStep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FixNormalsStep.cpp; path = code/FixNormalsStep.cpp; sourceTree = "<group>"; };
+		3DB87C751F46942800FB440C /* FixNormalsStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FixNormalsStep.h; path = code/FixNormalsStep.h; sourceTree = "<group>"; };
+		3DB87C761F46942800FB440C /* GenFaceNormalsProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenFaceNormalsProcess.cpp; path = code/GenFaceNormalsProcess.cpp; sourceTree = "<group>"; };
+		3DB87C771F46942800FB440C /* GenFaceNormalsProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenFaceNormalsProcess.h; path = code/GenFaceNormalsProcess.h; sourceTree = "<group>"; };
+		3DB87C781F46942800FB440C /* GenVertexNormalsProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GenVertexNormalsProcess.cpp; path = code/GenVertexNormalsProcess.cpp; sourceTree = "<group>"; };
+		3DB87C791F46942800FB440C /* GenVertexNormalsProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenVertexNormalsProcess.h; path = code/GenVertexNormalsProcess.h; sourceTree = "<group>"; };
+		3DB87C7A1F46942800FB440C /* ImproveCacheLocality.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImproveCacheLocality.cpp; path = code/ImproveCacheLocality.cpp; sourceTree = "<group>"; };
+		3DB87C7B1F46942800FB440C /* ImproveCacheLocality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImproveCacheLocality.h; path = code/ImproveCacheLocality.h; sourceTree = "<group>"; };
+		3DB87C7C1F46942800FB440C /* JoinVerticesProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JoinVerticesProcess.cpp; path = code/JoinVerticesProcess.cpp; sourceTree = "<group>"; };
+		3DB87C7D1F46942800FB440C /* JoinVerticesProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinVerticesProcess.h; path = code/JoinVerticesProcess.h; sourceTree = "<group>"; };
+		3DB87C7E1F46942800FB440C /* LimitBoneWeightsProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LimitBoneWeightsProcess.cpp; path = code/LimitBoneWeightsProcess.cpp; sourceTree = "<group>"; };
+		3DB87C7F1F46942800FB440C /* LimitBoneWeightsProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LimitBoneWeightsProcess.h; path = code/LimitBoneWeightsProcess.h; sourceTree = "<group>"; };
+		3DB87C801F46942800FB440C /* MakeVerboseFormat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MakeVerboseFormat.cpp; path = code/MakeVerboseFormat.cpp; sourceTree = "<group>"; };
+		3DB87C811F46942800FB440C /* MakeVerboseFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeVerboseFormat.h; path = code/MakeVerboseFormat.h; sourceTree = "<group>"; };
+		3DB87C821F46942800FB440C /* OptimizeGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OptimizeGraph.cpp; path = code/OptimizeGraph.cpp; sourceTree = "<group>"; };
+		3DB87C831F46942800FB440C /* OptimizeGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptimizeGraph.h; path = code/OptimizeGraph.h; sourceTree = "<group>"; };
+		3DB87C841F46942800FB440C /* OptimizeMeshes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OptimizeMeshes.cpp; path = code/OptimizeMeshes.cpp; sourceTree = "<group>"; };
+		3DB87C851F46942800FB440C /* OptimizeMeshes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptimizeMeshes.h; path = code/OptimizeMeshes.h; sourceTree = "<group>"; };
+		3DB87CA61F46947600FB440C /* PolyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PolyTools.h; path = code/PolyTools.h; sourceTree = "<group>"; };
+		3DB87CA71F46947600FB440C /* PretransformVertices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PretransformVertices.cpp; path = code/PretransformVertices.cpp; sourceTree = "<group>"; };
+		3DB87CA81F46947600FB440C /* PretransformVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PretransformVertices.h; path = code/PretransformVertices.h; sourceTree = "<group>"; };
+		3DB87CA91F46947600FB440C /* ProcessHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessHelper.cpp; path = code/ProcessHelper.cpp; sourceTree = "<group>"; };
+		3DB87CAA1F46947600FB440C /* ProcessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessHelper.h; path = code/ProcessHelper.h; sourceTree = "<group>"; };
+		3DB87CAB1F46947600FB440C /* RemoveRedundantMaterials.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RemoveRedundantMaterials.cpp; path = code/RemoveRedundantMaterials.cpp; sourceTree = "<group>"; };
+		3DB87CAC1F46947600FB440C /* RemoveRedundantMaterials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoveRedundantMaterials.h; path = code/RemoveRedundantMaterials.h; sourceTree = "<group>"; };
+		3DB87CAD1F46947600FB440C /* RemoveVCProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RemoveVCProcess.cpp; path = code/RemoveVCProcess.cpp; sourceTree = "<group>"; };
+		3DB87CAE1F46947600FB440C /* RemoveVCProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoveVCProcess.h; path = code/RemoveVCProcess.h; sourceTree = "<group>"; };
+		3DB87CAF1F46947600FB440C /* SortByPTypeProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SortByPTypeProcess.cpp; path = code/SortByPTypeProcess.cpp; sourceTree = "<group>"; };
+		3DB87CB01F46947600FB440C /* SortByPTypeProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SortByPTypeProcess.h; path = code/SortByPTypeProcess.h; sourceTree = "<group>"; };
+		3DB87CB11F46947600FB440C /* TextureTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureTransform.cpp; path = code/TextureTransform.cpp; sourceTree = "<group>"; };
+		3DB87CB21F46947600FB440C /* TextureTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureTransform.h; path = code/TextureTransform.h; sourceTree = "<group>"; };
+		3DB87CB31F46947600FB440C /* TriangulateProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TriangulateProcess.cpp; path = code/TriangulateProcess.cpp; sourceTree = "<group>"; };
+		3DB87CB41F46947600FB440C /* TriangulateProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TriangulateProcess.h; path = code/TriangulateProcess.h; sourceTree = "<group>"; };
+		3DB87CB51F46947600FB440C /* ValidateDataStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ValidateDataStructure.cpp; path = code/ValidateDataStructure.cpp; sourceTree = "<group>"; };
+		3DB87CB61F46947600FB440C /* ValidateDataStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValidateDataStructure.h; path = code/ValidateDataStructure.h; sourceTree = "<group>"; };
+		3DB87CC91F46949B00FB440C /* StepExporter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StepExporter.cpp; path = code/StepExporter.cpp; sourceTree = "<group>"; };
+		3DB87CCA1F46949B00FB440C /* StepExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StepExporter.h; path = code/StepExporter.h; sourceTree = "<group>"; };
+		3DB87CCE1F4694C400FB440C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = contrib/unzip/crypt.h; sourceTree = "<group>"; };
+		3DB87CCF1F4694C400FB440C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = contrib/unzip/ioapi.c; sourceTree = "<group>"; };
+		3DB87CD01F4694C400FB440C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = contrib/unzip/ioapi.h; sourceTree = "<group>"; };
+		3DB87CD11F4694C400FB440C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = contrib/unzip/unzip.c; sourceTree = "<group>"; };
+		3DB87CD21F4694C400FB440C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = contrib/unzip/unzip.h; sourceTree = "<group>"; };
+		3DB87E591F46CDD600FB440C /* libassimp Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libassimp Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB87E5A1F46CDD600FB440C /* libassimp iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libassimp iOS.a"; path = "/Users/mini/Documents/ParaEngine/Mobile/trunk/ParaCraftMobile/frameworks/runtime-src/externals/assimp/build/Debug-iphoneos/libassimp iOS.a"; sourceTree = "<absolute>"; };
+		3DB87E651F46CE7800FB440C /* SplitLargeMeshes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SplitLargeMeshes.cpp; path = code/SplitLargeMeshes.cpp; sourceTree = "<group>"; };
+		3DB87E661F46CE7800FB440C /* SplitLargeMeshes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplitLargeMeshes.h; path = code/SplitLargeMeshes.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1551A33C158F2AB200E66CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07A4CAD1783777C0073F6A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1551A334158F2AB200E66CFE = {
+			isa = PBXGroup;
+			children = (
+				3DB87CCD1F4694A300FB440C /* unzip */,
+				3DB87CC81F46948200FB440C /* Step */,
+				3DB87C651F4693A400FB440C /* PostProcessing */,
+				3DB87C4E1F46936400FB440C /* Poly2Tri */,
+				3DB87C331F46931500FB440C /* openddl_parser */,
+				3DB87BFE1F4692DF00FB440C /* open3dgc */,
+				3DB87BF91F4692B100FB440C /* MaterialSystem */,
+				3DB87BEA1F4691E600FB440C /* Logging */,
+				3DB87BE71F4691C900FB440C /* IrrXml */,
+				3DB87BB21F46916300FB440C /* FBX */,
+				3DB87BAB1F46912200FB440C /* Exporter */,
+				3DB87BA41F4690E400FB440C /* Compiler */,
+				3DB87B291F468EC600FB440C /* Common */,
+				3DB87B241F468BBB00FB440C /* Clipper */,
+				3DB87E591F46CDD600FB440C /* libassimp Mac.a */,
+			);
+			sourceTree = "<group>";
+		};
+		3DB87B241F468BBB00FB440C /* Clipper */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87B251F468EC000FB440C /* clipper.cpp */,
+				3DB87B261F468EC000FB440C /* clipper.hpp */,
+			);
+			name = Clipper;
+			sourceTree = "<group>";
+		};
+		3DB87B291F468EC600FB440C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87B9E1F4690D800FB440C /* VertexTriangleAdjacency.cpp */,
+				3DB87B9F1F4690D800FB440C /* VertexTriangleAdjacency.h */,
+				3DB87BA01F4690D800FB440C /* XMLTools.h */,
+				3DB87B621F4690AD00FB440C /* qnan.h */,
+				3DB87B631F4690AD00FB440C /* RemoveComments.cpp */,
+				3DB87B641F4690AD00FB440C /* RemoveComments.h */,
+				3DB87B651F4690AD00FB440C /* scene.cpp */,
+				3DB87B661F4690AD00FB440C /* SceneCombiner.cpp */,
+				3DB87B671F4690AD00FB440C /* ScenePreprocessor.cpp */,
+				3DB87B681F4690AD00FB440C /* ScenePreprocessor.h */,
+				3DB87B691F4690AD00FB440C /* ScenePrivate.h */,
+				3DB87B6A1F4690AD00FB440C /* SGSpatialSort.cpp */,
+				3DB87B6B1F4690AD00FB440C /* SGSpatialSort.h */,
+				3DB87B6C1F4690AD00FB440C /* SkeletonMeshBuilder.cpp */,
+				3DB87B6D1F4690AD00FB440C /* SkeletonMeshBuilder.h */,
+				3DB87B6E1F4690AD00FB440C /* SmoothingGroups.h */,
+				3DB87B6F1F4690AD00FB440C /* SpatialSort.cpp */,
+				3DB87B701F4690AD00FB440C /* SpatialSort.h */,
+				3DB87B711F4690AD00FB440C /* SplitByBoneCountProcess.cpp */,
+				3DB87B721F4690AD00FB440C /* SplitByBoneCountProcess.h */,
+				3DB87B731F4690AD00FB440C /* StandardShapes.cpp */,
+				3DB87B741F4690AD00FB440C /* StandardShapes.h */,
+				3DB87B751F4690AD00FB440C /* StreamReader.h */,
+				3DB87B761F4690AD00FB440C /* StreamWriter.h */,
+				3DB87B771F4690AD00FB440C /* StringComparison.h */,
+				3DB87B781F4690AD00FB440C /* StringUtils.h */,
+				3DB87B791F4690AD00FB440C /* Subdivision.cpp */,
+				3DB87B7A1F4690AD00FB440C /* Subdivision.h */,
+				3DB87B7B1F4690AD00FB440C /* TargetAnimation.cpp */,
+				3DB87B7C1F4690AD00FB440C /* TargetAnimation.h */,
+				3DB87B7D1F4690AD00FB440C /* TinyFormatter.h */,
+				3DB87B7E1F4690AD00FB440C /* Version.cpp */,
+				3DB87B7F1F4690AD00FB440C /* Vertex.h */,
+				3DB87B2A1F46902E00FB440C /* BaseImporter.cpp */,
+				3DB87B2B1F46902E00FB440C /* BaseImporter.h */,
+				3DB87B2C1F46902E00FB440C /* BaseProcess.cpp */,
+				3DB87B2D1F46902E00FB440C /* BaseProcess.h */,
+				3DB87B2E1F46902E00FB440C /* Bitmap.cpp */,
+				3DB87B2F1F46902E00FB440C /* Bitmap.h */,
+				3DB87B301F46902E00FB440C /* ByteSwapper.h */,
+				3DB87B311F46902E00FB440C /* CInterfaceIOWrapper.cpp */,
+				3DB87B321F46902E00FB440C /* CInterfaceIOWrapper.h */,
+				3DB87B331F46902E00FB440C /* CreateAnimMesh.cpp */,
+				3DB87B341F46902E00FB440C /* CreateAnimMesh.h */,
+				3DB87B351F46902E00FB440C /* DefaultIOStream.cpp */,
+				3DB87B361F46902E00FB440C /* DefaultIOSystem.cpp */,
+				3DB87B371F46902E00FB440C /* DefaultProgressHandler.h */,
+				3DB87B381F46902E00FB440C /* fast_atof.h */,
+				3DB87B391F46902E00FB440C /* GenericProperty.h */,
+				3DB87B3A1F46902E00FB440C /* Hash.h */,
+				3DB87B3B1F46902E00FB440C /* IFF.h */,
+				3DB87B3C1F46902E00FB440C /* Importer.cpp */,
+				3DB87B3D1F46902E00FB440C /* Importer.h */,
+				3DB87B3E1F46902E00FB440C /* ImporterRegistry.cpp */,
+				3DB87B3F1F46902E00FB440C /* IOStreamBuffer.h */,
+				3DB87B401F46902E00FB440C /* LineSplitter.h */,
+				3DB87B411F46902E00FB440C /* LogAux.h */,
+				3DB87B421F46902E00FB440C /* MemoryIOWrapper.h */,
+				3DB87B431F46902E00FB440C /* ParsingUtils.h */,
+				3DB87B441F46902E00FB440C /* PostStepRegistry.cpp */,
+				3DB87B451F46902E00FB440C /* Profiler.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3DB87BA41F4690E400FB440C /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BA51F46911600FB440C /* poppack1.h */,
+				3DB87BA61F46911600FB440C /* pstdint.h */,
+				3DB87BA71F46911600FB440C /* pushpack1.h */,
+			);
+			name = Compiler;
+			sourceTree = "<group>";
+		};
+		3DB87BAB1F46912200FB440C /* Exporter */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BAC1F46915700FB440C /* AssimpCExport.cpp */,
+				3DB87BAD1F46915700FB440C /* BlobIOSystem.h */,
+				3DB87BAE1F46915700FB440C /* Exporter.cpp */,
+			);
+			name = Exporter;
+			sourceTree = "<group>";
+		};
+		3DB87BB21F46916300FB440C /* FBX */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BB31F4691BD00FB440C /* FBXAnimation.cpp */,
+				3DB87BB41F4691BD00FB440C /* FBXBinaryTokenizer.cpp */,
+				3DB87BB51F4691BD00FB440C /* FBXCompileConfig.h */,
+				3DB87BB61F4691BD00FB440C /* FBXConverter.cpp */,
+				3DB87BB71F4691BD00FB440C /* FBXConverter.h */,
+				3DB87BB81F4691BD00FB440C /* FBXDeformer.cpp */,
+				3DB87BB91F4691BD00FB440C /* FBXDocument.cpp */,
+				3DB87BBA1F4691BD00FB440C /* FBXDocument.h */,
+				3DB87BBB1F4691BD00FB440C /* FBXDocumentUtil.cpp */,
+				3DB87BBC1F4691BD00FB440C /* FBXDocumentUtil.h */,
+				3DB87BBD1F4691BD00FB440C /* FBXImporter.cpp */,
+				3DB87BBE1F4691BD00FB440C /* FBXImporter.h */,
+				3DB87BBF1F4691BD00FB440C /* FBXImportSettings.h */,
+				3DB87BC01F4691BD00FB440C /* FBXMaterial.cpp */,
+				3DB87BC11F4691BD00FB440C /* FBXMeshGeometry.cpp */,
+				3DB87BC21F4691BD00FB440C /* FBXMeshGeometry.h */,
+				3DB87BC31F4691BD00FB440C /* FBXModel.cpp */,
+				3DB87BC41F4691BD00FB440C /* FBXNodeAttribute.cpp */,
+				3DB87BC51F4691BD00FB440C /* FBXParser.cpp */,
+				3DB87BC61F4691BD00FB440C /* FBXParser.h */,
+				3DB87BC71F4691BD00FB440C /* FBXProperties.cpp */,
+				3DB87BC81F4691BD00FB440C /* FBXProperties.h */,
+				3DB87BC91F4691BD00FB440C /* FBXTokenizer.cpp */,
+				3DB87BCA1F4691BD00FB440C /* FBXTokenizer.h */,
+				3DB87BCB1F4691BD00FB440C /* FBXUtil.cpp */,
+				3DB87BCC1F4691BD00FB440C /* FBXUtil.h */,
+			);
+			name = FBX;
+			sourceTree = "<group>";
+		};
+		3DB87BE71F4691C900FB440C /* IrrXml */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BE81F4691E300FB440C /* irrXMLWrapper.h */,
+			);
+			name = IrrXml;
+			sourceTree = "<group>";
+		};
+		3DB87BEA1F4691E600FB440C /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BF31F4692A900FB440C /* Logger.hpp */,
+				3DB87BF41F4692A900FB440C /* LogStream.hpp */,
+				3DB87BF51F4692A900FB440C /* NullLogger.hpp */,
+				3DB87BF11F46928800FB440C /* StdOStreamLogStream.h */,
+				3DB87BEF1F46925F00FB440C /* FileLogStream.h */,
+				3DB87BED1F46923C00FB440C /* DefaultLogger.hpp */,
+				3DB87BEB1F46921800FB440C /* DefaultLogger.cpp */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		3DB87BF91F4692B100FB440C /* MaterialSystem */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BFA1F4692D400FB440C /* MaterialSystem.cpp */,
+				3DB87BFB1F4692D400FB440C /* MaterialSystem.h */,
+			);
+			name = MaterialSystem;
+			sourceTree = "<group>";
+		};
+		3DB87BFE1F4692DF00FB440C /* open3dgc */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87BFF1F46930000FB440C /* o3dgcAdjacencyInfo.h */,
+				3DB87C001F46930000FB440C /* o3dgcArithmeticCodec.cpp */,
+				3DB87C011F46930000FB440C /* o3dgcArithmeticCodec.h */,
+				3DB87C021F46930000FB440C /* o3dgcBinaryStream.h */,
+				3DB87C031F46930000FB440C /* o3dgcCommon.h */,
+				3DB87C041F46930000FB440C /* o3dgcDVEncodeParams.h */,
+				3DB87C051F46930000FB440C /* o3dgcDynamicVector.h */,
+				3DB87C061F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp */,
+				3DB87C071F46930000FB440C /* o3dgcDynamicVectorDecoder.h */,
+				3DB87C081F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp */,
+				3DB87C091F46930000FB440C /* o3dgcDynamicVectorEncoder.h */,
+				3DB87C0A1F46930000FB440C /* o3dgcFIFO.h */,
+				3DB87C0B1F46930000FB440C /* o3dgcIndexedFaceSet.h */,
+				3DB87C0C1F46930000FB440C /* o3dgcIndexedFaceSet.inl */,
+				3DB87C0D1F46930000FB440C /* o3dgcSC3DMCDecoder.h */,
+				3DB87C0E1F46930000FB440C /* o3dgcSC3DMCDecoder.inl */,
+				3DB87C0F1F46930000FB440C /* o3dgcSC3DMCEncodeParams.h */,
+				3DB87C101F46930000FB440C /* o3dgcSC3DMCEncoder.h */,
+				3DB87C111F46930000FB440C /* o3dgcSC3DMCEncoder.inl */,
+				3DB87C121F46930000FB440C /* o3dgcTimer.h */,
+				3DB87C131F46930000FB440C /* o3dgcTools.cpp */,
+				3DB87C141F46930000FB440C /* o3dgcTriangleFans.cpp */,
+				3DB87C151F46930000FB440C /* o3dgcTriangleFans.h */,
+				3DB87C161F46930000FB440C /* o3dgcTriangleListDecoder.h */,
+				3DB87C171F46930000FB440C /* o3dgcTriangleListDecoder.inl */,
+				3DB87C181F46930000FB440C /* o3dgcTriangleListEncoder.h */,
+				3DB87C191F46930000FB440C /* o3dgcTriangleListEncoder.inl */,
+				3DB87C1A1F46930000FB440C /* o3dgcVector.h */,
+				3DB87C1B1F46930000FB440C /* o3dgcVector.inl */,
+			);
+			name = open3dgc;
+			sourceTree = "<group>";
+		};
+		3DB87C331F46931500FB440C /* openddl_parser */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87C401F46935100FB440C /* DDLNode.h */,
+				3DB87C411F46935100FB440C /* OpenDDLCommon.h */,
+				3DB87C421F46935100FB440C /* OpenDDLExport.h */,
+				3DB87C431F46935100FB440C /* OpenDDLParser.h */,
+				3DB87C441F46935100FB440C /* OpenDDLParserUtils.h */,
+				3DB87C451F46935100FB440C /* OpenDDLStream.h */,
+				3DB87C461F46935100FB440C /* Value.h */,
+				3DB87C341F46933900FB440C /* DDLNode.cpp */,
+				3DB87C351F46933900FB440C /* OpenDDLCommon.cpp */,
+				3DB87C361F46933900FB440C /* OpenDDLExport.cpp */,
+				3DB87C371F46933900FB440C /* OpenDDLParser.cpp */,
+				3DB87C381F46933900FB440C /* OpenDDLStream.cpp */,
+				3DB87C391F46933900FB440C /* Value.cpp */,
+			);
+			name = openddl_parser;
+			sourceTree = "<group>";
+		};
+		3DB87C4E1F46936400FB440C /* Poly2Tri */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87C551F46939200FB440C /* advancing_front.cc */,
+				3DB87C561F46939200FB440C /* advancing_front.h */,
+				3DB87C571F46939200FB440C /* cdt.cc */,
+				3DB87C581F46939200FB440C /* cdt.h */,
+				3DB87C591F46939200FB440C /* sweep_context.cc */,
+				3DB87C5A1F46939200FB440C /* sweep_context.h */,
+				3DB87C5B1F46939200FB440C /* sweep.cc */,
+				3DB87C5C1F46939200FB440C /* sweep.h */,
+				3DB87C4F1F46938300FB440C /* shapes.cc */,
+				3DB87C501F46938300FB440C /* shapes.h */,
+				3DB87C511F46938300FB440C /* utils.h */,
+			);
+			name = Poly2Tri;
+			sourceTree = "<group>";
+		};
+		3DB87C651F4693A400FB440C /* PostProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87E651F46CE7800FB440C /* SplitLargeMeshes.cpp */,
+				3DB87E661F46CE7800FB440C /* SplitLargeMeshes.h */,
+				3DB87CA61F46947600FB440C /* PolyTools.h */,
+				3DB87CA71F46947600FB440C /* PretransformVertices.cpp */,
+				3DB87CA81F46947600FB440C /* PretransformVertices.h */,
+				3DB87CA91F46947600FB440C /* ProcessHelper.cpp */,
+				3DB87CAA1F46947600FB440C /* ProcessHelper.h */,
+				3DB87CAB1F46947600FB440C /* RemoveRedundantMaterials.cpp */,
+				3DB87CAC1F46947600FB440C /* RemoveRedundantMaterials.h */,
+				3DB87CAD1F46947600FB440C /* RemoveVCProcess.cpp */,
+				3DB87CAE1F46947600FB440C /* RemoveVCProcess.h */,
+				3DB87CAF1F46947600FB440C /* SortByPTypeProcess.cpp */,
+				3DB87CB01F46947600FB440C /* SortByPTypeProcess.h */,
+				3DB87CB11F46947600FB440C /* TextureTransform.cpp */,
+				3DB87CB21F46947600FB440C /* TextureTransform.h */,
+				3DB87CB31F46947600FB440C /* TriangulateProcess.cpp */,
+				3DB87CB41F46947600FB440C /* TriangulateProcess.h */,
+				3DB87CB51F46947600FB440C /* ValidateDataStructure.cpp */,
+				3DB87CB61F46947600FB440C /* ValidateDataStructure.h */,
+				3DB87C661F46942800FB440C /* CalcTangentsProcess.cpp */,
+				3DB87C671F46942800FB440C /* CalcTangentsProcess.h */,
+				3DB87C681F46942800FB440C /* ComputeUVMappingProcess.cpp */,
+				3DB87C691F46942800FB440C /* ComputeUVMappingProcess.h */,
+				3DB87C6A1F46942800FB440C /* ConvertToLHProcess.cpp */,
+				3DB87C6B1F46942800FB440C /* ConvertToLHProcess.h */,
+				3DB87C6C1F46942800FB440C /* DeboneProcess.cpp */,
+				3DB87C6D1F46942800FB440C /* DeboneProcess.h */,
+				3DB87C6E1F46942800FB440C /* FindDegenerates.cpp */,
+				3DB87C6F1F46942800FB440C /* FindDegenerates.h */,
+				3DB87C701F46942800FB440C /* FindInstancesProcess.cpp */,
+				3DB87C711F46942800FB440C /* FindInstancesProcess.h */,
+				3DB87C721F46942800FB440C /* FindInvalidDataProcess.cpp */,
+				3DB87C731F46942800FB440C /* FindInvalidDataProcess.h */,
+				3DB87C741F46942800FB440C /* FixNormalsStep.cpp */,
+				3DB87C751F46942800FB440C /* FixNormalsStep.h */,
+				3DB87C761F46942800FB440C /* GenFaceNormalsProcess.cpp */,
+				3DB87C771F46942800FB440C /* GenFaceNormalsProcess.h */,
+				3DB87C781F46942800FB440C /* GenVertexNormalsProcess.cpp */,
+				3DB87C791F46942800FB440C /* GenVertexNormalsProcess.h */,
+				3DB87C7A1F46942800FB440C /* ImproveCacheLocality.cpp */,
+				3DB87C7B1F46942800FB440C /* ImproveCacheLocality.h */,
+				3DB87C7C1F46942800FB440C /* JoinVerticesProcess.cpp */,
+				3DB87C7D1F46942800FB440C /* JoinVerticesProcess.h */,
+				3DB87C7E1F46942800FB440C /* LimitBoneWeightsProcess.cpp */,
+				3DB87C7F1F46942800FB440C /* LimitBoneWeightsProcess.h */,
+				3DB87C801F46942800FB440C /* MakeVerboseFormat.cpp */,
+				3DB87C811F46942800FB440C /* MakeVerboseFormat.h */,
+				3DB87C821F46942800FB440C /* OptimizeGraph.cpp */,
+				3DB87C831F46942800FB440C /* OptimizeGraph.h */,
+				3DB87C841F46942800FB440C /* OptimizeMeshes.cpp */,
+				3DB87C851F46942800FB440C /* OptimizeMeshes.h */,
+			);
+			name = PostProcessing;
+			sourceTree = "<group>";
+		};
+		3DB87CC81F46948200FB440C /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87CC91F46949B00FB440C /* StepExporter.cpp */,
+				3DB87CCA1F46949B00FB440C /* StepExporter.h */,
+			);
+			name = Step;
+			sourceTree = "<group>";
+		};
+		3DB87CCD1F4694A300FB440C /* unzip */ = {
+			isa = PBXGroup;
+			children = (
+				3DB87CCE1F4694C400FB440C /* crypt.h */,
+				3DB87CCF1F4694C400FB440C /* ioapi.c */,
+				3DB87CD01F4694C400FB440C /* ioapi.h */,
+				3DB87CD11F4694C400FB440C /* unzip.c */,
+				3DB87CD21F4694C400FB440C /* unzip.h */,
+			);
+			name = unzip;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1551A33D158F2AB200E66CFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB87B611F46902E00FB440C /* Profiler.h in Headers */,
+				3DB87B571F46902E00FB440C /* IFF.h in Headers */,
+				3DB87C1C1F46930000FB440C /* o3dgcAdjacencyInfo.h in Headers */,
+				3DB87BE21F4691BD00FB440C /* FBXProperties.h in Headers */,
+				3DB87C4A1F46935100FB440C /* OpenDDLParser.h in Headers */,
+				3DB87BD41F4691BD00FB440C /* FBXDocument.h in Headers */,
+				3DB87BFD1F4692D400FB440C /* MaterialSystem.h in Headers */,
+				3DB87CC11F46947600FB440C /* SortByPTypeProcess.h in Headers */,
+				3DB87B921F4690AD00FB440C /* StandardShapes.h in Headers */,
+				3DB87BF21F46928800FB440C /* StdOStreamLogStream.h in Headers */,
+				3DB87CBF1F46947600FB440C /* RemoveVCProcess.h in Headers */,
+				3DB87C481F46935100FB440C /* OpenDDLCommon.h in Headers */,
+				3DB87B4E1F46902E00FB440C /* CInterfaceIOWrapper.h in Headers */,
+				3DB87BD81F4691BD00FB440C /* FBXImporter.h in Headers */,
+				3DB87B4C1F46902E00FB440C /* ByteSwapper.h in Headers */,
+				3DB87B5C1F46902E00FB440C /* LineSplitter.h in Headers */,
+				3DB87B891F4690AD00FB440C /* SGSpatialSort.h in Headers */,
+				3DB87C9D1F46942800FB440C /* JoinVerticesProcess.h in Headers */,
+				3DB87C641F46939200FB440C /* sweep.h in Headers */,
+				3DB87BCF1F4691BD00FB440C /* FBXCompileConfig.h in Headers */,
+				3DB87BE41F4691BD00FB440C /* FBXTokenizer.h in Headers */,
+				3DB87CC31F46947600FB440C /* TextureTransform.h in Headers */,
+				3DB87B561F46902E00FB440C /* Hash.h in Headers */,
+				3DB87CBB1F46947600FB440C /* ProcessHelper.h in Headers */,
+				3DB87BD11F4691BD00FB440C /* FBXConverter.h in Headers */,
+				3DB87BD61F4691BD00FB440C /* FBXDocumentUtil.h in Headers */,
+				3DB87BA31F4690D800FB440C /* XMLTools.h in Headers */,
+				3DB87C2C1F46930000FB440C /* o3dgcTimer.h in Headers */,
+				3DB87C291F46930000FB440C /* o3dgcSC3DMCDecoder.h in Headers */,
+				3DB87B501F46902E00FB440C /* CreateAnimMesh.h in Headers */,
+				3DB87C301F46930000FB440C /* o3dgcTriangleListDecoder.h in Headers */,
+				3DB87B5E1F46902E00FB440C /* MemoryIOWrapper.h in Headers */,
+				3DB87C8F1F46942800FB440C /* FindDegenerates.h in Headers */,
+				3DB87BF61F4692A900FB440C /* Logger.hpp in Headers */,
+				3DB87B591F46902E00FB440C /* Importer.h in Headers */,
+				3DB87B5B1F46902E00FB440C /* IOStreamBuffer.h in Headers */,
+				3DB87BEE1F46923C00FB440C /* DefaultLogger.hpp in Headers */,
+				3DB87B981F4690AD00FB440C /* Subdivision.h in Headers */,
+				3DB87BF01F46925F00FB440C /* FileLogStream.h in Headers */,
+				3DB87C8B1F46942800FB440C /* ConvertToLHProcess.h in Headers */,
+				3DB87C4B1F46935100FB440C /* OpenDDLParserUtils.h in Headers */,
+				3DB87C261F46930000FB440C /* o3dgcDynamicVectorEncoder.h in Headers */,
+				3DB87C531F46938300FB440C /* shapes.h in Headers */,
+				3DB87B801F4690AD00FB440C /* qnan.h in Headers */,
+				3DB87B9D1F4690AD00FB440C /* Vertex.h in Headers */,
+				3DB87C8D1F46942800FB440C /* DeboneProcess.h in Headers */,
+				3DB87B931F4690AD00FB440C /* StreamReader.h in Headers */,
+				3DB87B551F46902E00FB440C /* GenericProperty.h in Headers */,
+				3DB87CBD1F46947600FB440C /* RemoveRedundantMaterials.h in Headers */,
+				3DB87BF71F4692A900FB440C /* LogStream.hpp in Headers */,
+				3DB87B281F468EC000FB440C /* clipper.hpp in Headers */,
+				3DB87C9F1F46942800FB440C /* LimitBoneWeightsProcess.h in Headers */,
+				3DB87E681F46CE7800FB440C /* SplitLargeMeshes.h in Headers */,
+				3DB87BF81F4692A900FB440C /* NullLogger.hpp in Headers */,
+				3DB87C321F46930000FB440C /* o3dgcVector.h in Headers */,
+				3DB87BAA1F46911600FB440C /* pushpack1.h in Headers */,
+				3DB87C601F46939200FB440C /* cdt.h in Headers */,
+				3DB87B901F4690AD00FB440C /* SplitByBoneCountProcess.h in Headers */,
+				3DB87C211F46930000FB440C /* o3dgcDVEncodeParams.h in Headers */,
+				3DB87C241F46930000FB440C /* o3dgcDynamicVectorDecoder.h in Headers */,
+				3DB87C1E1F46930000FB440C /* o3dgcArithmeticCodec.h in Headers */,
+				3DB87C5E1F46939200FB440C /* advancing_front.h in Headers */,
+				3DB87BE91F4691E300FB440C /* irrXMLWrapper.h in Headers */,
+				3DB87C1F1F46930000FB440C /* o3dgcBinaryStream.h in Headers */,
+				3DB87C2F1F46930000FB440C /* o3dgcTriangleFans.h in Headers */,
+				3DB87B5F1F46902E00FB440C /* ParsingUtils.h in Headers */,
+				3DB87B491F46902E00FB440C /* BaseProcess.h in Headers */,
+				3DB87C2B1F46930000FB440C /* o3dgcSC3DMCEncoder.h in Headers */,
+				3DB87C491F46935100FB440C /* OpenDDLExport.h in Headers */,
+				3DB87B471F46902E00FB440C /* BaseImporter.h in Headers */,
+				3DB87B861F4690AD00FB440C /* ScenePreprocessor.h in Headers */,
+				3DB87B871F4690AD00FB440C /* ScenePrivate.h in Headers */,
+				3DB87CB71F46947600FB440C /* PolyTools.h in Headers */,
+				3DB87CA11F46942800FB440C /* MakeVerboseFormat.h in Headers */,
+				3DB87BB01F46915700FB440C /* BlobIOSystem.h in Headers */,
+				3DB87B961F4690AD00FB440C /* StringUtils.h in Headers */,
+				3DB87BE61F4691BD00FB440C /* FBXUtil.h in Headers */,
+				3DB87CA51F46942800FB440C /* OptimizeMeshes.h in Headers */,
+				3DB87B941F4690AD00FB440C /* StreamWriter.h in Headers */,
+				3DB87C471F46935100FB440C /* DDLNode.h in Headers */,
+				3DB87C311F46930000FB440C /* o3dgcTriangleListEncoder.h in Headers */,
+				3DB87C541F46938300FB440C /* utils.h in Headers */,
+				3DB87C911F46942800FB440C /* FindInstancesProcess.h in Headers */,
+				3DB87C201F46930000FB440C /* o3dgcCommon.h in Headers */,
+				3DB87BE01F4691BD00FB440C /* FBXParser.h in Headers */,
+				3DB87C621F46939200FB440C /* sweep_context.h in Headers */,
+				3DB87C9B1F46942800FB440C /* ImproveCacheLocality.h in Headers */,
+				3DB87B9A1F4690AD00FB440C /* TargetAnimation.h in Headers */,
+				3DB87BA91F46911600FB440C /* pstdint.h in Headers */,
+				3DB87C4C1F46935100FB440C /* OpenDDLStream.h in Headers */,
+				3DB87C281F46930000FB440C /* o3dgcIndexedFaceSet.h in Headers */,
+				3DB87BDC1F4691BD00FB440C /* FBXMeshGeometry.h in Headers */,
+				3DB87C271F46930000FB440C /* o3dgcFIFO.h in Headers */,
+				3DB87B541F46902E00FB440C /* fast_atof.h in Headers */,
+				3DB87C891F46942800FB440C /* ComputeUVMappingProcess.h in Headers */,
+				3DB87B8E1F4690AD00FB440C /* SpatialSort.h in Headers */,
+				3DB87B531F46902E00FB440C /* DefaultProgressHandler.h in Headers */,
+				3DB87CB91F46947600FB440C /* PretransformVertices.h in Headers */,
+				3DB87C971F46942800FB440C /* GenFaceNormalsProcess.h in Headers */,
+				3DB87BA81F46911600FB440C /* poppack1.h in Headers */,
+				3DB87C221F46930000FB440C /* o3dgcDynamicVector.h in Headers */,
+				3DB87CA31F46942800FB440C /* OptimizeGraph.h in Headers */,
+				3DB87CC51F46947600FB440C /* TriangulateProcess.h in Headers */,
+				3DB87B951F4690AD00FB440C /* StringComparison.h in Headers */,
+				3DB87C871F46942800FB440C /* CalcTangentsProcess.h in Headers */,
+				3DB87CC71F46947600FB440C /* ValidateDataStructure.h in Headers */,
+				3DB87B5D1F46902E00FB440C /* LogAux.h in Headers */,
+				3DB87C4D1F46935100FB440C /* Value.h in Headers */,
+				3DB87C931F46942800FB440C /* FindInvalidDataProcess.h in Headers */,
+				3DB87B821F4690AD00FB440C /* RemoveComments.h in Headers */,
+				3DB87B8B1F4690AD00FB440C /* SkeletonMeshBuilder.h in Headers */,
+				3DB87BD91F4691BD00FB440C /* FBXImportSettings.h in Headers */,
+				3DB87B9B1F4690AD00FB440C /* TinyFormatter.h in Headers */,
+				3DB87B4B1F46902E00FB440C /* Bitmap.h in Headers */,
+				3DB87C951F46942800FB440C /* FixNormalsStep.h in Headers */,
+				3DB87CCC1F46949B00FB440C /* StepExporter.h in Headers */,
+				3DB87B8C1F4690AD00FB440C /* SmoothingGroups.h in Headers */,
+				3DB87C2A1F46930000FB440C /* o3dgcSC3DMCEncodeParams.h in Headers */,
+				3DB87C991F46942800FB440C /* GenVertexNormalsProcess.h in Headers */,
+				3DB87BA21F4690D800FB440C /* VertexTriangleAdjacency.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07A4CB11783777C0073F6A7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB87E041F46BCAF00FB440C /* FBXParser.h in Headers */,
+				3DB87E161F46BCCF00FB440C /* RemoveComments.h in Headers */,
+				3DB87DC31F46BC5C00FB440C /* JoinVerticesProcess.h in Headers */,
+				3DB87DED1F46BCA100FB440C /* StdOStreamLogStream.h in Headers */,
+				3DB87E121F46BCCF00FB440C /* VertexTriangleAdjacency.h in Headers */,
+				3DB87E1D1F46BCCF00FB440C /* SGSpatialSort.h in Headers */,
+				3DB87E481F46BCCF00FB440C /* LineSplitter.h in Headers */,
+				3DB87E3A1F46BCCF00FB440C /* CInterfaceIOWrapper.h in Headers */,
+				3DB87DCF1F46BC6500FB440C /* cdt.h in Headers */,
+				3DB87E311F46BCCF00FB440C /* Vertex.h in Headers */,
+				3DB87DBB1F46BC5C00FB440C /* FixNormalsStep.h in Headers */,
+				3DB87E331F46BCCF00FB440C /* BaseImporter.h in Headers */,
+				3DB87E401F46BCCF00FB440C /* fast_atof.h in Headers */,
+				3DB87E371F46BCCF00FB440C /* Bitmap.h in Headers */,
+				3DB87DC71F46BC5C00FB440C /* MakeVerboseFormat.h in Headers */,
+				3DB87E291F46BCCF00FB440C /* StringComparison.h in Headers */,
+				3DB87E241F46BCCF00FB440C /* SplitByBoneCountProcess.h in Headers */,
+				3DB87DB11F46BC5C00FB440C /* ConvertToLHProcess.h in Headers */,
+				3DB87DBF1F46BC5C00FB440C /* GenVertexNormalsProcess.h in Headers */,
+				3DB87E141F46BCCF00FB440C /* qnan.h in Headers */,
+				3DB87D9C1F46BC5C00FB440C /* PolyTools.h in Headers */,
+				3DB87E0E1F46BCC400FB440C /* poppack1.h in Headers */,
+				3DB87DB51F46BC5C00FB440C /* FindDegenerates.h in Headers */,
+				3DB87DE91F46BC9A00FB440C /* MaterialSystem.h in Headers */,
+				3DB87DA51F46BC5C00FB440C /* SortByPTypeProcess.h in Headers */,
+				3DB87E351F46BCCF00FB440C /* BaseProcess.h in Headers */,
+				3DB87DAB1F46BC5C00FB440C /* ValidateDataStructure.h in Headers */,
+				3DB87D9B1F46BC5200FB440C /* StepExporter.h in Headers */,
+				3DB87E4B1F46BCCF00FB440C /* ParsingUtils.h in Headers */,
+				3DB87DC51F46BC5C00FB440C /* LimitBoneWeightsProcess.h in Headers */,
+				3DB87DEB1F46BCA100FB440C /* LogStream.hpp in Headers */,
+				3DB87DD11F46BC6500FB440C /* sweep_context.h in Headers */,
+				3DB87DC91F46BC5C00FB440C /* OptimizeGraph.h in Headers */,
+				3DB87DAD1F46BC5C00FB440C /* CalcTangentsProcess.h in Headers */,
+				3DB87DEE1F46BCA100FB440C /* FileLogStream.h in Headers */,
+				3DB87DBD1F46BC5C00FB440C /* GenFaceNormalsProcess.h in Headers */,
+				3DB87DDC1F46BC7100FB440C /* OpenDDLStream.h in Headers */,
+				3DB87E0A1F46BCAF00FB440C /* FBXUtil.h in Headers */,
+				3DB87E411F46BCCF00FB440C /* GenericProperty.h in Headers */,
+				3DB87DCB1F46BC5C00FB440C /* OptimizeMeshes.h in Headers */,
+				3DB87E2F1F46BCCF00FB440C /* TinyFormatter.h in Headers */,
+				3DB87DFB1F46BCAF00FB440C /* FBXDocumentUtil.h in Headers */,
+				3DB87E2E1F46BCCF00FB440C /* TargetAnimation.h in Headers */,
+				3DB87DA91F46BC5C00FB440C /* TriangulateProcess.h in Headers */,
+				3DB87DF41F46BCAF00FB440C /* FBXCompileConfig.h in Headers */,
+				3DB87DCD1F46BC6500FB440C /* advancing_front.h in Headers */,
+				3DB87E451F46BCCF00FB440C /* Importer.h in Headers */,
+				3DB87DD71F46BC7100FB440C /* DDLNode.h in Headers */,
+				3DB87DEF1F46BCA100FB440C /* DefaultLogger.hpp in Headers */,
+				3DB87E431F46BCCF00FB440C /* IFF.h in Headers */,
+				3DB87DF91F46BCAF00FB440C /* FBXDocument.h in Headers */,
+				3DB87DDB1F46BC7100FB440C /* OpenDDLParserUtils.h in Headers */,
+				3DB87E0C1F46BCBD00FB440C /* BlobIOSystem.h in Headers */,
+				3DB87E381F46BCCF00FB440C /* ByteSwapper.h in Headers */,
+				3DB87E061F46BCAF00FB440C /* FBXProperties.h in Headers */,
+				3DB87E0F1F46BCC400FB440C /* pstdint.h in Headers */,
+				3DB87E2C1F46BCCF00FB440C /* Subdivision.h in Headers */,
+				3DB87E1B1F46BCCF00FB440C /* ScenePrivate.h in Headers */,
+				3DB87E6A1F46CF2E00FB440C /* SplitLargeMeshes.h in Headers */,
+				3DB87DAF1F46BC5C00FB440C /* ComputeUVMappingProcess.h in Headers */,
+				3DB87E281F46BCCF00FB440C /* StreamWriter.h in Headers */,
+				3DB87DB91F46BC5C00FB440C /* FindInvalidDataProcess.h in Headers */,
+				3DB87D9E1F46BC5C00FB440C /* PretransformVertices.h in Headers */,
+				3DB87E2A1F46BCCF00FB440C /* StringUtils.h in Headers */,
+				3DB87DD91F46BC7100FB440C /* OpenDDLExport.h in Headers */,
+				3DB87DFD1F46BCAF00FB440C /* FBXImporter.h in Headers */,
+				3DB87E1A1F46BCCF00FB440C /* ScenePreprocessor.h in Headers */,
+				3DB87DFE1F46BCAF00FB440C /* FBXImportSettings.h in Headers */,
+				3DB87E221F46BCCF00FB440C /* SpatialSort.h in Headers */,
+				3DB87DA11F46BC5C00FB440C /* RemoveRedundantMaterials.h in Headers */,
+				3DB87DA31F46BC5C00FB440C /* RemoveVCProcess.h in Headers */,
+				3DB87DDD1F46BC7100FB440C /* Value.h in Headers */,
+				3DB87DD51F46BC6500FB440C /* shapes.h in Headers */,
+				3DB87DB71F46BC5C00FB440C /* FindInstancesProcess.h in Headers */,
+				3DB87DF11F46BCA700FB440C /* irrXMLWrapper.h in Headers */,
+				3DB87DEC1F46BCA100FB440C /* NullLogger.hpp in Headers */,
+				3DB87E081F46BCAF00FB440C /* FBXTokenizer.h in Headers */,
+				3DB87E3C1F46BCCF00FB440C /* CreateAnimMesh.h in Headers */,
+				3DB87E001F46BCAF00FB440C /* FBXMeshGeometry.h in Headers */,
+				3DB87E271F46BCCF00FB440C /* StreamReader.h in Headers */,
+				3DB87E4D1F46BCCF00FB440C /* Profiler.h in Headers */,
+				3DB87DD31F46BC6500FB440C /* sweep.h in Headers */,
+				3DB87E261F46BCCF00FB440C /* StandardShapes.h in Headers */,
+				3DB87DC11F46BC5C00FB440C /* ImproveCacheLocality.h in Headers */,
+				3DB87E201F46BCCF00FB440C /* SmoothingGroups.h in Headers */,
+				3DB87E1F1F46BCCF00FB440C /* SkeletonMeshBuilder.h in Headers */,
+				3DB87DEA1F46BCA100FB440C /* Logger.hpp in Headers */,
+				3DB87E4F1F46BCD800FB440C /* clipper.hpp in Headers */,
+				3DB87E131F46BCCF00FB440C /* XMLTools.h in Headers */,
+				3DB87DF61F46BCAF00FB440C /* FBXConverter.h in Headers */,
+				3DB87E421F46BCCF00FB440C /* Hash.h in Headers */,
+				3DB87DD61F46BC6500FB440C /* utils.h in Headers */,
+				3DB87E4A1F46BCCF00FB440C /* MemoryIOWrapper.h in Headers */,
+				3DB87E471F46BCCF00FB440C /* IOStreamBuffer.h in Headers */,
+				3DB87DB31F46BC5C00FB440C /* DeboneProcess.h in Headers */,
+				3DB87E101F46BCC400FB440C /* pushpack1.h in Headers */,
+				3DB87DD81F46BC7100FB440C /* OpenDDLCommon.h in Headers */,
+				3DB87DA01F46BC5C00FB440C /* ProcessHelper.h in Headers */,
+				3DB87DDA1F46BC7100FB440C /* OpenDDLParser.h in Headers */,
+				3DB87E3F1F46BCCF00FB440C /* DefaultProgressHandler.h in Headers */,
+				3DB87E491F46BCCF00FB440C /* LogAux.h in Headers */,
+				3DB87DA71F46BC5C00FB440C /* TextureTransform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1551A33E158F2AB200E66CFE /* libassimp Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1551A34C158F2AB200E66CFE /* Build configuration list for PBXNativeTarget "libassimp Mac" */;
+			buildPhases = (
+				1551A33B158F2AB200E66CFE /* Sources */,
+				1551A33C158F2AB200E66CFE /* Frameworks */,
+				1551A33D158F2AB200E66CFE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libassimp Mac";
+			productName = cocos2dx;
+			productReference = 3DB87E591F46CDD600FB440C /* libassimp Mac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A07A4C241783777C0073F6A7 /* libassimp iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A07A4D611783777C0073F6A7 /* Build configuration list for PBXNativeTarget "libassimp iOS" */;
+			buildPhases = (
+				A07A4C251783777C0073F6A7 /* Sources */,
+				A07A4CAD1783777C0073F6A7 /* Frameworks */,
+				A07A4CB11783777C0073F6A7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "libassimp iOS";
+			productName = cocos2dx;
+			productReference = 3DB87E5A1F46CDD600FB440C /* libassimp iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1551A336158F2AB200E66CFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "";
+			};
+			buildConfigurationList = 1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "assimp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1551A334158F2AB200E66CFE;
+			productRefGroup = 1551A334158F2AB200E66CFE;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1551A33E158F2AB200E66CFE /* libassimp Mac */,
+				A07A4C241783777C0073F6A7 /* libassimp iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1551A33B158F2AB200E66CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB87C631F46939200FB440C /* sweep.cc in Sources */,
+				3DB87CC61F46947600FB440C /* ValidateDataStructure.cpp in Sources */,
+				3DB87B9C1F4690AD00FB440C /* Version.cpp in Sources */,
+				3DB87BD51F4691BD00FB440C /* FBXDocumentUtil.cpp in Sources */,
+				3DB87C251F46930000FB440C /* o3dgcDynamicVectorEncoder.cpp in Sources */,
+				3DB87C5F1F46939200FB440C /* cdt.cc in Sources */,
+				3DB87C3C1F46933900FB440C /* OpenDDLExport.cpp in Sources */,
+				3DB87C901F46942800FB440C /* FindInstancesProcess.cpp in Sources */,
+				3DB87C9C1F46942800FB440C /* JoinVerticesProcess.cpp in Sources */,
+				3DB87BAF1F46915700FB440C /* AssimpCExport.cpp in Sources */,
+				3DB87B8F1F4690AD00FB440C /* SplitByBoneCountProcess.cpp in Sources */,
+				3DB87C8A1F46942800FB440C /* ConvertToLHProcess.cpp in Sources */,
+				3DB87C941F46942800FB440C /* FixNormalsStep.cpp in Sources */,
+				3DB87C3B1F46933900FB440C /* OpenDDLCommon.cpp in Sources */,
+				3DB87C9A1F46942800FB440C /* ImproveCacheLocality.cpp in Sources */,
+				3DB87BE31F4691BD00FB440C /* FBXTokenizer.cpp in Sources */,
+				3DB87BCE1F4691BD00FB440C /* FBXBinaryTokenizer.cpp in Sources */,
+				3DB87C5D1F46939200FB440C /* advancing_front.cc in Sources */,
+				3DB87CA41F46942800FB440C /* OptimizeMeshes.cpp in Sources */,
+				3DB87CC41F46947600FB440C /* TriangulateProcess.cpp in Sources */,
+				3DB87C9E1F46942800FB440C /* LimitBoneWeightsProcess.cpp in Sources */,
+				3DB87B5A1F46902E00FB440C /* ImporterRegistry.cpp in Sources */,
+				3DB87B841F4690AD00FB440C /* SceneCombiner.cpp in Sources */,
+				3DB87B881F4690AD00FB440C /* SGSpatialSort.cpp in Sources */,
+				3DB87BD31F4691BD00FB440C /* FBXDocument.cpp in Sources */,
+				3DB87C8C1F46942800FB440C /* DeboneProcess.cpp in Sources */,
+				3DB87CBC1F46947600FB440C /* RemoveRedundantMaterials.cpp in Sources */,
+				3DB87BD01F4691BD00FB440C /* FBXConverter.cpp in Sources */,
+				3DB87BDD1F4691BD00FB440C /* FBXModel.cpp in Sources */,
+				3DB87C2D1F46930000FB440C /* o3dgcTools.cpp in Sources */,
+				3DB87B911F4690AD00FB440C /* StandardShapes.cpp in Sources */,
+				3DB87B511F46902E00FB440C /* DefaultIOStream.cpp in Sources */,
+				3DB87BDF1F4691BD00FB440C /* FBXParser.cpp in Sources */,
+				3DB87CBA1F46947600FB440C /* ProcessHelper.cpp in Sources */,
+				3DB87B581F46902E00FB440C /* Importer.cpp in Sources */,
+				3DB87BDE1F4691BD00FB440C /* FBXNodeAttribute.cpp in Sources */,
+				3DB87C3D1F46933900FB440C /* OpenDDLParser.cpp in Sources */,
+				3DB87BDA1F4691BD00FB440C /* FBXMaterial.cpp in Sources */,
+				3DB87C881F46942800FB440C /* ComputeUVMappingProcess.cpp in Sources */,
+				3DB87C521F46938300FB440C /* shapes.cc in Sources */,
+				3DB87B971F4690AD00FB440C /* Subdivision.cpp in Sources */,
+				3DB87BD21F4691BD00FB440C /* FBXDeformer.cpp in Sources */,
+				3DB87B4A1F46902E00FB440C /* Bitmap.cpp in Sources */,
+				3DB87B4D1F46902E00FB440C /* CInterfaceIOWrapper.cpp in Sources */,
+				3DB87BB11F46915700FB440C /* Exporter.cpp in Sources */,
+				3DB87CC01F46947600FB440C /* SortByPTypeProcess.cpp in Sources */,
+				3DB87CBE1F46947600FB440C /* RemoveVCProcess.cpp in Sources */,
+				3DB87BFC1F4692D400FB440C /* MaterialSystem.cpp in Sources */,
+				3DB87C3F1F46933900FB440C /* Value.cpp in Sources */,
+				3DB87B601F46902E00FB440C /* PostStepRegistry.cpp in Sources */,
+				3DB87C231F46930000FB440C /* o3dgcDynamicVectorDecoder.cpp in Sources */,
+				3DB87C3A1F46933900FB440C /* DDLNode.cpp in Sources */,
+				3DB87C961F46942800FB440C /* GenFaceNormalsProcess.cpp in Sources */,
+				3DB87B461F46902E00FB440C /* BaseImporter.cpp in Sources */,
+				3DB87BEC1F46921800FB440C /* DefaultLogger.cpp in Sources */,
+				3DB87BDB1F4691BD00FB440C /* FBXMeshGeometry.cpp in Sources */,
+				3DB87BD71F4691BD00FB440C /* FBXImporter.cpp in Sources */,
+				3DB87C8E1F46942800FB440C /* FindDegenerates.cpp in Sources */,
+				3DB87B831F4690AD00FB440C /* scene.cpp in Sources */,
+				3DB87BE11F4691BD00FB440C /* FBXProperties.cpp in Sources */,
+				3DB87BCD1F4691BD00FB440C /* FBXAnimation.cpp in Sources */,
+				3DB87B271F468EC000FB440C /* clipper.cpp in Sources */,
+				3DB87C2E1F46930000FB440C /* o3dgcTriangleFans.cpp in Sources */,
+				3DB87C3E1F46933900FB440C /* OpenDDLStream.cpp in Sources */,
+				3DB87C1D1F46930000FB440C /* o3dgcArithmeticCodec.cpp in Sources */,
+				3DB87B481F46902E00FB440C /* BaseProcess.cpp in Sources */,
+				3DB87CCB1F46949B00FB440C /* StepExporter.cpp in Sources */,
+				3DB87C981F46942800FB440C /* GenVertexNormalsProcess.cpp in Sources */,
+				3DB87B851F4690AD00FB440C /* ScenePreprocessor.cpp in Sources */,
+				3DB87B521F46902E00FB440C /* DefaultIOSystem.cpp in Sources */,
+				3DB87BA11F4690D800FB440C /* VertexTriangleAdjacency.cpp in Sources */,
+				3DB87B8A1F4690AD00FB440C /* SkeletonMeshBuilder.cpp in Sources */,
+				3DB87CB81F46947600FB440C /* PretransformVertices.cpp in Sources */,
+				3DB87E671F46CE7800FB440C /* SplitLargeMeshes.cpp in Sources */,
+				3DB87CC21F46947600FB440C /* TextureTransform.cpp in Sources */,
+				3DB87B4F1F46902E00FB440C /* CreateAnimMesh.cpp in Sources */,
+				3DB87CA21F46942800FB440C /* OptimizeGraph.cpp in Sources */,
+				3DB87B8D1F4690AD00FB440C /* SpatialSort.cpp in Sources */,
+				3DB87BE51F4691BD00FB440C /* FBXUtil.cpp in Sources */,
+				3DB87B811F4690AD00FB440C /* RemoveComments.cpp in Sources */,
+				3DB87C921F46942800FB440C /* FindInvalidDataProcess.cpp in Sources */,
+				3DB87C611F46939200FB440C /* sweep_context.cc in Sources */,
+				3DB87CA01F46942800FB440C /* MakeVerboseFormat.cpp in Sources */,
+				3DB87C861F46942800FB440C /* CalcTangentsProcess.cpp in Sources */,
+				3DB87B991F4690AD00FB440C /* TargetAnimation.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07A4C251783777C0073F6A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB87E251F46BCCF00FB440C /* StandardShapes.cpp in Sources */,
+				3DB87DC01F46BC5C00FB440C /* ImproveCacheLocality.cpp in Sources */,
+				3DB87E361F46BCCF00FB440C /* Bitmap.cpp in Sources */,
+				3DB87DE21F46BC7100FB440C /* OpenDDLStream.cpp in Sources */,
+				3DB87DC81F46BC5C00FB440C /* OptimizeGraph.cpp in Sources */,
+				3DB87E111F46BCCF00FB440C /* VertexTriangleAdjacency.cpp in Sources */,
+				3DB87DBC1F46BC5C00FB440C /* GenFaceNormalsProcess.cpp in Sources */,
+				3DB87E191F46BCCF00FB440C /* ScenePreprocessor.cpp in Sources */,
+				3DB87DB61F46BC5C00FB440C /* FindInstancesProcess.cpp in Sources */,
+				3DB87E4C1F46BCCF00FB440C /* PostStepRegistry.cpp in Sources */,
+				3DB87DAC1F46BC5C00FB440C /* CalcTangentsProcess.cpp in Sources */,
+				3DB87E4E1F46BCD800FB440C /* clipper.cpp in Sources */,
+				3DB87E091F46BCAF00FB440C /* FBXUtil.cpp in Sources */,
+				3DB87DDF1F46BC7100FB440C /* OpenDDLCommon.cpp in Sources */,
+				3DB87E461F46BCCF00FB440C /* ImporterRegistry.cpp in Sources */,
+				3DB87DCC1F46BC6500FB440C /* advancing_front.cc in Sources */,
+				3DB87DE71F46BC8F00FB440C /* o3dgcTools.cpp in Sources */,
+				3DB87D9A1F46BC5200FB440C /* StepExporter.cpp in Sources */,
+				3DB87D9F1F46BC5C00FB440C /* ProcessHelper.cpp in Sources */,
+				3DB87DE61F46BC8F00FB440C /* o3dgcDynamicVectorEncoder.cpp in Sources */,
+				3DB87DF21F46BCAF00FB440C /* FBXAnimation.cpp in Sources */,
+				3DB87D931F46BC2000FB440C /* RemoveRedundantMaterials.cpp in Sources */,
+				3DB87DFC1F46BCAF00FB440C /* FBXImporter.cpp in Sources */,
+				3DB87DA41F46BC5C00FB440C /* SortByPTypeProcess.cpp in Sources */,
+				3DB87DB21F46BC5C00FB440C /* DeboneProcess.cpp in Sources */,
+				3DB87DE01F46BC7100FB440C /* OpenDDLExport.cpp in Sources */,
+				3DB87E171F46BCCF00FB440C /* scene.cpp in Sources */,
+				3DB87DE41F46BC8F00FB440C /* o3dgcArithmeticCodec.cpp in Sources */,
+				3DB87DF01F46BCA100FB440C /* DefaultLogger.cpp in Sources */,
+				3DB87E231F46BCCF00FB440C /* SplitByBoneCountProcess.cpp in Sources */,
+				3DB87E301F46BCCF00FB440C /* Version.cpp in Sources */,
+				3DB87E3E1F46BCCF00FB440C /* DefaultIOSystem.cpp in Sources */,
+				3DB87E211F46BCCF00FB440C /* SpatialSort.cpp in Sources */,
+				3DB87E071F46BCAF00FB440C /* FBXTokenizer.cpp in Sources */,
+				3DB87E2B1F46BCCF00FB440C /* Subdivision.cpp in Sources */,
+				3DB87DD01F46BC6500FB440C /* sweep_context.cc in Sources */,
+				3DB87DB81F46BC5C00FB440C /* FindInvalidDataProcess.cpp in Sources */,
+				3DB87DBE1F46BC5C00FB440C /* GenVertexNormalsProcess.cpp in Sources */,
+				3DB87DF31F46BCAF00FB440C /* FBXBinaryTokenizer.cpp in Sources */,
+				3DB87E341F46BCCF00FB440C /* BaseProcess.cpp in Sources */,
+				3DB87E051F46BCAF00FB440C /* FBXProperties.cpp in Sources */,
+				3DB87DE81F46BC8F00FB440C /* o3dgcTriangleFans.cpp in Sources */,
+				3DB87DCA1F46BC5C00FB440C /* OptimizeMeshes.cpp in Sources */,
+				3DB87D921F46BC1A00FB440C /* MaterialSystem.cpp in Sources */,
+				3DB87E1C1F46BCCF00FB440C /* SGSpatialSort.cpp in Sources */,
+				3DB87DB41F46BC5C00FB440C /* FindDegenerates.cpp in Sources */,
+				3DB87DBA1F46BC5C00FB440C /* FixNormalsStep.cpp in Sources */,
+				3DB87DE11F46BC7100FB440C /* OpenDDLParser.cpp in Sources */,
+				3DB87DE31F46BC7100FB440C /* Value.cpp in Sources */,
+				3DB87DCE1F46BC6500FB440C /* cdt.cc in Sources */,
+				3DB87DC21F46BC5C00FB440C /* JoinVerticesProcess.cpp in Sources */,
+				3DB87E3D1F46BCCF00FB440C /* DefaultIOStream.cpp in Sources */,
+				3DB87DD41F46BC6500FB440C /* shapes.cc in Sources */,
+				3DB87DF81F46BCAF00FB440C /* FBXDocument.cpp in Sources */,
+				3DB87E2D1F46BCCF00FB440C /* TargetAnimation.cpp in Sources */,
+				3DB87DAA1F46BC5C00FB440C /* ValidateDataStructure.cpp in Sources */,
+				3DB87E011F46BCAF00FB440C /* FBXModel.cpp in Sources */,
+				3DB87E021F46BCAF00FB440C /* FBXNodeAttribute.cpp in Sources */,
+				3DB87DF51F46BCAF00FB440C /* FBXConverter.cpp in Sources */,
+				3DB87E0D1F46BCBD00FB440C /* Exporter.cpp in Sources */,
+				3DB87E3B1F46BCCF00FB440C /* CreateAnimMesh.cpp in Sources */,
+				3DB87DC61F46BC5C00FB440C /* MakeVerboseFormat.cpp in Sources */,
+				3DB87DA21F46BC5C00FB440C /* RemoveVCProcess.cpp in Sources */,
+				3DB87DA61F46BC5C00FB440C /* TextureTransform.cpp in Sources */,
+				3DB87E0B1F46BCBD00FB440C /* AssimpCExport.cpp in Sources */,
+				3DB87E181F46BCCF00FB440C /* SceneCombiner.cpp in Sources */,
+				3DB87DFA1F46BCAF00FB440C /* FBXDocumentUtil.cpp in Sources */,
+				3DB87DAE1F46BC5C00FB440C /* ComputeUVMappingProcess.cpp in Sources */,
+				3DB87DDE1F46BC7100FB440C /* DDLNode.cpp in Sources */,
+				3DB87E441F46BCCF00FB440C /* Importer.cpp in Sources */,
+				3DB87DFF1F46BCAF00FB440C /* FBXMeshGeometry.cpp in Sources */,
+				3DB87DF71F46BCAF00FB440C /* FBXDeformer.cpp in Sources */,
+				3DB87E391F46BCCF00FB440C /* CInterfaceIOWrapper.cpp in Sources */,
+				3DB87E691F46CF2A00FB440C /* SplitLargeMeshes.cpp in Sources */,
+				3DB87E151F46BCCF00FB440C /* RemoveComments.cpp in Sources */,
+				3DB87D9D1F46BC5C00FB440C /* PretransformVertices.cpp in Sources */,
+				3DB87DA81F46BC5C00FB440C /* TriangulateProcess.cpp in Sources */,
+				3DB87E1E1F46BCCF00FB440C /* SkeletonMeshBuilder.cpp in Sources */,
+				3DB87E031F46BCAF00FB440C /* FBXParser.cpp in Sources */,
+				3DB87E321F46BCCF00FB440C /* BaseImporter.cpp in Sources */,
+				3DB87DB01F46BC5C00FB440C /* ConvertToLHProcess.cpp in Sources */,
+				3DB87D941F46BC2700FB440C /* FBXMaterial.cpp in Sources */,
+				3DB87DD21F46BC6500FB440C /* sweep.cc in Sources */,
+				3DB87DE51F46BC8F00FB440C /* o3dgcDynamicVectorDecoder.cpp in Sources */,
+				3DB87DC41F46BC5C00FB440C /* LimitBoneWeightsProcess.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1551A34A158F2AB200E66CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					ASSIMP_BUILD_NO_OWN_ZLIB,
+					ASSIMP_BUILD_NO_EXPORT,
+					ASSIMP_BUILD_DLL_EXPORT,
+					_SCL_SECURE_NO_WARNINGS,
+					_CRT_SECURE_NO_WARNINGS,
+					ASSIMP_BUILD_NO_X_IMPORTER,
+					ASSIMP_BUILD_NO_3DS_IMPORTER,
+					ASSIMP_BUILD_NO_MD3_IMPORTER,
+					ASSIMP_BUILD_NO_MDL_IMPORTER,
+					ASSIMP_BUILD_NO_MD2_IMPORTER,
+					ASSIMP_BUILD_NO_PLY_IMPORTER,
+					ASSIMP_BUILD_NO_ASE_IMPORTER,
+					ASSIMP_BUILD_NO_OBJ_IMPORTER,
+					ASSIMP_BUILD_NO_HMP_IMPORTER,
+					ASSIMP_BUILD_NO_SMD_IMPORTER,
+					ASSIMP_BUILD_NO_MDC_IMPORTER,
+					ASSIMP_BUILD_NO_MD5_IMPORTER,
+					ASSIMP_BUILD_NO_LWO_IMPORTER,
+					ASSIMP_BUILD_NO_DXF_IMPORTER,
+					ASSIMP_BUILD_NO_NFF_IMPORTER,
+					ASSIMP_BUILD_NO_RAW_IMPORTER,
+					ASSIMP_BUILD_NO_OFF_IMPORTER,
+					ASSIMP_BUILD_NO_AC_IMPORTER,
+					ASSIMP_BUILD_NO_BVH_IMPORTER,
+					ASSIMP_BUILD_NO_IRRMESH_IMPORTER,
+					ASSIMP_BUILD_NO_IRR_IMPORTER,
+					ASSIMP_BUILD_NO_Q3D_IMPORTER,
+					ASSIMP_BUILD_NO_B3D_IMPORTER,
+					ASSIMP_BUILD_NO_COLLADA_IMPORTER,
+					ASSIMP_BUILD_NO_TERRAGEN_IMPORTER,
+					ASSIMP_BUILD_NO_CSM_IMPORTER,
+					ASSIMP_BUILD_NO_3D_IMPORTER,
+					ASSIMP_BUILD_NO_LWS_IMPORTER,
+					ASSIMP_BUILD_NO_MS3D_IMPORTER,
+					ASSIMP_BUILD_NO_COB_IMPORTER,
+					ASSIMP_BUILD_NO_BLEND_IMPORTER,
+					ASSIMP_BUILD_NO_OGRE_IMPORTER,
+					ASSIMP_BUILD_NO_Q3BSP_IMPORTER,
+					ASSIMP_BUILD_NO_NDO_IMPORTER,
+					ASSIMP_BUILD_NO_IFC_IMPORTER,
+					ASSIMP_BUILD_NO_XGL_IMPORTER,
+					ASSIMP_BUILD_NO_COLLADA_EXPORTER,
+					ASSIMP_BUILD_NO_OBJ_EXPORTER,
+					ASSIMP_BUILD_NO_PLY_EXPORTER,
+					"CMAKE_INTDIR=\"Debug\"",
+					"ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1",
+					OPENDDLPARSER_BUILD,
+					OPENDDL_NO_USE_CPP11,
+					ASSIMP_BUILD_NO_AMF_EXPORTER,
+					ASSIMP_BUILD_NO_C4D_IMPORTER,
+					ASSIMP_BUILD_NO_AMF_IMPORTER,
+					ASSIMP_BUILD_NO_STL_IMPORTER,
+					ASSIMP_BUILD_NO_STL_EXPORTER,
+					ASSIMP_BUILD_NO_SIB_IMPORTER,
+					ASSIMP_BUILD_NO_SIB_EXPORTER,
+					ASSIMP_BUILD_NO_GLTF_IMPORTER,
+					ASSIMP_BUILD_NO_GLTF_EXPORTER,
+					ASSIMP_BUILD_NO_3MF_IMPORTER,
+					ASSIMP_BUILD_NO_3MF_EXPORTER,
+					ASSIMP_BUILD_NO_MMD_IMPORTER,
+					ASSIMP_BUILD_NO_MMD_EXPORTER,
+					ASSIMP_BUILD_NO_X3D_IMPORTER,
+					ASSIMP_BUILD_NO_X3D_EXPORTER,
+					ASSIMP_BUILD_NO_OPENGEX_IMPORTER,
+					ASSIMP_BUILD_NO_OPENGEX_EXPORTER,
+					ASSIMP_BUILD_NO_ASSBIN_IMPORTER,
+					ASSIMP_BUILD_NO_ASSBIN_EXPORTER,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ $(SRCROOT)/include $(SRCROOT)/contrib/rapidjson/include $(SRCROOT)/contrib $(SRCROOT)/contrib/irrXML $(SRCROOT)/contrib/openddlparser/include $(SRCROOT)/../../../cocos2d-x/external/zlib/include $(SRCROOT)/../../../cocos2d-x/external/unzip";
+			};
+			name = Debug;
+		};
+		1551A34B158F2AB200E66CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					ASSIMP_BUILD_NO_OWN_ZLIB,
+					ASSIMP_BUILD_NO_EXPORT,
+					ASSIMP_BUILD_DLL_EXPORT,
+					_SCL_SECURE_NO_WARNINGS,
+					_CRT_SECURE_NO_WARNINGS,
+					ASSIMP_BUILD_NO_X_IMPORTER,
+					ASSIMP_BUILD_NO_3DS_IMPORTER,
+					ASSIMP_BUILD_NO_MD3_IMPORTER,
+					ASSIMP_BUILD_NO_MDL_IMPORTER,
+					ASSIMP_BUILD_NO_MD2_IMPORTER,
+					ASSIMP_BUILD_NO_PLY_IMPORTER,
+					ASSIMP_BUILD_NO_ASE_IMPORTER,
+					ASSIMP_BUILD_NO_OBJ_IMPORTER,
+					ASSIMP_BUILD_NO_HMP_IMPORTER,
+					ASSIMP_BUILD_NO_SMD_IMPORTER,
+					ASSIMP_BUILD_NO_MDC_IMPORTER,
+					ASSIMP_BUILD_NO_MD5_IMPORTER,
+					ASSIMP_BUILD_NO_LWO_IMPORTER,
+					ASSIMP_BUILD_NO_DXF_IMPORTER,
+					ASSIMP_BUILD_NO_NFF_IMPORTER,
+					ASSIMP_BUILD_NO_RAW_IMPORTER,
+					ASSIMP_BUILD_NO_OFF_IMPORTER,
+					ASSIMP_BUILD_NO_AC_IMPORTER,
+					ASSIMP_BUILD_NO_BVH_IMPORTER,
+					ASSIMP_BUILD_NO_IRRMESH_IMPORTER,
+					ASSIMP_BUILD_NO_IRR_IMPORTER,
+					ASSIMP_BUILD_NO_Q3D_IMPORTER,
+					ASSIMP_BUILD_NO_B3D_IMPORTER,
+					ASSIMP_BUILD_NO_COLLADA_IMPORTER,
+					ASSIMP_BUILD_NO_TERRAGEN_IMPORTER,
+					ASSIMP_BUILD_NO_CSM_IMPORTER,
+					ASSIMP_BUILD_NO_3D_IMPORTER,
+					ASSIMP_BUILD_NO_LWS_IMPORTER,
+					ASSIMP_BUILD_NO_MS3D_IMPORTER,
+					ASSIMP_BUILD_NO_COB_IMPORTER,
+					ASSIMP_BUILD_NO_BLEND_IMPORTER,
+					ASSIMP_BUILD_NO_OGRE_IMPORTER,
+					ASSIMP_BUILD_NO_Q3BSP_IMPORTER,
+					ASSIMP_BUILD_NO_NDO_IMPORTER,
+					ASSIMP_BUILD_NO_IFC_IMPORTER,
+					ASSIMP_BUILD_NO_XGL_IMPORTER,
+					ASSIMP_BUILD_NO_COLLADA_EXPORTER,
+					ASSIMP_BUILD_NO_OBJ_EXPORTER,
+					ASSIMP_BUILD_NO_PLY_EXPORTER,
+					"CMAKE_INTDIR=\"Release\"",
+					NDEBUG,
+					OPENDDLPARSER_BUILD,
+					OPENDDL_NO_USE_CPP11,
+					"ASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1",
+					ASSIMP_BUILD_NO_AMF_EXPORTER,
+					ASSIMP_BUILD_NO_C4D_IMPORTER,
+					ASSIMP_BUILD_NO_AMF_IMPORTER,
+					ASSIMP_BUILD_NO_STL_IMPORTER,
+					ASSIMP_BUILD_NO_STL_EXPORTER,
+					ASSIMP_BUILD_NO_SIB_IMPORTER,
+					ASSIMP_BUILD_NO_GLTF_IMPORTER,
+					ASSIMP_BUILD_NO_SIB_EXPORTER,
+					ASSIMP_BUILD_NO_GLTF_EXPORTER,
+					ASSIMP_BUILD_NO_3MF_IMPORTER,
+					ASSIMP_BUILD_NO_3MF_EXPORTER,
+					ASSIMP_BUILD_NO_MMD_IMPORTER,
+					ASSIMP_BUILD_NO_MMD_EXPORTER,
+					ASSIMP_BUILD_NO_X3D_IMPORTER,
+					ASSIMP_BUILD_NO_X3D_EXPORTER,
+					ASSIMP_BUILD_NO_OPENGEX_IMPORTER,
+					ASSIMP_BUILD_NO_OPENGEX_EXPORTER,
+					ASSIMP_BUILD_NO_ASSBIN_IMPORTER,
+					ASSIMP_BUILD_NO_ASSBIN_EXPORTER,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/ $(SRCROOT)/include $(SRCROOT)/contrib/rapidjson/include $(SRCROOT)/contrib $(SRCROOT)/contrib/irrXML $(SRCROOT)/contrib/openddlparser/include $(SRCROOT)/../../../cocos2d-x/external/zlib/include $(SRCROOT)/../../../cocos2d-x/external/unzip";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1551A34D158F2AB200E66CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
+				LD_DYLIB_INSTALL_NAME = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1551A34E158F2AB200E66CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
+				LD_DYLIB_INSTALL_NAME = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+		A07A4D621783777C0073F6A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LIBRARY_SEARCH_PATHS = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Debug;
+		};
+		A07A4D631783777C0073F6A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_PREFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LIBRARY_SEARCH_PATHS = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1551A339158F2AB200E66CFE /* Build configuration list for PBXProject "assimp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1551A34A158F2AB200E66CFE /* Debug */,
+				1551A34B158F2AB200E66CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1551A34C158F2AB200E66CFE /* Build configuration list for PBXNativeTarget "libassimp Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1551A34D158F2AB200E66CFE /* Debug */,
+				1551A34E158F2AB200E66CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A07A4D611783777C0073F6A7 /* Build configuration list for PBXNativeTarget "libassimp iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A07A4D621783777C0073F6A7 /* Debug */,
+				A07A4D631783777C0073F6A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1551A336158F2AB200E66CFE /* Project object */;
+}

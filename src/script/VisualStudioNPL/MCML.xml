@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<doc>
+  <tables>
+    <table name="mcml">
+      <function name="new">
+        <summary>new mcml node</summary>
+        <parameter name="object" />
+        <returns>Returns mcml</returns>
+      </function>
+    </table>
+  </tables>
+  <variables>
+    <variable name="mcml" type="mcml" ns="Map3DSystem.mcml" />
+  </variables>
+</doc>

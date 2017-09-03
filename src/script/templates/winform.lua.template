@@ -1,0 +1,98 @@
+--[[
+Title: template: windows form or modeless dialog
+Author(s): [your name], original template by LiXizhi
+Date: 2007/2/7
+Parameters:
+	%instance_name%: it needs to be a valid name, such as MyDialog
+use the lib:
+------------------------------------------------------------
+NPL.load("(gl)%file_path%");
+local ctl = CommonCtrl.%instance_name%:new{
+	name = "%instance_name%1",
+	alignment = "_lt",
+	left=0, top=0,
+	width = 512,
+	height = 290,
+	parent = nil,
+};
+ctl:Show();
+-------------------------------------------------------
+]]
+
+-- common control library
+NPL.load("(gl)script/ide/common_control.lua");
+
+-- define a new control in the common control libary
+
+-- default member attributes
+local %instance_name% = {
+	-- the top level control name
+	name = "%instance_name%1",
+	-- normal window size
+	alignment = "_lt",
+	left = 0,
+	top = 0,
+	width = 512,
+	height = 290, 
+	parent = nil,
+}
+CommonCtrl.%instance_name% = %instance_name%;
+
+-- constructor
+function %instance_name%:new (o)
+	o = o or {}   -- create object if user does not provide one
+	setmetatable(o, self)
+	self.__index = self
+	return o
+end
+
+-- Destroy the UI control
+function %instance_name%:Destroy ()
+	ParaUI.Destroy(self.name);
+end
+
+--@param bShow: boolean to show or hide. if nil, it will toggle current setting. 
+function %instance_name%:Show(bShow)
+	local _this,_parent;
+	if(self.name==nil)then
+		log("%instance_name% instance name can not be nil\r\n");
+		return
+	end
+	
+	_this=ParaUI.GetUIObject(self.name);
+	if(_this:IsValid() == false) then
+		if(bShow == false) then return	end
+		bShow = true;
+		_this=ParaUI.CreateUIObject("container",self.name,self.alignment,self.left,self.top,self.width,self.height);
+		--_this.background="Texture/whitedot.png;0 0 0 0";
+		_parent = _this;
+		
+		if(self.parent==nil) then
+			_this:AttachToRoot();
+		else
+			self.parent:AddChild(_this);
+		end
+		CommonCtrl.AddControl(self.name, self);
+		
+		local left, top, width, height = 0,0, 124, 32
+		_this=ParaUI.CreateUIObject("button",self.name.."OK","_lt",left,top,width,height);
+		_this.text="OK";
+		_this.onclick=string.format([[;CommonCtrl.%instance_name%.OnClose("%s");]],self.name);
+		_parent:AddChild(_this);
+	else
+		if(bShow == nil) then
+			bShow = (_this.visible == false);
+		end
+		_this.visible = bShow;
+	end	
+end
+
+-- close the given control
+function %instance_name%.OnClose(sCtrlName)
+	local self = CommonCtrl.GetControl(sCtrlName);
+	if(self==nil)then
+		log("error getting %instance_name% instance "..sCtrlName.."\r\n");
+		return;
+	end
+	ParaUI.Destroy(self.name);
+end

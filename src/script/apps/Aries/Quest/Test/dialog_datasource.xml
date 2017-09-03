@@ -1,0 +1,82 @@
+<dialogs>
+     <!--<dialog_group>
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 1</content>
+            <buttons>
+                <button action="gotogroup" label="quest10 按钮1"/>
+                <button action="gotogroup" label="quest11 按钮1"/>
+            </buttons>
+        </item>
+    </dialog_group>-->
+    <!--任务1
+	state:开始/结束 任务时说的话
+	npcid:触发任务的NPC
+	-->
+    <dialog state="start" npcid="1" questid="10">
+        <item>
+			<!--questid:在解析后生成-->
+			<questid>10</questid>
+			<!--id:说话的NPC 可以与npcid不一样-->
+            <id>npc</id>
+            <content>NPC 说: 1</content>
+            <buttons>
+                <button action="gotonext" label="按钮1"/>
+            </buttons>
+        </item>
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 2</content>
+            <buttons>
+                <button action="gotonext" label="按钮2"/>
+            </buttons>
+        </item>
+        <item>
+            <id>user</id>
+            <content>我 说: 1</content>
+            <buttons>
+                <button action="gotonext" label="按钮3"/>
+            </buttons>
+        </item>
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 3</content>
+            <buttons>
+                <button action="doaccept" label="我要接受任务"/>
+                <button action="docancel" label="下次再说"/>
+            </buttons>
+        </item>
+    </dialog>
+    <!--任务2-->
+    <dialog state="start" npcid="1" questid="11">
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 1</content>
+            <buttons>
+                <button action="gotonext" label="按钮1"/>
+            </buttons>
+        </item>
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 2</content>
+            <buttons>
+                <button action="gotonext" label="按钮2"/>
+            </buttons>
+        </item>
+        <item>
+            <id>user</id>
+            <content>我 说: 1</content>
+            <buttons>
+                <button action="gotonext" label="按钮3"/>
+            </buttons>
+        </item>
+        <item>
+            <id>npc</id>
+            <content>NPC 说: 3</content>
+            <buttons>
+                <button action="doaccept" label="我要接受任务"/>
+                <button action="docancel" label="下次再说"/>
+            </buttons>
+        </item>
+    </dialog>
+</dialogs>

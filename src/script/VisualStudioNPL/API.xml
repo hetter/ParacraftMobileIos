@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <tables>
+    <table name="ParaWorldAPI">
+      <function name="foreach">
+        <summary>Execute function for each element in table.</summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+    </table>
+    <table name="JGSL">
+      <function name="foreach">
+        <summary>Execute function for each element in table.</summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+    </table>
+    <table name="Constants">
+      <function name="foreach">
+        <summary>such as messages, etc. </summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+    </table>
+    <table name="Commands">
+      <function name="foreach">
+        <summary>App commands</summary>
+        <parameter name="table" />
+        <parameter name="function" />
+      </function>
+    </table>
+  </tables>
+  <variables>
+    <variable name="ParaWorldAPI" type="ParaWorldAPI" />
+    <variable name="JGSL" type="JGSL" />
+    <variable name="Constants" type="Constants" />
+    <variable name="Commands" type="Commands" />
+  </variables>
+</doc>

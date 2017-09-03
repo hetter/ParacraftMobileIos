@@ -1,0 +1,7 @@
+doc/
+boost/
+ffmpeg*/
+FreeImage*/
+bin/
+*.zip
+*.7z

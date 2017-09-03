@@ -1,0 +1,91 @@
+December work plan -- Andy
+
+1	UI Design with Lorne and XiZhi (DONE)
+2	CodeName: Aquarius. Build Aquarius solution files (DONE)
+	Desktop structure (DONE)
+3	Menu and QuickLaunch scrolling and lock (DONE only lock)
+	Dragable application icons and QuickLaunch receive (DONE)
+	Build training solution and codename for Zhang Chengpeng  Use Orion as the training program (DONE)
+	Animation feasible test (DONE)
+4	Current Application and pop up ribbon pages with animation (DONE)
+	Basic UtilBar1 and UtilBar2 (DONE)
+	Intern job training program Color Palette and Picker (basic lua and game engine API) (CANCELLED)
+5	Open interface for desktop Chat Tabs (PENDING: wait for ParaWorld API and Jabber)
+	Bubble message implementation with animation (PENDING: wait for ParaWorld API and Jabber)
+	Main menu (application list) (DONE)
+	Main login page and world related functions (new, save, publish, download, visit) (PENDING: wait for ParaWorld API and Jabber)
+6	MiniMap and status icons (DONE)
+	New common control artwork specification (window frame, button, scrollbar, tabs .etc)
+	Basic profile(self and target) (DONE)
+	Self and other user avatar selection hook and effect (DONE)
+	
+7	Milestone: Alpha Aquarius. Features:
+	-	Basic user interface
+	-	ParaWorld BIG picture
+	-	Existing utilities import
+	
+8	Dialog and Task feasible design
+	-	MMOPRG-like task and dialog
+	-	SimCity-like tutorial
+9	Advanced Dialog and Task feasible design
+	-	Task content, e.g. move object to target area, BCS mounting, UI guide
+10	Basic Dialog and Task AI script templates and testing
+11	Task and dialog design and implementation with Lorne
+	In game Task and Dialog appearance
+12	Content database and editing UI
+	Editor testing, Intern job for Chengpeng(possible database queries and MCML page) (CANCELLED)
+13	Task and Dialog editor bug shouting
+
+14	Milestone: Beta Aquarius. Features:
+	-	Ready-to-produce task and dialog editor
+	
+15	Creator Integration, waiting for Leio¡¯s advanced creator and propose 3D requirement for mini-scene model/character editing
+	Apply the new Desktop UI artwork whenever possible
+	Discuss artwork and animation metaphor whenever possible
+	Change onclick-inner-expand context menu into onmouseover-external-expand menu (DONE)
+16	Top Level window frame management (DONE)
+	Chat Local History saving and message management (CANCELLED)
+	Chat MainWnd and ChatWnd refinement
+	History display window, Intern job for Chengpeng (I/O, XML and CommonCtrl) (CANCELLED)
+17	System notification channel
+	Common message channel selection
+	Chat action smiley (Chat and Channel), interface and transfer
+	Shadow text and transparent background when mouse away
+18	Message system, send, receive, read, reply .etc.
+	Poke
+	Context menu of scene objects, NPC, other user avatar, 
+19	CCS refinement
+	+++ separate male and female items
+	Cursor management, mouse over window resizer, other user avatar, BCSXRef .etc.
+	Registration avatar templates after designer
+20	Fix previous MCML pages into new user interface artwork
+	Unify UI element logics and init position
+	
+21	Milestone: Gamma Aquarius. Features:
+	-	Product level user interface
+	-	New feature integration
+	
+22	Improve user experience with massive animation and highlight
+	Task and Dialog editor training to designers
+	+++ expose effect
+	Pending: Helping system
+23	Improve user experience of world activity
+24	Improve user experience of social activity
+25	Public world Portal editing if required
+	Challenge friend and world explorer. Pair programming with Chengpeng (if all finished)
+26	Public world test
+	Creator world test
+	Tutorial test
+27	Challenge friend and world explorer with animation (if all finished)
+	Possible only pre-calculated positions of user/world nodes
+	
+28	Milestone: Delta Aquarius. Features:
+	-	Vivid public world
+	-	Convenient peer-to-peer social activity
+	
+29	Ready-to-build bug shooting
+30	Ready-to-build bug shooting
+
+31	Milestone: Epsilon Aquarius.
+
+

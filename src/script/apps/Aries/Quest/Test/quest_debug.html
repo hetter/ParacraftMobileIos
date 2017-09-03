@@ -1,0 +1,211 @@
+﻿<!-- "script/apps/Aries/Quest/Test/quest_debug.html" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>quest_debug.html, by leio,2010/09/25</title>
+</head>
+<body>
+<pe:mcml>
+<script type="text/npl" refresh="true"><![CDATA[
+local pageCtrl = NPL.load("(gl)script/apps/Aries/Quest/QuestHelp2.lua");
+local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");document:GetPageCtrl();
+NPL.load("(gl)script/apps/Aries/Quest/Test/quest_debug.lua");
+local quest_debug = commonlib.gettable("MyCompany.Aries.Quest.quest_debug");
+quest_debug.OnInit()
+quest_debug.Load_Quests();
+NPL.load("(gl)script/apps/Aries/Quest/QuestClientLogics.lua");
+local QuestClientLogics = commonlib.gettable("MyCompany.Aries.Quest.QuestClientLogics");
+
+local nid = System.User.nid;
+
+function doKill()
+    local mode = 2;
+    QuestClientLogics.Test_Kill(mode);
+end
+function doClear()
+    NPL.load("(gl)script/apps/Aries/Desktop/GUIHelper/CustomMessageBox.lua");
+    _guihelper.Custom_MessageBox("确认要重置所有任务吗？",function(result)
+	    if(result == _guihelper.DialogResult.Yes)then
+            local msg = {
+                nid = nid,
+            }
+            QuestClientLogics.DoReset(msg);
+	    end
+    end,_guihelper.MessageBoxButtons.YesNo,{yes = "Texture/Aries/Common/OK_32bits.png; 0 0 153 49", no = "Texture/Aries/Common/Cancel_32bits.png; 0 0 153 49"});
+end
+
+function doAccept()
+    local questid = MyCompany.Aries.Quest.quest_debug.selected_id;
+    questid = tonumber(questid);
+     local msg = {
+	            nid = nid,
+	            id = questid,
+            }
+    QuestClientLogics.TryAccept(msg);
+end
+function doFinished()
+   local questid = MyCompany.Aries.Quest.quest_debug.selected_id;
+    questid = tonumber(questid);
+     local msg = {
+	            nid = nid,
+	            id = questid,
+            }
+    QuestClientLogics.TryFinished(msg);
+end
+function doDelete()
+    local questid = MyCompany.Aries.Quest.quest_debug.selected_id;
+    questid = tonumber(questid);
+     local msg = {
+	            nid = nid,
+	            id = questid,
+            }
+    QuestClientLogics.TryDelete(msg);
+end
+function DS_Func_Items(index)
+    return quest_debug.DS_Func_Items(index);
+end
+function GetQuestState(id)
+    local provider = QuestClientLogics.GetProvider();
+    if(provider and id)then
+        local q_item = provider:GetQuest(id);
+        if(q_item)then
+            local state = q_item.QuestState;
+            if(state == 1)then
+                return "已经完成"
+            elseif(state == 3)then
+                return "已经接受"
+            elseif(state == 5)then
+                return "已经放弃"
+            end
+        end
+    end
+    return "未接受";
+end
+function buildDgml()
+    NPL.load("(gl)script/apps/Aries/Quest/QuestHelp.lua");
+    local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");
+    local path = "config/Aries/Quests/quest_list.xml";
+    local data = QuestHelp.LoadAllQuests(path);
+    local graph = QuestHelp.CreateGraph(data,true);
+    QuestHelp.SaveToDgml(graph,"HaqiQuestTools/quest_template_parsed.dgml",false)
+end
+function buildDgml_isdebug()
+    NPL.load("(gl)script/apps/Aries/Quest/QuestHelp.lua");
+    local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");
+    local path = "config/Aries/Quests/quest_list.xml";
+    local data = QuestHelp.LoadAllQuests(path,true);
+    local graph = QuestHelp.CreateGraph(data,true);
+    QuestHelp.SaveToDgml(graph,"HaqiQuestTools/quest_template_parsed.isdebug.dgml",false)
+end
+function buildDgml_Teen()
+    NPL.load("(gl)script/apps/Aries/Quest/QuestHelp.lua");
+    local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");
+    local path = "config/Aries/Quests_Teen/quest_list.xml";
+    local data = QuestHelp.LoadAllQuests(path);
+    local graph = QuestHelp.CreateGraph(data,true);
+    QuestHelp.SaveToDgml(graph,"HaqiQuestTools/quest_template_parsed.teen.dgml",false)
+end
+function buildDgml_Teen_isdebug()
+    NPL.load("(gl)script/apps/Aries/Quest/QuestHelp.lua");
+    local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");
+    local path = "config/Aries/Quests_Teen/quest_list.xml";
+    local data = QuestHelp.LoadAllQuests(path,true);
+    local graph = QuestHelp.CreateGraph(data,true);
+    QuestHelp.SaveToDgml(graph,"HaqiQuestTools/quest_template_parsed.teen.isdebug.dgml",false)
+end
+function buildExcel()
+    NPL.load("(gl)script/apps/Aries/Quest/QuestHelp2.lua");
+    local QuestHelp = commonlib.gettable("MyCompany.Aries.Quest.QuestHelp");
+    QuestHelp.QuestToExcel();
+end
+function debug()
+    local command = Map3DSystem.App.Commands.GetCommand("Help.Debug");
+	command:Call();
+end
+function buildChart()
+    QuestHelp.BuildChart();
+end
+]]></script>
+<div style="width:800px;">
+账号放在这个文件里面:
+<br />
+alienbrain://PARA2/KidsMovie:595/ParaEngineSDK/config/Aries/Others/specialids.xml
+<br />
+<input type="button" value="杀                    怪" style="margin-left:10px;" onclick="doKill()"/>
+<input type="button" value="清空所有任务" style="margin-left:10px;" onclick="doClear()"/>
+<br />
+<input type="button" value="生成青年版Excel" style="margin-left:10px;" onclick="buildChart()"/>
+<br />
+<input type="button" value="生成儿童版Dgml" style="margin-left:10px;" onclick="buildDgml()"/>
+<input type="button" value="生成儿童版Dgml(包含废除的任务)" style="margin-left:10px;" onclick="buildDgml_isdebug()"/>
+<br />
+<input type="button" value="生成青年版Dgml" style="margin-left:10px;" onclick="buildDgml_Teen()"/>
+<input type="button" value="生成青年版Dgml(包含废除的任务)" style="margin-left:10px;" onclick="buildDgml_Teen_isdebug()"/>
+<!--<br />
+<input type="button" value="生成Excel" style="margin-left:10px;" onclick="buildExcel()"/>
+<br />
+<input type="button" value="debug" style="margin-left:10px;" onclick="debug"/>-->
+<div>
+    <div style="float:left;">
+        <pe:gridview name="allquests"  style="float:left;margin-left:0px;margin-top:10px;width:400px;height:550px" DataSource="<%=DS_Func_Items%>"  ItemsPerLine="1" AllowPaging="true" pagesize="18">
+            <Columns>
+                <div>
+                    <a onclick="MyCompany.Aries.Quest.quest_debug.DoClick()" style="color:#000000" param1="<%=Eval('Id') %>">
+                        <%=Eval('Id') %>
+                        <%=Eval('Title') %>
+                        <div style="float:left;color:#ff0000;font-size:12;"><%=GetQuestState(Eval('Id')) %></div>
+                    </a>
+                    <pe:if condition="<%=Eval('Id')== MyCompany.Aries.Quest.quest_debug.selected_id  %>">
+                    <div style="position:relative;margin-top:-25px;width:260px;height:25px;background:url(Texture/Aries/LobbyService/selected_bg2_32bits.png);"/>
+                    </pe:if>
+                </div>
+            </Columns>
+            <EmptyDataTemplate>
+                <b>空</b>
+            </EmptyDataTemplate>
+            <FetchingDataTemplate>
+                <b>请稍等 ... </b>
+            </FetchingDataTemplate>
+            <PagerSettings Position="Bottom" />
+        </pe:gridview>
+    </div>
+    <div style="float:left;font-size:12p;">
+        <div>
+        <input type="button" value="接受任务" style="margin-left:5px;" onclick="doAccept"/>
+        <input type="button" value="完成任务" style="margin-left:5px;" onclick="doFinished"/>
+        <input type="button" value="删除任务" style="margin-left:5px;" onclick="doDelete"/>
+    </div>
+    <div><b>任务Id:</b><%=MyCompany.Aries.Quest.quest_debug.selected_id %><div style="float:left;color:#ff0000"><%=GetQuestState(MyCompany.Aries.Quest.quest_debug.selected_id) %></div></div>
+    <br />
+     <aries:quest questid="<%=MyCompany.Aries.Quest.quest_debug.selected_id%>" >
+        <div><b>任务名称:</b><aries:quest_item property="Title" style="float:left;font-size:12;"/></div>                     
+        <div><b>任务描述:</b><aries:quest_item property="Detail" style="float:left;font-size:12;"/></div>                     
+        <div><b>任务目标:</b>                     
+                        <aries:quest_item property="Goal" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="GoalItem" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="ClientGoalItem" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="ClientExchangeItem" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="FlashGame" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="ClientDialogNPC" style="float:left;font-size:12;"/>
+                        <br />
+                        <aries:quest_item property="CustomGoal" style="float:left;font-size:12;"/>
+        </div>
+        <div><b>领取条件:</b><aries:quest_item property="RequestAttr" style="float:left;font-size:12;"/></div>                     
+        <div><aries:quest_item property="Reward" style="float:left;font-size:12;"/></div>                     
+         <div><b>任务接取:</b><aries:quest_item property="StartNPC" style="float:left;font-size:12;"/></div>
+         <div><b>任务完成:</b><aries:quest_item property="EndNPC" style="float:left;font-size:12;"/></div>               
+    </aries:quest>
+    
+    </div>
+</div>
+
+</div>
+</pe:mcml> 
+</body>
+</html>
